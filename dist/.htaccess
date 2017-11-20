@@ -1,0 +1,26 @@
+RewriteEngine on
+
+# Redirect to domain without www.
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule .* http://%1%{REQUEST_URI} [R=301,L]
+
+# Same for HTTPS:
+# RewriteCond %{HTTPS} on
+# RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+# RewriteRule .* https://%1%{REQUEST_URI} [R=301,L]
+# Ensure all directory URLs have a trailing slash.
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_URI} !\/$
+# RewriteCond %{REQUEST_URI} !\/[^\/]*\.[^\/]+$
+# RewriteRule .* http://%{HTTP_HOST}%{REQUEST_URI}/ [L,R=301]{
+# Remove .html extenstion
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME}\.html -f
+# RewriteRule ^(.*)$ $1.html}
+# Custom error pages.
+ErrorDocument 400 /
+ErrorDocument 401 /
+ErrorDocument 403 /
+ErrorDocument 404 /
+ErrorDocument 500 /
