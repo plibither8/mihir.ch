@@ -1,0 +1,70 @@
+@require "imports/main"
+
+div.border
+	position fixed
+	background #bbb
+	
+	&.top, &.bottom
+		left 0
+		right 0
+		height 15px
+		width 100%
+		
+	&.right, &.left
+		top 0
+		bottom 0
+		height 100%
+		width 15px
+		
+	&.top
+		top 0
+	
+	&.bottom
+		bottom 0
+	
+	&.right
+		right 0
+	
+	&.left
+		left 0
+	
+
+section.main
+	height 100%
+	width 90%
+	margin 0 auto
+	max-width 500px
+	padding 50px 20px 0 20px
+	font-size 16px
+	color #222
+
+	h1
+		font-size 2em
+
+	h2
+		font-size 1.5em
+		color #444
+		padding 5px 0 30px 0
+	
+	p
+		font-size 1.1em
+		line-height 1.5
+		padding 10px 0
+
+	a
+		display block
+		font-size 1.1em
+		display flex
+		margin 5px 0
+
+		span
+			display flex
+			padding-right 5px
+
+			svg
+				display inline-block
+				width 1.3em
+				height 1.3em
+		
+		&.first
+			margin-top 30px
