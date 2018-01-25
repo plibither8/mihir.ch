@@ -8,7 +8,7 @@ const surge = require("gulp-surge");
 gulp.task('pug', function() {
 	return gulp.src(['src/pug/**/*.pug', '!src/pug/includes/*'])
 	.pipe(pug())
-	.pipe(gulp.dest('dist/'));
+	.pipe(gulp.dest(''));
 })
 
 gulp.task('stylus', function() {
@@ -19,7 +19,7 @@ gulp.task('stylus', function() {
 	.pipe(autoprefix({
 		cascade: false
 	}))
-	.pipe(gulp.dest('dist/css'));
+	.pipe(gulp.dest('assets/css'));
 })
 
 gulp.task('scripts', function() {
@@ -29,12 +29,12 @@ gulp.task('scripts', function() {
 		presets: ['env'],
 		minified: true
 	}))
-	.pipe(gulp.dest('dist/js'))
+	.pipe(gulp.dest('assets/js'))
 })
 
 gulp.task('deploy', function() {
 	return surge({
-		project: './dist/',
+		project: './assets/',
 		domain: 'mihirch.surge.sh'
 	})
 })

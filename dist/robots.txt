@@ -1,4 +1,0 @@
-User-agent: *
-Host: www.projectbeta.tech
-Disallow: /styl/
-Disallow: /woff/
