@@ -1,3 +1,3 @@
 # Mihir.ch
 
-Portfolio website
+Personal website
