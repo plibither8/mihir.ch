@@ -1,9 +1,9 @@
 @require "imports/main"
 
 section.main
-	height 100%
 	width 90%
 	max-width 500px
+	min-height 100%
 	margin 0 auto
 	padding 50px 0
 	font-size 16px
@@ -24,24 +24,25 @@ section.main
 		padding 10px 0
 
 	a
-		display block
 		font-size 1em
-		display flex
-		margin 5px 0
-		text-decoration underline
 		color #555
 
 		&:hover
 			color #ff7043
 
-		span
+		&.link
 			display flex
-			padding-right 5px
+			margin 5px 0
+			text-decoration underline
 
-			svg
-				display inline-block
-				width 1.3em
-				height 1.3em
+			span
+				display flex
+				padding-right 5px
+
+				svg
+					display inline-block
+					width 1.3em
+					height 1.3em
 		
-		&.first
-			margin-top 30px
+			&.first
+				margin-top 30px
