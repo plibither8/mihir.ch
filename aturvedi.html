@@ -1,5 +1,43 @@
+<!DOCTYPE html>
 <html>
-	<head>
-	<meta http-equiv="refresh" content="0; url=https://www.youtube.com/watch?v=dQw4w9WgXcQ/" />
-	</head>
+
+<head>
+
+	<meta name="viewport" content="width=device-width">
+
+	<title>Good times, good times</title>
+
+	<style>
+		body,
+		html {
+			width: 100%;
+			height: 100%;
+			background: black;
+			overflow: hidden;
+			margin: 0;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<iframe id="video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&showinfo=0&rel=0&wmode=transparent&autohide=1&enablejsapi=1&autoplay=1&loop=1&modestbranding=1&mute=1" allowfullscreen="" frameborder="0">
+	</iframe>
+
+</body>
+
+	<script>
+
+		var v = document.querySelector('#video');
+		v.style.width = document.body.clientWidth+'px';
+		v.style.height = document.body.clientHeight+'px';
+
+		window.addEventListener('resize', function(){
+			v.style.width = document.body.clientWidth+'px';
+			v.style.height = document.body.clientHeight+'px';
+		});
+
+	</script>
+
 </html>
