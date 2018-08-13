@@ -8,6 +8,7 @@
 <head>
 
 	<meta name="viewport" content="width=device-width">
+	<meta name="theme-color" content="#ff00cb">
 
 	<title>Good times, good times</title>
 
@@ -19,6 +20,40 @@
 			background: black;
 			overflow: hidden;
 			margin: 0;
+		}
+
+		img {
+			width: 200px;
+			height: auto;
+		}
+
+		.rotate {
+			animation: rotation 1s infinite linear;
+			-webkit-animation: rotation 1s infinite linear;
+		}
+
+		@-webkit-keyframes rotation {
+			from {
+				-webkit-transform: rotate(0deg);
+			}
+			to {
+				-webkit-transform: rotate(359deg);
+			}
+		}
+
+		@keyframes rotation {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(359deg);
+			}
+		}
+
+		@media only screen and (max-width: 800px) {
+			img {
+				width: 120px;
+			}
 		}
 	</style>
 
@@ -45,34 +80,34 @@
 		/**
 		 * SOURCE: https://github.com/jimpo/nyancat
 		 */
-		nyan = (function () {
 
-			var MP3_SRC = "/nyancat.mp3";
-			var IMG_SRC = "/nyancat.gif";
+		const craxyMode = (imgSrc, allowAudio = 0) => {
+			
+			const IMG_SRC = imgSrc;
+			const STEP_SIZE = 15;
+			const MP3_SRC = allowAudio ? "assets/aturvedi/nyancat.mp3" : null;
 
-			var STEP_SIZE = 25;
-			var audio, body, img, targetX, targetY, mouseX = 0, mouseY = 0;
+			let audio, body, img, targetX, targetY, mouseX = 0, mouseY = 0;
 
-
-			function createAudioElement() {
+			const createAudioElement = allowAudio ? () => {
 				audio = document.createElement('embed');
 				audio.src = MP3_SRC;
 				audio.setAttribute('hidden', 'true');
 				audio.setAttribute('autostart', 'true');
 				audio.setAttribute('loop', 'true');
-			}
+			} : null;
 
-			function createImgElement() {
+			const createImgElement = () => {
 				img = document.createElement('img');
 				img.src = IMG_SRC;
-				img.style['width'] = '200px';
+				img.classList.add('rotate');
 				img.style['z-index'] = '100';
 				img.style['position'] = 'fixed';
 				img.style['left'] = 0;
 				img.style['top'] = 0;
 			}
 
-			function randomWalk() {
+			const randomWalk = () => {
 				setRandomTarget();
 				setInterval(function () {
 					if (atTarget()) {
@@ -82,35 +117,40 @@
 				}, 20);
 			}
 
-			function speed() {
-				var bonus = 0;
-				var dx = mouseX - posX();
-				var dy = mouseY - posY();
-				var dist = Math.sqrt(dx * dx + dy * dy);
+			const speed = () => {
+
+				const maxWidth = window.innerWidth;
+
+				let bonus = 0;
+				const dx = mouseX - posX();
+				const dy = mouseY - posY();
+				const dist = Math.sqrt(dx * dx + dy * dy);
 				if (dist < 500) {
-					bonus = (500 - dist) / 10;
+					bonus = maxWidth > 800 ? (500 - dist) / 10 : 0;
 				}
 				return STEP_SIZE + bonus;
 			}
 
-			function atTarget() {
+			const atTarget = () => {
 				return posX() == targetX && posY() == targetY;
 			}
 
-			function setRandomTarget() {
+			const setRandomTarget = () => {
+
 				targetX = Math.floor(Math.random() * window.innerWidth);
 				targetY = Math.floor(Math.random() * window.innerHeight);
+
 			}
 
-			function posX() {
+			const posX = () => {
 				return parseFloat(img.style['left']);
 			}
 
-			function posY() {
+			const posY = () => {
 				return parseFloat(img.style['top']);
 			}
 
-			function stepTowardsTarget() {
+			const stepTowardsTarget = () => {
 				var dx = targetX - posX();
 				var dy = targetY - posY();
 				var d = Math.sqrt(dx * dx + dy * dy);
@@ -125,28 +165,54 @@
 				}
 			}
 
-			function setMouseListener() {
+			const setMouseListener = () => {
 				window.addEventListener('mousemove', function () {
 					mouseX = window.event.clientX;
 					mouseY = window.event.clientY;
 				});
 			}
 
-			return function () {
-				createAudioElement()
-				createImgElement()
+			return () => {
 				body = document.getElementsByTagName('body')[0];
-				body.appendChild(audio);
+				if (allowAudio) {
+					createAudioElement();
+					body.appendChild(audio);
+				}
+				createImgElement();
 				body.appendChild(img);
 				setMouseListener();
 				randomWalk();
 			};
 
-		})();
+		};
 
 		window.addEventListener('load', function () {
-			nyan();
+			(craxyMode('assets/aturvedi/nyancat.gif', 1))();
+			(craxyMode('assets/aturvedi/craxy_mihir.gif'))();
 		});
+
+		let i = 0;
+		const colors = [
+			"#FF00CB",
+			"#FF0000",
+			"#E2571E",
+			"#FF7F00",
+			"#FFFF00",
+			"#00FF00",
+			"#96bf33",
+			"#0000FF",
+			"#4B0082",
+			"#4DEEEA",
+			"#74EE15",
+			"#FFE700",
+			"#F000FF",
+			"#001EF0",
+			"#8B00FF",
+		];
+
+		setInterval(() => {
+			document.querySelector('meta[name="theme-color"]').setAttribute("content", colors[i++ % colors.length]);
+		}, 500);
 
 	</script>
 
