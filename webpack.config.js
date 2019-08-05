@@ -3,6 +3,7 @@
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const SizePlugin = require('size-plugin');
 
 module.exports = (env, argv) => ({
@@ -35,6 +36,12 @@ module.exports = (env, argv) => ({
 	},
 	plugins: [
 		new SizePlugin(),
+		new CopyWebpackPlugin([
+			{
+				from: 'src/static',
+				to: 'static'
+			}
+		]),
 		new HtmlWebpackPlugin({
 			title: 'Last.fm Tab',
 			template: './src/index.pug'
