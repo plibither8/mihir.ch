@@ -3,12 +3,33 @@
 @import "variables"
 @import "universal"
 
-html, body, :root
-	width 100%
-	height 100%
-	background #f7f7f7
+html
+	height: 100vh
+	width: 100vw
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 500% 500%;
+	animation: gradientBG 5s ease infinite;
+	overflow: auto
+
+body
+	width: calc(100% - 10px)
+	height: calc(100% - 10px)
+	margin: 0 auto
+	position: fixed
+	top: 5px
+	left: 5px
+	background: #fff
+	overflow-y: auto
 	font-family $default-font-stack
 	font-size 16px
 	-webkit-font-smoothing antialiased
 	-moz-osx-font-smoothing grayscale
 	-webkit-overflow-scrolling touch
+
+@keyframes gradientBG
+	0%
+		background-position: 0% 50%;
+	50%
+		background-position: 100% 50%;
+	100%
+		background-position: 0% 50%;
