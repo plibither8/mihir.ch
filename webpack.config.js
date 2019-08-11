@@ -9,7 +9,10 @@ const SizePlugin = require('size-plugin');
 module.exports = (env, argv) => ({
 	devtool: 'sourcemap',
 	devServer: {
-		contentBase: './dist',
+		contentBase: [
+			'./dist',
+			'./src'
+		],
 		hot: true,
 		watchContentBase: true
 	},
@@ -25,13 +28,6 @@ module.exports = (env, argv) => ({
 		rules: [{
 			test: /\.pug/,
 			use: 'pug-loader'
-		}, {
-			test: /\.styl/,
-			use: [
-				'style-loader',
-				'css-loader',
-				'stylus-loader'
-			]
 		}]
 	},
 	plugins: [
@@ -43,7 +39,7 @@ module.exports = (env, argv) => ({
 			}
 		]),
 		new HtmlWebpackPlugin({
-			title: 'Last.fm Tab',
+			title: 'Mihir Chaturvedi',
 			template: './src/index.pug'
 		})
 	],
