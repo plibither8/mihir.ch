@@ -2,9 +2,10 @@
 
 const path = require('path');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SizePlugin = require('size-plugin');
+const WriteFilePlugin = require('write-file-webpack-plugin');
 
 module.exports = (env, argv) => ({
 	devtool: 'sourcemap',
@@ -32,6 +33,7 @@ module.exports = (env, argv) => ({
 	},
 	plugins: [
 		new SizePlugin(),
+		new WriteFilePlugin(),
 		new CopyWebpackPlugin([
 			{
 				from: 'src/static',
@@ -40,7 +42,8 @@ module.exports = (env, argv) => ({
 		]),
 		new HtmlWebpackPlugin({
 			title: 'Mihir Chaturvedi',
-			template: './src/index.pug'
+			template: './src/index.pug',
+			projects: require('./src/data/projects.json')
 		})
 	],
 	resolve: {

@@ -34,7 +34,7 @@ section.heading
 
 section.intro
 
-	p
+	p:not(.small)
 		max-width: 600px
 		font-size: 20px
 		line-height: 1.5
@@ -45,59 +45,119 @@ section.intro
 			color: #984c6b
 			font-style: normal
 
-		&:not(.small) a
+		a
 			color: #c87c9e
 			border-bottom: 3px solid #c87c9e77
 			&:hover
 				color: #984c6b
 				border-color: #c87c9e
 
-		&.small
-			margin-top: 10px
-			font-size: 12px
-			color: #aaa
-			width: 100%
-			background: #f7f7f7
-			display: inline-block
-			padding: 5px
-			border-left: 3px solid #ddd
+	p.small
+		margin-top: 10px
+		font-size: 12px
+		color: #aaa
+		width: 100%
+		background: #f7f7f7
+		display: inline-block
+		padding: 5px
+		border-left: 3px solid #ddd
+		max-width: 650px
 
-			span
+		span
+			color: inherit
+
+		code
+			letter-spacing: 1px
+
+		button
+			margin-left: 10px
+			cursor: help
+			border: none 
+			background: none
+			font-family: $default-font-stack
+			color: inherit
+			font-size: inherit
+			text-decoration: underline dotted
+
+			&:hover,
+			&:focus
 				color: #c87c9e
 
-			code
-				letter-spacing: 1px
-
-			button
-				margin-left: 10px
-				cursor: help
-				border: none 
-				background: none
-				font-family: $default-font-stack
-				color: inherit
-				font-size: inherit
-				text-decoration: underline dotted
-
-				&:hover,
-				&:focus
-					color: #c87c9e
-
-					&::after
-						content: 'This means sarcasm just btw.'
-						position: absolute
-						min-width: 100px
-						font-style: italic
-						margin-left: 10px
-						padding: 5px 5px 5px 10px
-						background: #fceaf3
-						border-left: 3px solid #ffbbdd
-						color: #984c6b
+				&::after
+					content: 'Sarcastic and satirical. No harm meant. Maybe.'
+					position: absolute
+					min-width: 100px
+					margin-left: 10px
+					padding: 5px 5px 5px 10px
+					background: #fceaf3
+					border-left: 3px solid #ffbbdd
+					color: #984c6b
+					line-height: 1.3
 
 section.projects
 
 	h2
 		color: #984c6b
 		font-size: 30px
+
+	.card
+		display: flex
+		margin: 5vh 0
+		align-items: flex-start
+
+		.info
+			padding: 5px 20px
+
+			h1
+				font-size: 28px
+				color: #c87c9e
+
+				a::after
+					content: '↗'
+					color: #fce9f4
+
+				a:hover, a:focus
+					color: #984c6b
+					&::after
+						color: inherit
+
+			p.caption
+				font-size: 20px
+				color: #555
+				margin: 10px 0
+				line-height: 1.5
+				font-style: italic
+
+			p.details
+				font-size: 16px
+				color: #333
+				line-height: 1.5
+
+				span.hidden
+					display: none
+				
+				button
+					border: none
+					background: none
+					font-family: $default-font-stack
+					color: #c87c9e
+					font-size: 20px
+					font-weight: bold
+					cursor: pointer
+
+		img
+			width: 200px
+
+		@media only screen and (max-width: 800px)
+			flex-direction: column
+
+			.info
+				padding: 20px 0
+
+			img
+				width: initial
+				max-height: 250px
+				max-width: 100%
 
 section.about
 

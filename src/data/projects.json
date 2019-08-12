@@ -1,0 +1,30 @@
+[
+	{
+		"name": "2048.cpp",
+		"caption": "🎮 A fully-featured terminal version of the popular game \"2048\" written in C++",
+		"details": "Originally developed for my 12th grade course project, the game gained traction on Reddit and Hacker News. It was featured on GitHub's Twitter and Facebook accounts as well, thereby becoming popular overnight.",
+		"image": true,
+		"main_link": "https://github.com/plibither8/2048.cpp"
+	},
+	{
+		"name": "Refined Hacker News",
+		"caption": "✨ Browser extension: Hacker News, but refined — Interface tweaks and features to make the HN experience better",
+		"details": "This browser extension adds much-needed features, and tweaks a few stuff on Hacker News to make the browsing experience better... without changing the look and feel. The minimalist and raw design of the site is sacrosanct and should remain intact!",
+		"image": true,
+		"main_link": "https://github.com/plibither8/refined-hacker-news"
+	},
+	{
+		"name": "Markdown New Tab",
+		"caption": "🗒️ ⏰ ✔️ Browser New Tab: Save notes in Markdown directly in the 'New Tab' page",
+		"details": "Markdown New Tab (MDNT) is a browser 'New Tab' page alternative that allows you to save notes, checklists, links, images, tables and everything that GitHub-flavoured Markdown [M↓] has to offer directly in the New Tab page for quick access.",
+		"image": true,
+		"main_link": "https://github.com/plibither8/markdown-new-tab"
+	},
+	{
+		"name": "licensed",
+		"caption": "⚖️ licensed is an interactive command line tool to help you choose and add licenses to your projects",
+		"details": "This project was one of my first attempts at creating a CLI tool and an npm package. It drasctically improved my understanding of Node.js and more abstractly, the opensource culture.",
+		"image": true,
+		"main_link": "https://github.com/plibither8/licensed"
+	}
+]
