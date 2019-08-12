@@ -54,6 +54,7 @@ section.intro
 				border-color: #c87c9e
 
 		&.small
+			padding-top: 10px
 			font-size: 13px
 			font-style: italic
 			color: #aaa
@@ -67,14 +68,27 @@ section.intro
 				letter-spacing: 1px
 				padding: 0 3px
 
-			abbr
+			button
 				cursor: help
+				border: none 
+				background: none
+				font-family: $default-font-stack
+				color: inherit
+				font-size: inherit
+				text-decoration: underline dotted
 
-		&:last-child:hover
-			abbr
-				color: #c87c9e
-				// border-bottom: 3px solid #c87c9e77
-				// text-decoration: underline solid
+				&:hover::after,
+				&:focus::after
+					content: 'This means sarcasm just btw.'
+					position: absolute
+					min-width: 100px
+					font-style: italic
+					margin-left: 10px
+					margin-top: -5px
+					padding: 5px 5px 5px 10px
+					background: #fceaf3
+					border-left: 3px solid #ffbbdd
+					color: #c87c9e
 
 section.projects
 
