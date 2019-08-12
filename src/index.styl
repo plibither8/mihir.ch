@@ -2,11 +2,12 @@
 
 @import "stylus/nav"
 
-div.hr
+hr
+	border: none
 	width: 100%
 	height: 3px
 	background: #fceaf3
-	margin: 5vh 0
+	margin: 7vh 0
 
 div.main
 	width: 95%
@@ -35,27 +36,51 @@ section.intro
 	margin: 7vh 0
 
 	p
-		font-size: 18px
+		max-width: 600px
+		font-size: 20px
 		line-height: 1.5
-		color: #82274d
-		font-style: italic
+		color: #444
+		margin: 20px 0
 
 		span
-			font-size: 40px
-			font-weight: bold
+			color: #984c6b
 			font-style: normal
 
-		a
+		&:not(.small) a
 			color: #c87c9e
 			border-bottom: 3px solid #c87c9e77
 			&:hover
-				color: #82274d
+				color: #984c6b
 				border-color: #c87c9e
+
+		&.small
+			font-size: 13px
+			font-style: italic
+			color: #aaa
+
+			span
+				font-weight: bold
+				color: inherit
+				font-style: inherit
+
+			code
+				letter-spacing: 1px
+				padding: 0 3px
+
+			abbr
+				cursor: help
+
+		&:last-child:hover
+			abbr
+				color: #c87c9e
+				// border-bottom: 3px solid #c87c9e77
+				// text-decoration: underline solid
 
 section.projects
 
 	h2
 		color: #984c6b
+		font-size: 30px
 
 section.about
 
