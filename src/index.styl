@@ -33,7 +33,6 @@ section.heading
 			color: #c87c9e
 
 section.intro
-	margin: 7vh 0
 
 	p
 		max-width: 600px
@@ -54,21 +53,25 @@ section.intro
 				border-color: #c87c9e
 
 		&.small
-			padding-top: 10px
-			font-size: 13px
+			margin-top: 10px
+			font-size: 12px
 			font-style: italic
 			color: #aaa
+			width: 100%
+			background: #f7f7f7
+			display: flex
+			align-items: center
+			padding: 5px
+			border-left: 3px solid #ddd
 
 			span
-				font-weight: bold
 				color: inherit
-				font-style: inherit
 
 			code
 				letter-spacing: 1px
-				padding: 0 3px
 
 			button
+				margin-left: 10px
 				cursor: help
 				border: none 
 				background: none
@@ -77,18 +80,20 @@ section.intro
 				font-size: inherit
 				text-decoration: underline dotted
 
-				&:hover::after,
-				&:focus::after
-					content: 'This means sarcasm just btw.'
-					position: absolute
-					min-width: 100px
-					font-style: italic
-					margin-left: 10px
-					margin-top: -5px
-					padding: 5px 5px 5px 10px
-					background: #fceaf3
-					border-left: 3px solid #ffbbdd
+				&:hover,
+				&:focus
 					color: #c87c9e
+
+					&::after
+						content: 'This means sarcasm just btw.'
+						position: absolute
+						min-width: 100px
+						font-style: italic
+						margin-left: 10px
+						padding: 5px 5px 5px 10px
+						background: #fceaf3
+						border-left: 3px solid #ffbbdd
+						color: #c87c9e
 
 section.projects
 
