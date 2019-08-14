@@ -52,10 +52,20 @@ section.intro
 
 		a
 			color: #c87c9e
-			border-bottom: 3px solid #c87c9e77
+
+			&::before
+				content: ''
+				height: 35%
+				width: 100%
+				background: #c87c9e36
+				position: absolute
+				bottom: 0px
+				transition: 0.1s all linear
+
 			&:hover
 				color: #984c6b
-				border-color: #c87c9e
+				&::before
+					height: 100%
 
 	p.small
 		margin-top: 10px
@@ -110,8 +120,7 @@ section.projects
 
 	.gallery
 		display: flex
-		flex-direction: column
-		flex-flow: wrap
+		flex-wrap: wrap
 		justify-content: space-around
 
 	.card
@@ -189,7 +198,7 @@ section.projects
 					bottom: 0px
 					transition: 0.1s all linear
 
-				&:hover, &:focus
+				&:hover
 					&::before
 						height: 100%
 
