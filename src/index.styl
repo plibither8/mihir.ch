@@ -7,16 +7,18 @@ hr
 	width: 100%
 	height: 3px
 	background: #fceaf3
-	margin: 7vh 0
-
-div.main
-	width: 95%
+	margin: 7vh auto
 	max-width: 800px
+
+main
+	width: 95%
 	margin: 0 auto
 	padding: 10px
 
 section.heading
-	margin: 7vh 0
+	margin: 7vh auto
+	width: 100%
+	max-width: 800px
 
 	h1
 		font-size: 40px
@@ -33,6 +35,9 @@ section.heading
 			color: #c87c9e
 
 section.intro
+	margin: 0 auto
+	width: 100%
+	max-width: 800px
 
 	p:not(.small)
 		max-width: 600px
@@ -95,69 +100,113 @@ section.intro
 					line-height: 1.3
 
 section.projects
+	max-width: 1300px
+	width: 100%
+	margin: 0 auto
 
 	h2
 		color: #984c6b
-		font-size: 30px
+		font-size: 40px
+
+	.gallery
+		display: flex
+		flex-direction: column
+		flex-flow: wrap
+		justify-content: space-around
 
 	.card
-		display: flex
-		margin: 5vh 0
-		align-items: flex-start
+		margin: 40px 10px
+		width: 100%
+		max-width: 500px
 
-		.info
-			padding: 5px 20px
+		> a
+			display: block
 
-			h1
+			img
+				margin: 0 auto 20px auto
+				display: block
+				max-height: 200px
+				max-width: 100%
+
+			h3
 				font-size: 28px
 				color: #c87c9e
 
-				a::after
+				&::after
 					content: '↗'
 					color: #fce9f4
 
-				a:hover, a:focus
-					color: #984c6b
-					&::after
-						color: inherit
+			&:hover, &:focus
+				color: #984c6b
 
-			p.caption
+				h3::after
+					color: inherit
+
+		.meta
+			display: flex
+			align-items: center
+			overflow-x: auto
+
+			time
+				white-space: nowrap
+				font-size: 18px
+				color: #888
+
+			.tags
+				display: flex
+				margin-left: 10px
+
+				span
+					padding: 5px
+					background: #fceaf3
+					margin: 0 5px
+					font-size: 14px
+					border-radius: 5px
+					border: 1px solid #c87c9e
+
+		p.caption
+			font-size: 20px
+			color: #555
+			margin: 10px 0
+			line-height: 1.5
+			font-style: italic
+
+		p.details
+			font-size: 16px
+			color: #333
+			line-height: 1.5
+			padding-top: 10px
+
+			a
+				color: #984c6b
+
+				&::before
+					content: ''
+					height: 35%
+					width: 100%
+					background: #c87c9e36
+					position: absolute
+					bottom: 0px
+					transition: 0.1s all linear
+
+				&:hover, &:focus
+					&::before
+						height: 100%
+
+			span.hidden
+				display: none
+			
+			button
+				border: none
+				background: none
+				font-family: $default-font-stack
+				color: #c87c9e
 				font-size: 20px
-				color: #555
-				margin: 10px 0
-				line-height: 1.5
-				font-style: italic
+				font-weight: bold
+				cursor: pointer
 
-			p.details
-				font-size: 16px
-				color: #333
-				line-height: 1.5
-
-				span.hidden
-					display: none
-				
-				button
-					border: none
-					background: none
-					font-family: $default-font-stack
-					color: #c87c9e
-					font-size: 20px
-					font-weight: bold
-					cursor: pointer
-
-		img
-			width: 200px
-
-		@media only screen and (max-width: 800px)
-			flex-direction: column
-
-			.info
-				padding: 20px 0
-
-			img
-				width: initial
-				max-height: 250px
-				max-width: 100%
+		@media only screen and (max-width: 1000px)
+			margin: 40px 0
 
 section.about
 

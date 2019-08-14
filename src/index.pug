@@ -1,5 +1,7 @@
 - const {options} = htmlWebpackPlugin
 
+include ./pug/mixins.pug
+
 html(lang="en")
 
 	include ./pug/head.pug
@@ -8,7 +10,7 @@ html(lang="en")
 
 		include ./pug/nav.pug
 
-		div.main
+		main
 
 			section.heading
 
@@ -22,7 +24,7 @@ html(lang="en")
 
 				p 👋 Hi there, and welcome to my humble abode on the internet!
 
-				p I'm primarily a <span>UX developer</span>, big-time <span>JavaScripter</span>, small-time <span>designer</span> and a full-time <span>student @ <a href="https://iiitd.ac.in">IIIT Delhi</a>.</span>
+				p I'm primarily a <span>UX developer</span>, big-time <span>JavaScripter</span>, small-time <span>designer</span> and a full-time <span>student @ <a href="https://iiitd.ac.in" target="_blank">IIIT Delhi</a>.</span>
 
 				p.small Psst! I can also be described as a&nbsp;<span>"maker of things 👷"</span>,&nbsp;<span>"coffee-lover ☕"</span>&nbsp;and a&nbsp;<span>"<code>10x engineer 😲</code>"</span>.&nbsp;<button>/s</button>
 
@@ -34,27 +36,9 @@ html(lang="en")
 
 				.gallery
 
-					- const {projects} = options
-					each project in projects
-						.card
-							- if(project.image)
-								- const kebab = project.name.toLowerCase().split(' ').join('-')
-								img(src=`/static/img/projects/${kebab}.png`)
+					each project in options.projects
 
-							.info
-								h1
-									a(href=project.main_link target="_blank") !{project.name}
-								- const visible = project.details.substr(0, 100)
-								- const hidden = project.details.substring(100)
-								p.caption !{project.caption}
-								p.details
-									| !{visible}
-									span.ellipsis ...
-									button ++
-									span.hidden !{hidden}
-
-								noscript
-									p.details !{project.details}
+						+createCard(project)
 
 			hr
 
