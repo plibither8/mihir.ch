@@ -14,10 +14,17 @@
 mixin createCard(project)
 	.card
 
-		a(href=project.main_link target="_blank")
+		a(
+			href=project.main_link
+			target="_blank"
+			rel="noopener"
+		)
 			- if(project.image)
 				- const kebab = project.name.toLowerCase().split(' ').join('-')
-				img(src=`/static/img/projects/${kebab}.png`)
+				img(
+					src=`/static/img/projects/${kebab}.png`
+					alt=`Graphic for ${project.name}`
+				)
 			h3 !{project.name}
 
 		p.caption !{project.caption}

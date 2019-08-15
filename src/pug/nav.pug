@@ -1,14 +1,14 @@
 nav
-	button
-		img(src="/static/img/menu.svg")
+	button.flex(aria-label="Toggle navigation menu")
+		img(src="/static/img/menu.svg" alt="")
 
 	.links
 		a.button(href="/") 🏠 Home
 		a.button(href="/about") 🤔 About
-		a.button(href="https://github.com/plibither8" target="_blank")
+		a.button(href="https://github.com/plibither8" target="_blank" rel="noopener")
 			img(src="/static/img/octocat.png")
 			| &nbsp;GitHub
-		a.button(href="https://twitter.com/plibither8" target="_blank")
+		a.button(href="https://twitter.com/plibither8" target="_blank" rel="noopener")
 			img(src="/static/img/twitter.png")
 			| &nbsp;Twitter
 		a.button(href="/projects") ✨ Projects
