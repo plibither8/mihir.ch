@@ -1,15 +1,15 @@
 [
 	{
 		"name": "2048.cpp",
-		"caption": "🎮 A fully-featured terminal version of the popular game \"2048\" written in C++",
+		"emoji": "🎮",
+		"caption": "A fully-featured terminal version of the popular game \"2048\" written in C++",
 		"details": {
 			"short": "Originally developed for my 12th grade course project, the game gained traction",
 			"full": "Originally developed for my 12th grade course project, the game gained traction on <a href='https://www.reddit.com/r/commandline/comments/8rwz4h/for_my_schools_summer_project_i_created_a_2048cpp/' target='_blank'>Reddit</a> and <a href='https://news.ycombinator.com/item?id=17897283'>Hacker News</a>. It was featured on GitHub's <a href='https://twitter.com/github/status/1017094930991370240'>Twitter</a> and Facebook accounts as well, thereby becoming popular overnight."
 		},
 		"date": "May 2018",
 		"image": true,
-		"main_link": "https://github.com/plibither8/2048.cpp",
-		"links": [],
+		"link": "https://github.com/plibither8/2048.cpp",
 		"tags": [
 			"c++",
 			"terminal",
@@ -18,15 +18,15 @@
 	},
 	{
 		"name": "Refined Hacker News",
-		"caption": "✨ Browser extension: Hacker News, but refined — Interface tweaks and features to make the HN experience better",
+		"emoji": "✨",
+		"caption": "Browser extension: Hacker News, but refined — Interface tweaks and features to make the HN experience better",
 		"details": {
 			"short": "This browser extension adds much-needed features, and tweaks a few stuff on Hacker News",
 			"full": "This browser extension adds much-needed features, and tweaks a few stuff on Hacker News to make the browsing experience better... without changing the look and feel. The minimalist and raw design of the site is sacrosanct and should remain intact!"
 		},
 		"date": "June 2019",
 		"image": true,
-		"main_link": "https://github.com/plibither8/refined-hacker-news",
-		"links": [],
+		"link": "https://github.com/plibither8/refined-hacker-news",
 		"tags": [
 			"javascript",
 			"extension",
@@ -34,16 +34,34 @@
 		]
 	},
 	{
+		"name": "licensed",
+		"emoji": "⚖️",
+		"caption": "licensed is an interactive command line tool to help you choose and add licenses to your projects",
+		"details": {
+			"short": "This project was one of my first attempts at creating a CLI tool and an npm package",
+			"full": "This project was one of my first attempts at creating a CLI tool and an npm package. It drasctically improved my understanding of Node.js and more abstractly, the opensource culture."
+		},
+		"date": "June 2018",
+		"image": true,
+		"link": "https://github.com/plibither8/licensed",
+		"tags": [
+			"javascript",
+			"terminal",
+			"cli",
+			"node.js"
+		]
+	},
+	{
 		"name": "Markdown New Tab",
-		"caption": "🗒️ ⏰ ✔️ Browser New Tab: Save notes in Markdown directly in the 'New Tab' page",
+		"emoji": "🗒️ ⏰ ✔️",
+		"caption": "Browser New Tab: Save notes in Markdown directly in the 'New Tab' page",
 		"details": {
 			"short": "Markdown New Tab (MDNT) is a browser 'New Tab' page alternative that allows you to save notes",
 			"full": "Markdown New Tab (MDNT) is a browser 'New Tab' page alternative that allows you to save notes, checklists, links, images, tables and everything that GitHub-flavoured Markdown [M↓] has to offer directly in the New Tab page for quick access."
 		},
 		"date": "August 2018",
 		"image": true,
-		"main_link": "https://github.com/plibither8/markdown-new-tab",
-		"links": [],
+		"link": "https://github.com/plibither8/markdown-new-tab",
 		"tags": [
 			"javascript",
 			"html",
@@ -53,21 +71,39 @@
 		]
 	},
 	{
-		"name": "licensed",
-		"caption": "⚖️ licensed is an interactive command line tool to help you choose and add licenses to your projects",
+		"name": "Sanskriti School",
+		"emoji": "🎒",
+		"caption": "The official website of Sanskriti School, New Delhi",
 		"details": {
-			"short": "This project was one of my first attempts at creating a CLI tool and an npm package",
-			"full": "This project was one of my first attempts at creating a CLI tool and an npm package. It drasctically improved my understanding of Node.js and more abstractly, the opensource culture."
+			"short": "",
+			"full": ""
 		},
-		"date": "June 2018",
+		"date": "July, August 2018",
 		"image": true,
-		"main_link": "https://github.com/plibither8/licensed",
-		"links": [],
+		"link": "http://sanskritischool.edu.in",
+		"tags": [
+			"html",
+			"css",
+			"web",
+			"website"
+		]
+	},
+	{
+		"name": "Made With Love In",
+		"emoji": "❤️",
+		"caption": "Mircoservice for serving and listing \"Made with love in &lt;country-name&gt;\" badges",
+		"details": {
+			"short": "",
+			"full": ""
+		},
+		"date": "March 2019",
+		"image": "https://madewithlove.now.sh/in?heart=true&template=for-the-badge",
+		"link": "https://madewithlove.now.sh",
 		"tags": [
 			"javascript",
-			"terminal",
-			"cli",
-			"node.js"
+			"serverless",
+			"api",
+			"web"
 		]
 	}
 ]

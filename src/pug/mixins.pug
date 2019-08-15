@@ -15,29 +15,37 @@ mixin createCard(project)
 	.card
 
 		a(
-			href=project.main_link
+			href=project.link
 			target="_blank"
 			rel="noopener"
 		)
 			- if(project.image)
 				- const kebab = project.name.toLowerCase().split(' ').join('-');
 				- const baseDir = '/static/img/projects';
-				picture
-					source(
-						type="image/webp"
-						srcset=`${baseDir}/${kebab}.webp`
-					)
-					source(
-						type="image/png"
-						srcset=`${baseDir}/${kebab}.png`
-					)
+				- if (typeof project.image === 'string')
 					img(
-						src=`${baseDir}/${kebab}.png`
+						src=project.image
 						alt=`Graphic for ${project.name}`
 					)
+				- else
+					picture
+						source(
+							type="image/webp"
+							srcset=`${baseDir}/${kebab}.webp`
+						)
+						source(
+							type="image/png"
+							srcset=`${baseDir}/${kebab}.png`
+						)
+						img(
+							src=`${baseDir}/${kebab}.png`
+							alt=`Graphic for ${project.name}`
+						)
 			h3 !{project.name}
 
-		p.caption !{project.caption}
+		p.caption
+			span.emoji !{project.emoji}
+			| &nbsp;!{project.caption}
 
 		.meta
 			time !{project.date}
