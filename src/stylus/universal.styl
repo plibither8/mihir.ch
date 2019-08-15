@@ -18,7 +18,7 @@
 	user-select: none
 
 *.nodisplay
-	display: none
+	display: none !important
 
 a
 	text-decoration: none
@@ -28,5 +28,7 @@ a
 		color: inherit
 
 a, button, h1
-	&:focus
+	&:focus-visible
 		outline: 2px dashed #983c5f
+	&:focus
+		outline: 2px solid #983c5f33

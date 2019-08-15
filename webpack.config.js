@@ -15,6 +15,7 @@ module.exports = (env, argv) => ({
 			'./src'
 		],
 		hot: true,
+		writeToDisk: true,
 		watchContentBase: true
 	},
 	stats: 'errors-only',

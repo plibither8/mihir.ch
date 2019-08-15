@@ -14,10 +14,8 @@ html(lang="en")
 
 			section.heading
 
-				img(src='/static/img/logo.svg')
-
+				img(src='/static/img/muh.svg')
 				h1 Mihir Chaturvedi
-
 				p.caption ...or perhaps,&nbsp;
 					span plibither8
 					| ...
@@ -25,9 +23,7 @@ html(lang="en")
 			section.intro
 
 				p Hi there, and welcome to my humble abode on the internet!
-
 				p I'm primarily a <span>UX developer</span>, big-time <span>JavaScripter</span>, small-time <span>designer</span> and a full-time <span>student @ <a href="https://iiitd.ac.in" target="_blank">IIIT Delhi</a>.</span>
-
 				p.small Psst! I can also be described as a&nbsp;<span>"maker of things 👷"</span>,&nbsp;<span>"coffee-lover ☕"</span>&nbsp;and a&nbsp;<span>"<code>10x engineer 😲</code>"</span>.&nbsp;<button>/s</button>
 
 			hr
@@ -35,11 +31,8 @@ html(lang="en")
 			section.projects
 
 				h2 ✨ Projects
-
 				.gallery
-
 					each project in options.projects
-
 						+createCard(project)
 
 			hr
