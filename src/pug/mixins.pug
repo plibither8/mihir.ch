@@ -11,7 +11,7 @@
 - 	return colour;
 - }
 
-mixin createCard(project)
+mixin createCard(project, collapse)
 	.card
 
 		a(
@@ -19,16 +19,18 @@ mixin createCard(project)
 			target="_blank"
 			rel="noopener"
 		)
+
 			- if(project.image)
 				- const kebab = project.name.toLowerCase().split(' ').join('-');
 				- const baseDir = '/static/img/projects';
 				- if (typeof project.image === 'string')
 					img(
+						class=(collapse ? 'nodisplay' : '')
 						src=project.image
 						alt=`Graphic for ${project.name}`
 					)
 				- else
-					picture
+					picture(class=(collapse ? 'nodisplay' : ''))
 						source(
 							type="image/webp"
 							srcset=`${baseDir}/${kebab}.webp`
@@ -58,9 +60,12 @@ mixin createCard(project)
 					- ];
 					span(style=styles.join(';')) !{tag}
 
-		p.details(data-details-full=project.details.full)
-			| !{project.details.short}...
-			button ++
+		p.details(
+			class=(collapse ? 'nodisplay' : '')
+			data-details-full=project.details.full
+		)
+			| !{project.details.full}
+			//- button ++
 
 		noscript
 			p.details !{project.details.full}

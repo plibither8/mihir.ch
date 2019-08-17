@@ -32,10 +32,10 @@ html(lang="en")
 
 			section.projects
 
-				h2 ✨ Projects
+				h2 ✨ Featured Projects
 				.gallery
-					each project in options.projects
-						+createCard(project)
+					each project in options.projects.slice(0, 4)
+						+createCard(project, true)
 
 			hr
 

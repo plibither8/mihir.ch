@@ -1,49 +1,31 @@
 nav
-	position: fixed
-	z-index: 10
-	margin: 2vh
+	width: 95%
+	max-width: 800px
+	margin: 2vh auto 0 auto
+	border: 2px solid #984c6b
+	background: #fff
+	display: flex
+	overflow-x: auto
+	border-radius: 3px
+	box-shadow: 4px 5px 0px #c87c9e
+	transition: 0.1s all ease-out
 
-	.links
-		border: 3px solid #984c6b
-		background: #fff
+	&:hover
+		box-shadow: 8px 7px 0px #c87c9e
 
-		@media only screen and (max-width: 1200px)
-			display: none
-
-	a.button
+	a.link
 		display: flex
 		padding: 15px
 		color: #b34871
 		font-weight: bold
 		user-select: none
-		justify-content: flex-start
+		justify-content: center
 		align-items: center
+		flex: 1
+		white-space: nowrap
 
 		img
 			height: 19px
 
 		&:hover
 			background: #ffe6f0
-
-	button
-		background: #fff
-		border: 3px solid #984c6b
-		margin-bottom: 10px
-		cursor: pointer
-
-		img
-			width: 35px
-			padding: 2px
-
-		&::before
-			content: ''
-			position: absolute
-			height: 0
-			width: 100%
-			bottom: 0
-			background: #f3e4eb
-			transition: 0.1s all linear
-
-		&:hover, &:focus
-			&::before
-				height: 100%

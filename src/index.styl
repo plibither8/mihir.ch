@@ -124,7 +124,7 @@ section.projects
 
 	h2
 		color: #984c6b
-		font-size: 40px
+		font-size: 30px
 
 	.gallery
 		display: flex
@@ -132,12 +132,12 @@ section.projects
 		justify-content: space-around
 
 	.card
-		margin: 40px 10px
+		margin: 30px 10px
 		width: 100%
 		max-width: 500px
 
 		> a
-			display: block
+			display: inline-block
 
 			img
 				margin: 0 auto 20px auto
@@ -147,18 +147,32 @@ section.projects
 				max-width: 100%
 
 			h3
-				font-size: 28px
-				color: #c87c9e
+				font-size: 25px
+				font-weight: normal
+				color: #984c6b
 
 				&::after
 					content: '↗'
 					color: #fce9f4
+					transition: 0.1s all linear
 
 			&:hover, &:focus
 				color: #984c6b
 
 				h3::after
 					color: inherit
+
+				&::before
+					height: 100%
+
+			&::before
+				content: ''
+				position: absolute
+				bottom: 0
+				width: 100%
+				height: 25%
+				background: #c87c9e36
+				transition: 0.1s all linear
 
 		.meta
 			display: flex
@@ -181,11 +195,10 @@ section.projects
 					border-radius: 5px
 
 		p.caption
-			font-size: 20px
-			color: #555
+			font-size: 18px
+			color: #222
 			margin: 10px 0
 			line-height: 1.5
-			font-style: italic
 
 			span
 				font-style: normal
@@ -206,7 +219,7 @@ section.projects
 					background: #c87c9e36
 					position: absolute
 					bottom: 0px
-					transition: 0.1s all linear
+					transition: 0.1s height linear
 
 				&:hover
 					&::before
@@ -225,7 +238,7 @@ section.projects
 				cursor: pointer
 
 		@media only screen and (max-width: 1000px)
-			margin: 40px 0
+			margin: 30px 0
 
 section.about
 
