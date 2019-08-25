@@ -19,7 +19,15 @@ mixin createCard(project, collapse)
 			target="_blank"
 			rel="noopener"
 		)
+			h3 !{project.name}
 
+		p.caption
+			time !{project.date} &mdash;&nbsp;
+			span.emoji !{project.emoji}
+			| &nbsp;!{project.caption}
+			button ++
+
+		p.details.nodisplay
 			- if(project.image)
 				- const kebab = project.name.toLowerCase().split(' ').join('-');
 				- const baseDir = '/static/img/projects';
@@ -30,7 +38,7 @@ mixin createCard(project, collapse)
 						alt=`Graphic for ${project.name}`
 					)
 				- else
-					picture(class=(collapse ? 'nodisplay' : ''))
+					picture
 						source(
 							type="image/webp"
 							srcset=`${baseDir}/${kebab}.webp`
@@ -43,29 +51,7 @@ mixin createCard(project, collapse)
 							src=`${baseDir}/${kebab}.png`
 							alt=`Graphic for ${project.name}`
 						)
-			h3 !{project.name}
-
-		p.caption
-			span.emoji !{project.emoji}
-			| &nbsp;!{project.caption}
-
-		.meta
-			time !{project.date}
-			.tags
-				for tag in project.tags
-					- const color = getColor(tag);
-					- const styles = [
-					- 	`background: ${color}38`,
-					- 	`border: 1px solid ${color}`
-					- ];
-					span(style=styles.join(';')) !{tag}
-
-		p.details(
-			class=(collapse ? 'nodisplay' : '')
-			data-details-full=project.details.full
-		)
-			| !{project.details.full}
-			//- button ++
+			span !{project.details.full}
 
 		noscript
 			p.details !{project.details.full}

@@ -26,7 +26,17 @@ html(lang="en")
 
 				p Hi there, and welcome to my humble abode on the internet!
 				p I'm primarily a <span>UX developer</span>, big-time <span>JavaScripter</span>, small-time <span>designer</span> and a full-time <span>student @ <a href="https://iiitd.ac.in" target="_blank" rel="noopener">IIIT Delhi</a>.</span>
-				p.small Psst! I can also be described as a&nbsp;<span>"maker of things 👷"</span>,&nbsp;<span>"coffee-lover ☕"</span>&nbsp;and a&nbsp;<span>"<code>10x engineer 😲</code>"</span>.&nbsp;<button aria-label="Satire disclaimer tooltip">/s</button>
+				p.small
+					button.expand Psst! ++&nbsp;
+					span.more.nodisplay
+						| <strong>Psst!</strong> I can also be described as a&nbsp;
+						span "maker of things 👷"
+						| ,&nbsp;
+						span "coffee-lover ☕"
+						| &nbsp;and a&nbsp;
+						span "<code>10x engineer 😲</code>"
+						| .&nbsp;
+						button(class="tooltip" aria-label="Satire disclaimer tooltip") /s
 
 			hr
 
