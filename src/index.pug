@@ -1,7 +1,3 @@
-- const {options} = htmlWebpackPlugin
-
-include ./pug/mixins.pug
-
 doctype html
 
 html(lang="en")
@@ -10,43 +6,26 @@ html(lang="en")
 
 	body
 
+		//- Navigation
 		include ./pug/nav.pug
 
 		main
 
-			section.heading
+			//- Heading
+			include ./pug/sections/heading.pug
 
-				img(src="/static/img/muh.svg" alt="")
-				h1 Mihir Chaturvedi
-				p.caption ...or perhaps,&nbsp;
-					span plibither8
-					| ...
-
-			section.intro
-
-				p Hi there, and welcome to my humble abode on the internet!
-				p I'm primarily a <span>UX developer</span>, big-time <span>JavaScripter</span>, small-time <span>designer</span> and a full-time <span>student @ <a href="https://iiitd.ac.in" target="_blank" rel="noopener">IIIT Delhi</a>.</span>
-				p.small
-					button.expand Psst! ++&nbsp;
-					span.more.nodisplay
-						| <strong>Psst!</strong> I can also be described as a&nbsp;
-						span "maker of things 👷"
-						| ,&nbsp;
-						span "coffee-lover ☕"
-						| &nbsp;and a&nbsp;
-						span "<code>10x engineer 😲</code>"
-						| .&nbsp;
-						button(class="tooltip" aria-label="Satire disclaimer tooltip") /s
+			//- Intro
+			include ./pug/sections/intro.pug
 
 			hr
 
-			section.projects
-
-				h2 ✨ Featured Projects
-				.gallery
-					each project in options.projects.slice(0, 4)
-						+createCard(project, true)
+			//- Featured Projects
+			include ./pug/sections/projects.pug
 
 			hr
 
-			section.about
+			//- Contact
+			include ./pug/sections/contact.pug
+
+		//- Footer
+		include ./pug/footer.pug

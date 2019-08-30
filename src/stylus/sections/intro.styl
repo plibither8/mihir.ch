@@ -1,0 +1,86 @@
+section.intro
+
+	p:not(.small)
+		max-width: 600px
+		font-size: 20px
+		line-height: 1.5
+		color: #222
+		margin: 20px 0
+
+		span
+			color: #000
+
+		a
+			color: $accent-color-4
+
+			&::before
+				content: ''
+				height: 35%
+				width: 100%
+				background: alpha($accent-color-3, 0.2)
+				position: absolute
+				bottom: 0px
+				transition: 0.1s all linear
+
+			&:hover
+				color: $accent-color-5
+				&::before
+					height: 100%
+
+	p.small
+		margin-top: 10px
+		font-size: 12px
+		color: $accent-color-5
+		display: inline-block
+		max-width: 650px
+
+		span.more
+			color: inherit
+			padding: 5px
+			display: block
+			border: 1px solid $accent-color-3
+
+		code
+			letter-spacing: 1px
+
+		button
+			border: none
+			background: none
+			color: inherit
+			font-size: inherit
+			font-family: inherit
+
+		button.expand
+			padding: 5px
+			cursor: pointer
+			font-weight: bold
+			border-radius: 3px
+			border: 2px solid $accent-color-3
+			box-shadow: 2px 3px 0 $accent-color-1
+			position: relative
+
+			&:focus, &:active
+				box-shadow: 1px 1px
+				top: 1px
+				left: 1px
+				outline: none
+
+		button.tooltip
+			margin-left: 10px
+			cursor: help
+			text-decoration: underline dotted
+
+			&:hover,
+			&:focus
+				color: $accent-color-3
+
+				&::after
+					content: 'Sarcastic and satirical. No harm meant. Maybe.'
+					position: absolute
+					min-width: 100px
+					margin-left: 10px
+					padding: 5px 5px 5px 10px
+					background: $accent-color-0
+					border-left: 3px solid $accent-color-1
+					color: $accent-color-7
+					line-height: 1.3

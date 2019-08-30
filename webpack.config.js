@@ -46,7 +46,8 @@ module.exports = (env, argv) => ({
 		new HtmlWebpackPlugin({
 			title: 'Mihir Chaturvedi',
 			template: './src/index.pug',
-			projects: require('./src/data/projects.json')
+			projects: require('./src/data/projects.json'),
+			networks: require('./src/data/networks.json')
 		}),
 		new ImageminPlugin(),
 		new ImageminWebpWebpackPlugin({

@@ -1,0 +1,65 @@
+section.contact
+
+	p
+		font-size: 20px
+		color: #333
+		margin: 20px 0
+		line-height: 1.5
+
+		&.status
+			font-size: 22px
+			color: $accent-color-4
+			font-style: italic
+
+			span
+				border-bottom: 1px solid $accent-color-2
+
+		a
+			color: $accent-color-6
+
+			&::before
+				content: ''
+				position: absolute
+				bottom: 0
+				width: 100%
+				height: 25%
+				background: alpha($accent-color-3, 0.2)
+				transition: 0.1s all linear
+
+			&:hover, &:focus
+				&::before
+					height: 100%
+
+	.networks
+		width: 100%
+		display: flex
+		flex-flow: wrap
+		margin: 0px -15px
+
+		a
+			display: flex
+			justify-content: center
+			align-items: center
+			margin: 10px 15px
+			padding: 5px 10px
+			color: $accent-color-5
+			font-family: $mono-font-stack
+			font-weight: bold
+
+			img
+				height: 25px
+				margin-right: 5px
+
+			&::before
+				content: ''
+				position: absolute
+				display: block
+				bottom: 0
+				height: 35%
+				width: 100%
+				background: alpha($accent-color-3, 0.2)
+				transition: 0.1s all linear
+
+			&:hover, &:focus
+				&::before
+					height: 100%

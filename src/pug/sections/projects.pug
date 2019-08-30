@@ -1,0 +1,11 @@
+- const {options} = htmlWebpackPlugin
+
+include ../mixins.pug
+
+section.projects#projects
+
+	h2 ✨ Featured Projects
+
+	.gallery
+		each project in options.projects
+			+createCard(project, true)

@@ -2,31 +2,30 @@ nav
 	width: 95%
 	max-width: 800px
 	margin: 2vh auto 0 auto
-	border: 3px solid $accent-color-5
-	background: #fff
 	display: flex
 	overflow-x: auto
-	border-radius: 3px
-	box-shadow: 4px 5px 0px $accent-color-3
-	transition: 0.1s all ease-out
+	font-family: $mono-font-stack
 
-	&:hover
-		box-shadow: 8px 7px 0px $accent-color-3
-
-	a.link
+	a
 		display: flex
-		padding: 15px
-		color: $accent-color-3
-		font-weight: bold
-		user-select: none
 		justify-content: center
 		align-items: center
-		flex: 1
-		white-space: nowrap
+		margin: 10px 7.5px
+		padding: 5px 10px
+		font-family: $mono-font-stack
+		font-weight: bold
+		font-size: 20px
 
-		img
-			height: 19px
+		&::before
+			content: ''
+			position: absolute
+			display: block
+			bottom: 0
+			height: 35%
+			width: 100%
+			background: alpha($accent-color-3, 0.2)
+			transition: 0.1s all linear
 
-		&:hover
-			background: $accent-color-0
-			color: $accent-color-5
+		&:hover, &:focus
+			&::before
+				height: 100%
