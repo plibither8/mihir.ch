@@ -47,7 +47,8 @@ module.exports = (env, argv) => ({
 			title: 'Mihir Chaturvedi',
 			template: './src/index.pug',
 			projects: require('./src/data/projects.json'),
-			networks: require('./src/data/networks.json')
+			networks: require('./src/data/networks.json'),
+			navigation: require('./src/data/navigation.json')
 		}),
 		new ImageminPlugin(),
 		new ImageminWebpWebpackPlugin({

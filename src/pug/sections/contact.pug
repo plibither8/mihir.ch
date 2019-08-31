@@ -6,7 +6,7 @@ section.contact#contact
 
 	p.status I am <span>currently accepting</span> new freelance projects.
 
-	p The best way to get in touch with me is to email at <a href="mailto:mail@chaturvedi.dev">mail@chaturvedi.dev</a>. <br> For a more informal tête-à-tête, you can contact me on <a href="https://t.me/plibither8">Telegram</a>.
+	p The best way to get in touch with me is to email at <a href="mailto:mail@chaturvedi.dev">mail@chaturvedi.dev</a> or fill in the form below. <br> For a more informal tête-à-tête, you can contact me on <a href="https://t.me/plibither8">Telegram</a>.
 
 	p Otherwise, you can connect with or follow me on any of the following networks too:
 
@@ -17,3 +17,16 @@ section.contact#contact
 			a(href=network.link rel="noopener" target="_blank")
 				img(src=network.icon alt=`${network.name} Logo`)
 				| !{network.name}
+
+	//- form(name="contact" method="POST" netlify)
+
+		label Name
+		input(type="text" placeholder="Enter your name" required)
+
+		label Email
+		input(type="email" placeholder="Enter your email" required)
+
+		label Message
+		textarea(placeholder="Enter your message" required)
+
+		input(type="submit" value="Send")

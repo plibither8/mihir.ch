@@ -1,6 +1,9 @@
+- const {options} = htmlWebpackPlugin
+
 nav
-	a.link(href="/") Home
-	a.link(href="#projects") Projects
-	a.link(href="#contact") Contact
-	a.link(href="https://github.com/plibither8" target="_blank" rel="noopener") GitHub
-	a.link(href="https://twitter.com/plibither8" target="_blank" rel="noopener") Twitter
+	each link in options.navigation
+		a(
+			href=link.href
+			target=(link.external ? '_blank' : false)
+			rel=(link.external ? 'noopener' : false)
+		) !{link.label}

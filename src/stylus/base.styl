@@ -3,7 +3,7 @@
 @import "variables"
 @import "universal"
 
-body
+body, html
 	background: #fff
 	overflow-y: auto
 	font-family $default-font-stack
@@ -11,11 +11,3 @@ body
 	-webkit-font-smoothing: antialiased
 	-moz-osx-font-smoothing: grayscale
 	-webkit-overflow-scrolling: touch
-
-@keyframes gradientBG
-	0%
-		background-position: 0% 50%;
-	50%
-		background-position: 100% 50%;
-	100%
-		background-position: 0% 50%;
