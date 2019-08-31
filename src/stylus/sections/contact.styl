@@ -31,6 +31,7 @@ section.contact
 		display: flex
 		flex-flow: wrap
 		margin: 0px -15px
+		color: $accent-color-9
 
 		a
 			display: flex
@@ -38,7 +39,6 @@ section.contact
 			align-items: center
 			margin: 10px 15px
 			padding: 5px 10px
-			color: $accent-color-5
 			font-family: $mono-font-stack
 			font-weight: bold
 
@@ -59,3 +59,48 @@ section.contact
 			&:hover, &:focus
 				&::before
 					height: 100%
+
+	form
+		display: flex
+		flex-direction: column
+		max-width: 600px
+		margin-top: 2vh
+
+		label
+			font-size: 20px
+			font-weight: bold
+			color: #444
+			margin-top: 20px
+
+		input, textarea
+			border: 3px solid $accent-color-0
+			margin: 5px 0
+			padding: 10px
+			font-size: 16px
+			border-radius: 3px
+			font-family: $default-font-stack
+			transition: .1s
+			color: #222
+			line-height: 1.5
+
+			&[type="submit"]
+				width: 100px
+				color: $accent-color-5
+				background: $accent-color-0
+				cursor: pointer
+				margin-top: 20px
+				font-weight: bold
+
+			&[type="email"]
+				font-family: $mono-font-stack
+
+			&:active, &:focus
+				border-color: $accent-color-2
+				outline: none
+
+			&:hover
+				box-shadow: 0 0 10px $accent-color-0
+
+		textarea
+			resize: vertical
+			height: 150px

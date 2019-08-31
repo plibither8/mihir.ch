@@ -15,18 +15,22 @@ section.contact#contact
 		each network in options.networks
 
 			a(href=network.link rel="noopener" target="_blank")
-				img(src=network.icon alt=`${network.name} Logo` draggable="false")
+				img(
+					src=network.icon
+					alt=`${network.name} Logo`
+					draggable="false"
+				)
 				| !{network.name}
 
-	//- form(name="contact" method="POST" netlify)
+	form(name="contact" method="POST" netlify)
 
-		label Name
-		input(type="text" placeholder="Enter your name" required)
+		label(for="name") Name
+		input(name="name" type="text" placeholder="Enter your name" required)
 
-		label Email
-		input(type="email" placeholder="Enter your email" required)
+		label(for="email") Email
+		input(name="email" type="email" placeholder="Enter your email" required)
 
-		label Message
-		textarea(placeholder="Enter your message" required)
+		label(for="message") Message
+		textarea(name="message" placeholder="Enter your message" required)
 
 		input(type="submit" value="Send")
