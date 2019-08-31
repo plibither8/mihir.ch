@@ -5,7 +5,7 @@
 		"caption": "A fully-featured terminal version of the popular game \"2048\" written in C++",
 		"details": {
 			"short": "Originally developed for my 12th grade course project, the game gained traction",
-			"full": "Originally developed for my 12th grade course project, the game gained traction on <a href='https://www.reddit.com/r/commandline/comments/8rwz4h/for_my_schools_summer_project_i_created_a_2048cpp/' target='_blank'>Reddit</a> and <a href='https://news.ycombinator.com/item?id=17897283'>Hacker News</a>. It was featured on GitHub's <a href='https://twitter.com/github/status/1017094930991370240'>Twitter</a> and Facebook accounts as well, thereby becoming popular overnight."
+			"full": "Originally developed for my 12th grade course project, the game gained traction on <a href='https://www.reddit.com/r/commandline/comments/8rwz4h/for_my_schools_summer_project_i_created_a_2048cpp/' target='_blank' rel='noopener'>Reddit</a> and <a href='https://news.ycombinator.com/item?id=17897283' target='_blank' rel='noopener'>Hacker News</a>. It was featured on GitHub's <a href='https://twitter.com/github/status/1017094930991370240' target='_blank' rel='noopener'>Twitter</a> and Facebook accounts as well, thereby becoming popular overnight."
 		},
 		"date": "May 2018",
 		"image": true,
