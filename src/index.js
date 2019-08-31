@@ -1,3 +1,5 @@
+import 'lazysizes'
+
 // Expand the "Psst! ++" button
 const introExpandButton = document.querySelector('section.intro button.expand');
 introExpandButton.addEventListener('click', () => {

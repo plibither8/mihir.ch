@@ -33,8 +33,9 @@ mixin createCard(project)
 				- if (typeof project.image === 'string')
 					picture
 						img(
-							src=project.image
+							data-src=project.image
 							alt=`Graphic for ${project.name}`
+							class='lazyload'
 						)
 
 				- else
@@ -44,15 +45,16 @@ mixin createCard(project)
 					picture
 						source(
 							type="image/webp"
-							srcset=`${baseDir}/${kebab}.webp`
+							data-srcset=`${baseDir}/${kebab}.webp`
 						)
 						source(
 							type="image/png"
-							srcset=`${baseDir}/${kebab}.png`
+							data-srcset=`${baseDir}/${kebab}.png`
 						)
 						img(
-							src=`${baseDir}/${kebab}.png`
+							data-src=`${baseDir}/${kebab}.png`
 							alt=`Graphic for ${project.name}`
+							class='lazyload'
 						)
 
 			span !{project.details.full}

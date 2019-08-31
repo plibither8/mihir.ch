@@ -40,5 +40,8 @@
 			"import/no-named-as-default": 0,
 			"no-script-url": 0
 		}
+	},
+	"dependencies": {
+		"lazysizes": "^5.1.1"
 	}
 }
