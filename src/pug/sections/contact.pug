@@ -15,7 +15,7 @@ section.contact#contact
 		each network in options.networks
 
 			a(href=network.link rel="noopener" target="_blank")
-				img(src=network.icon alt=`${network.name} Logo`)
+				img(src=network.icon alt=`${network.name} Logo` draggable="false")
 				| !{network.name}
 
 	//- form(name="contact" method="POST" netlify)
