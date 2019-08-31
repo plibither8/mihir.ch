@@ -57,7 +57,7 @@ module.exports = (env, argv) => ({
 		new ImageminWebpWebpackPlugin({
 			config:[
 				{
-					test: /static\/assets\/img\/projects/
+					test: /static\/img\/projects/
 				}
 			],
 			detailedLogs: true
