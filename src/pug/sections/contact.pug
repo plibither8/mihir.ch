@@ -1,4 +1,8 @@
-- const {options} = htmlWebpackPlugin
+//- 'options' variable and 'networkLink' mixin
+//- have been declared and included in projects.pug
+//- and implicitly inherited into this template.
+//- This is very hacky and makes me unhappy, but until
+//- I find a solution for this, it is how it's going to be.
 
 section.contact#contact
 
@@ -13,14 +17,7 @@ section.contact#contact
 	.networks
 
 		each network in options.networks
-
-			a(href=network.link rel="noopener" target="_blank")
-				img(
-					src=network.icon
-					alt=`${network.name} Logo`
-					draggable="false"
-				)
-				| !{network.name}
+			+networkLink(network)
 
 	form(name="contact" method="POST" netlify)
 
