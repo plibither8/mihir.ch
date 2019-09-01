@@ -11,13 +11,13 @@ section.intro
 			color: #000
 
 		a
-			color: $accent-color-8
-			anchorLinkBottomBar(35%, alpha($accent-color-4, 0.15))
+			color: var(--accent-color-8)
+			anchorLinkBottomBar(35%, alpha($accent-colors[4], 0.15))
 
 	p.small
 		margin-top: 10px
 		font-size: 12px
-		color: $accent-color-5
+		color: var(--accent-color-5)
 		padding: 5px 0
 		height: 23px
 
@@ -42,7 +42,7 @@ section.intro
 
 				&:hover,
 				&:focus
-					color: $accent-color-9
+					color: var(--accent-color-9)
 
 					&::after
 						content: 'Sarcastic and satirical. No harm meant. Maybe.'
@@ -50,7 +50,7 @@ section.intro
 						min-width: 100px
 						margin-left: 10px
 						padding: 5px 5px 5px 10px
-						background: $accent-color-0
-						border-left: 3px solid $accent-color-1
-						color: $accent-color-7
+						background: var(--accent-color-0)
+						border-left: 3px solid var(--accent-color-1)
+						color: var(--accent-color-7)
 						line-height: 1.3

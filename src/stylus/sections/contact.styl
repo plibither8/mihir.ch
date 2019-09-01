@@ -11,15 +11,15 @@ section.contact
 			color: #000
 
 		a
-			color: $accent-color-9
-			anchorLinkBottomBar(25%, alpha($accent-color-4, 0.15))
+			color: var(--accent-color-9)
+			anchorLinkBottomBar(25%, alpha($accent-colors[4], 0.15))
 
 	.networks
 		width: 100%
 		display: flex
 		flex-flow: wrap
 		margin: 0px -15px
-		color: $accent-color-9
+		color: var(--accent-color-9)
 
 		a
 			display: flex
@@ -27,9 +27,9 @@ section.contact
 			align-items: center
 			margin: 10px 15px
 			padding: 5px 10px
-			font-family: $mono-font-stack
+			font-family: var(--mono-font-stack)
 			font-weight: bold
-			anchorLinkBottomBar(35%, alpha($accent-color-4, 0.15))
+			anchorLinkBottomBar(35%, alpha($accent-colors[4], 0.15))
 
 			img
 				height: 25px
@@ -48,33 +48,33 @@ section.contact
 			margin-top: 20px
 
 		input, textarea
-			border: 3px solid $accent-color-0
+			border: 3px solid var(--accent-color-0)
 			margin: 5px 0
 			padding: 10px
 			font-size: 16px
 			border-radius: 3px
-			font-family: $default-font-stack
+			font-family: var(--default-font-stack)
 			transition: .1s
 			color: #222
 			line-height: 1.5
 
 			&[type="submit"]
 				width: 100px
-				color: $accent-color-5
-				background: $accent-color-0
+				color: var(--accent-color-5)
+				background: var(--accent-color-0)
 				cursor: pointer
 				margin-top: 20px
 				font-weight: bold
 
 			&[type="email"]
-				font-family: $mono-font-stack
+				font-family: var(--mono-font-stack)
 
 			&:active, &:focus
-				border-color: $accent-color-2
+				border-color: var(--accent-color-2)
 				outline: none
 
 			&:hover
-				box-shadow: 0 0 10px $accent-color-0
+				box-shadow: 0 0 10px var(--accent-color-0)
 
 		textarea
 			resize: vertical

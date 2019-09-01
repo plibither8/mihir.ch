@@ -12,21 +12,21 @@ section.projects
 
 		> a
 			display: inline-block
-			anchorLinkBottomBar(25%, alpha($accent-color-4, 0.2))
+			anchorLinkBottomBar(25%, alpha($accent-colors[4], 0.2))
 
 			h3
 				font-size: 25px
 				font-weight: normal
 				color: #000
-				font-family: $mono-font-stack
+				font-family: var(--mono-font-stack)
 
 				&::after
 					content: '↗'
-					color: $accent-color-1
+					color: var(--accent-color-1)
 					transition: 0.1s all linear
 
 			&:hover, &:focus
-				color: $accent-color-5
+				color: var(--accent-color-5)
 
 				h3::after
 					color: inherit
@@ -47,9 +47,9 @@ section.projects
 
 			button
 				border: none
-				background: $accent-color-0
+				background: var(--accent-color-0)
 				font-family: monospace
-				color: $accent-color-5
+				color: var(--accent-color-5)
 				font-size: 20px
 				font-weight: bold
 				cursor: pointer
@@ -67,7 +67,7 @@ section.projects
 			min-height: 120px
 
 			a
-				color: $accent-color-5
+				color: var(--accent-color-5)
 
 				&:hover
 					&::before
