@@ -16,17 +16,4 @@ nav
 		font-family: $mono-font-stack
 		font-weight: bold
 		font-size: 20px
-
-		&::before
-			content: ''
-			position: absolute
-			display: block
-			bottom: 0
-			height: 35%
-			width: 100%
-			background: alpha($accent-color-4, 0.15)
-			transition: 0.1s all linear
-
-		&:hover, &:focus
-			&::before
-				height: 100%
+		anchorLinkBottomBar(35%, alpha($accent-color-4, 0.15))

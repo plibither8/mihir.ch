@@ -12,18 +12,7 @@ section.intro
 
 		a
 			color: $accent-color-8
-
-			&::before
-				content: ''
-				height: 35%
-				width: 100%
-				background: alpha($accent-color-4, 0.15)
-				position: absolute
-				bottom: 0px
-				transition: 0.1s all linear
-
-			&:hover::before
-				height: 100%
+			anchorLinkBottomBar(35%, alpha($accent-color-4, 0.15))
 
 	p.small
 		margin-top: 10px

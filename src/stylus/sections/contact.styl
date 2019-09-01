@@ -11,20 +11,8 @@ section.contact
 			color: #000
 
 		a
-			color: $accent-color-6
-
-			&::before
-				content: ''
-				position: absolute
-				bottom: 0
-				width: 100%
-				height: 25%
-				background: alpha($accent-color-4, 0.2)
-				transition: 0.1s all linear
-
-			&:hover, &:focus
-				&::before
-					height: 100%
+			color: $accent-color-9
+			anchorLinkBottomBar(25%, alpha($accent-color-4, 0.15))
 
 	.networks
 		width: 100%
@@ -41,24 +29,11 @@ section.contact
 			padding: 5px 10px
 			font-family: $mono-font-stack
 			font-weight: bold
+			anchorLinkBottomBar(35%, alpha($accent-color-4, 0.15))
 
 			img
 				height: 25px
 				margin-right: 5px
-
-			&::before
-				content: ''
-				position: absolute
-				display: block
-				bottom: 0
-				height: 35%
-				width: 100%
-				background: alpha($accent-color-4, 0.15)
-				transition: 0.1s all linear
-
-			&:hover, &:focus
-				&::before
-					height: 100%
 
 	form
 		display: flex
