@@ -4,7 +4,7 @@ mixin projectCard(project)
 	.card
 
 		a(
-			href=project.link
+			href=project.links.main
 			target="_blank"
 			rel="noopener"
 		)
@@ -16,7 +16,7 @@ mixin projectCard(project)
 			| &nbsp;!{project.caption}
 			button ++
 
-		p.details.nodisplay
+		.details.nodisplay
 			- if(project.image)
 
 				- if (typeof project.image === 'string')
@@ -46,10 +46,13 @@ mixin projectCard(project)
 							class='lazyload'
 						)
 
-			span !{project.details.full}
+			each para in project.details
+				p.text !{para}
 
-		noscript
-			p.details !{project.details.full}
+			a(href=project.links.source target="_blank" rel="noopener").links.source Source
+
+			each link in project.links.others
+				a(href=link.href target="_blank" rel="noopener").links !{link.text}
 
 //- Section: #contact
 mixin networkLink(network)

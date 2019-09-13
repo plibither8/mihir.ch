@@ -58,20 +58,14 @@ section#projects
 				border-radius: 3px
 				z-index: 2
 
-		p.details
+		.details
 			font-size: 17px
 			color: #000
 			line-height: 1.5
 			overflow: hidden
 			padding-top: 10px
 			min-height: 120px
-
-			a
-				color: var(--accent-color-5)
-
-				&:hover
-					&::before
-						height: 100%
+			margin: -20px 0 0 0
 
 			picture
 				display: block
@@ -79,6 +73,25 @@ section#projects
 				right: 0
 				opacity: 0.15
 
-			span
+			p.text
 				z-index: 2
-				max-width: 90%
+				margin: 20px 0
+
+				a
+					color: var(--accent-color-7)
+					&::after
+						content: '↗'
+
+			a.links
+				color: var(--accent-color-7)
+				font-size: 18px
+				margin-right: 20px
+				font-family: var(--mono-font-stack)
+				display: inline-block
+				anchorLinkBottomBar(35%, alpha($accent-colors[3], 0.1))
+
+				&.source
+					font-weight: bold
+
+				&::after
+					content: '↗'

@@ -11,7 +11,7 @@ introExpandButton.addEventListener('click', () => {
 // Expand/collapse projects' "++" buttons
 const projectCards = document.querySelectorAll('#projects .card');
 for (const card of projectCards) {
-	const details = card.querySelector('p.details');
+	const details = card.querySelector('div.details');
 	const button = card.querySelector('button');
 
 	button.addEventListener('click', () => {
