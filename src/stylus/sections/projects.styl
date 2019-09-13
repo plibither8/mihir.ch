@@ -3,13 +3,6 @@ section#projects
 	.card
 		margin: 40px 0
 
-		img
-			margin: 0 auto 20px auto
-			display: block
-			max-height: 200px
-			min-height: 50px
-			max-width: 100%
-
 		> a
 			display: inline-block
 			anchorLinkBottomBar(25%, alpha($accent-colors[4], 0.2))
@@ -73,17 +66,26 @@ section#projects
 				right: 0
 				opacity: 0.15
 
+				img
+					margin: 0 auto 20px auto
+					display: block
+					max-height: 200px
+					min-height: 50px
+					max-width: 100%
+
 			p.text
 				z-index: 2
 				margin: 20px 0
 
-				a
-					color: var(--accent-color-7)
-					&::after
-						content: '↗'
+				img
+					vertical-align: text-bottom
+
+			a
+				color: var(--accent-color-7)
+				&::after
+					content: '↗'
 
 			a.links
-				color: var(--accent-color-7)
 				font-size: 18px
 				margin-right: 20px
 				font-family: var(--mono-font-stack)
@@ -92,6 +94,3 @@ section#projects
 
 				&.source
 					font-weight: bold
-
-				&::after
-					content: '↗'

@@ -153,17 +153,18 @@
 		"emoji": "❤️",
 		"caption": "Mircoservice for serving and listing \"Made with love in &lt;country-name&gt;\" badges",
 		"details": [
-			"Inspired by the <a href='https://madewithlove.org.in' target='_blank' rel='noopener'>Made With Love in India Campaign</a>, and driven by the urge to publish something on ZEIT's Now platform to understand what \"serverless deployments\" were all about, I created a microservice to serve SVG \"Made with ♥️ in &lt;country-name&gt;\" badges to show off your and your project's country of origin."
+			"Inspired by the <a href='https://madewithlove.org.in' target='_blank' rel='noopener'>Made With Love in India Campaign</a>, and driven by the urge to publish something on ZEIT's Now platform to understand what <em>serverless deployments</em> were all about, I created a microservice to serve SVG \"Made with ♥️ in &lt;country-name&gt;\" badges to show off your and your project's country of origin.",
+			"Here is what it looks like: <img src='https://madewithlove.now.sh/in?heart=true&template=flat'>"
 		],
 		"date": "March 2019",
-		"image": "https://madewithlove.now.sh/in?heart=true&template=for-the-badge",
+		"image": "https://madewithlove.now.sh/in",
 		"links": {
 			"main": "https://madewithlove.now.sh",
 			"source": "https://github.com/plibither8/made-with-love-in",
 			"others": [
 				{
 					"text": "madewithlove.now.sh",
-					"link": "https://madewithlove.now.sh"
+					"href": "https://madewithlove.now.sh"
 				}
 			]
 		},
