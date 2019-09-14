@@ -1,0 +1,56 @@
+section#intro
+
+	p:not(.small)
+		max-width: 600px
+		font-size: 20px
+		line-height: 1.5
+		color: #222
+		margin: 20px 0
+
+		span
+			color: #000
+
+		a
+			color: var(--accent-color-8)
+			anchorLinkBottomBar(35%, alpha($accent-colors[4], 0.15))
+
+	p.small
+		margin-top: 10px
+		font-size: 12px
+		color: var(--accent-color-5)
+		padding: 5px 0
+		height: 23px
+
+		code
+			letter-spacing: 1px
+
+		button
+			border: none
+			background: none
+			color: inherit
+			font-size: inherit
+			font-family: inherit
+
+			&.expand
+				cursor: pointer
+				font-weight: bold
+
+			&.tooltip
+				margin-left: 10px
+				cursor: help
+				text-decoration: underline dotted
+
+				&:hover,
+				&:focus
+					color: var(--accent-color-9)
+
+					&::after
+						content: 'Sarcastic and satirical. No harm meant. Maybe.'
+						position: absolute
+						min-width: 100px
+						margin-left: 10px
+						padding: 5px 5px 5px 10px
+						background: var(--accent-color-0)
+						border-left: 3px solid var(--accent-color-1)
+						color: var(--accent-color-7)
+						line-height: 1.3

@@ -1,27 +1,56 @@
 {
-  "name": "mihir.ch",
-  "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-latest": "^6.24.1",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.1.0",
-    "gulp-babel": "^7.0.1",
-    "gulp-cli": "^1.4.0",
-    "gulp-cssbeautify": "0.1.3",
-    "gulp-csslint": "^1.0.1",
-    "gulp-esformatter": "^6.1.0",
-    "gulp-html": "0.4.7",
-    "gulp-pug": "^3.3.0",
-    "gulp-stylus": "^2.7.0",
-    "gulp-surge": "0.1.0",
-    "gulp-watch": "^4.3.11",
-    "x-tag": "^1.5.11"
-  }
+	"private": true,
+	"scripts": {
+		"lint": "run-p --silent lint:*",
+		"lint:js": "xo",
+		"lint:styl": "stylint src/*.styl",
+		"lint-fix": "run-p --silent 'lint:* -- --fix'",
+		"clean": "rimraf dist",
+		"webpack.build": "webpack --mode=production",
+		"webpack.watch": "webpack --mode=development --watch",
+		"webpack.dev-server": "webpack-dev-server --open",
+		"stylus.build": "stylus ./src/*.styl --out ./dist/ --compress",
+		"stylus.watch": "stylus ./src/*.styl --out ./dist/ -m --watch",
+		"postcss": "postcss ./dist/index.css -r --no-map -u cssnano",
+		"build": "run-s clean webpack.build stylus.build postcss",
+		"watch": "run-p webpack.watch stylus.watch",
+		"start": "run-p webpack.dev-server stylus.watch"
+	},
+	"devDependencies": {
+		"copy-webpack-plugin": "^5.0.4",
+		"cssnano": "^4.1.10",
+		"html-webpack-plugin": "^3.2.0",
+		"imagemin-webp-webpack-plugin": "^3.2.1",
+		"imagemin-webpack-plugin": "^2.4.2",
+		"npm-run-all": "^4.1.5",
+		"postcss-cli": "^6.1.3",
+		"pug": "^2.0.4",
+		"pug-html-loader": "^1.1.5",
+		"pug-loader": "https://github.com/pugjs/pug-loader/tarball/master",
+		"rimraf": "^2.6.3",
+		"size-plugin": "^1.2.0",
+		"stylint": "^2.0.0",
+		"stylus": "^0.54.5",
+		"webpack": "^4.38.0",
+		"webpack-cli": "^3.3.6",
+		"webpack-dev-server": "^3.7.2",
+		"write-file-webpack-plugin": "^4.5.1",
+		"xo": "^0.24.0"
+	},
+	"xo": {
+		"envs": [
+			"browser"
+		],
+		"globals": [
+			"browser"
+		],
+		"rules": {
+			"import/no-unassigned-import": 0,
+			"import/no-named-as-default": 0,
+			"no-script-url": 0
+		}
+	},
+	"dependencies": {
+		"lazysizes": "^5.1.1"
+	}
 }

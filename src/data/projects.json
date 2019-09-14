@@ -1,0 +1,178 @@
+[
+	{
+		"name": "2048.cpp",
+		"emoji": "🎮",
+		"caption": "A fully-featured terminal version of the popular game \"2048\" written in C++",
+		"details": [
+			"Originally developed for my 12th grade course project, the game gained traction on Reddit and Hacker News. It was featured on GitHub's Twitter and Facebook accounts as well, thereby becoming popular overnight."
+		],
+		"date": "May 2018",
+		"image": true,
+		"links": {
+			"main": "https://github.com/plibither8/2048.cpp",
+			"source": "https://github.com/plibither8/2048.cpp",
+			"others": [
+				{
+					"text": "Reddit post",
+					"href": "https://www.reddit.com/r/commandline/comments/8rwz4h/for_my_schools_summer_project_i_created_a_2048cpp/"
+				},
+				{
+					"text": "Discussion on Hacker News",
+					"href": "https://news.ycombinator.com/item?id=17897283"
+				},
+				{
+					"text": "GitHub's Tweet",
+					"href": "https://twitter.com/github/status/1017094930991370240"
+				}
+			]
+		},
+		"tags": [
+			"c++",
+			"terminal",
+			"game"
+		]
+	},
+	{
+		"name": "Refined Hacker News",
+		"emoji": "✨",
+		"caption": "Browser extension: Hacker News, but refined — Interface tweaks and features to make the HN experience better",
+		"details": [
+			"This browser extension adds much-needed features, and tweaks a few stuff on Hacker News to make the browsing experience better... without changing the look and feel. The minimalist and raw design of the site is sacrosanct and should remain intact!"
+		],
+		"date": "June 2019",
+		"image": true,
+		"links": {
+			"main": "https://github.com/plibither8/refined-hacker-news",
+			"source": "https://github.com/plibither8/refined-hacker-news",
+			"others": [
+				{
+					"text": "Chrome Extension",
+					"href": "https://chrome.google.com/webstore/detail/gcibdgjaladjjloeocimnijdgopejkfk"
+				},
+				{
+					"text": "Firefox Add-on",
+					"href": "https://addons.mozilla.org/en-US/firefox/addon/refined-hacker-news/"
+				},
+				{
+					"text": "Discussion on Hacker News",
+					"href": "https://news.ycombinator.com/item?id=20173974"
+				}
+			]
+		},
+		"tags": [
+			"javascript",
+			"extension",
+			"web"
+		]
+	},
+	{
+		"name": "licensed",
+		"emoji": "⚖️",
+		"caption": "licensed is an interactive command line tool to help you choose and add licenses to your projects",
+		"details": [
+			"This project was one of my first attempts at creating a CLI tool and an npm package. It drasctically improved my understanding of Node.js and more abstractly, the opensource culture."
+		],
+		"date": "June 2018",
+		"image": true,
+		"links": {
+			"main": "https://github.com/plibither8/licensed",
+			"source": "https://github.com/plibither8/licensed",
+			"others": [
+				{
+					"text": "npm Package",
+					"href": "https://www.npmjs.com/package/licensed"
+				}
+			]
+		},
+		"tags": [
+			"javascript",
+			"terminal",
+			"cli",
+			"node.js"
+		]
+	},
+	{
+		"name": "Markdown New Tab",
+		"emoji": "🗒️ ⏰ ✔️",
+		"caption": "Browser New Tab: Save notes in Markdown directly in the 'New Tab' page",
+		"details": [
+			"Markdown New Tab (MDNT) is a browser 'New Tab' page alternative that allows you to save notes, checklists, links, images, tables and everything that GitHub-flavoured Markdown [M↓] has to offer directly in the New Tab page for quick access."
+		],
+		"date": "August 2018",
+		"image": true,
+		"links": {
+			"main": "https://github.com/plibither8/markdown-new-tab",
+			"source": "https://github.com/plibither8/markdown-new-tab",
+			"others": [
+				{
+					"text": "Chrome Extension",
+					"href": "https://chrome.google.com/webstore/detail/demppioeofcekpjcnlkmdjbabifjnokj"
+				},
+				{
+					"text": "Firefox Add-on",
+					"href": "https://addons.mozilla.org/en-US/firefox/addon/markdown-new-tab/"
+				},
+				{
+					"text": "Discussion on Hacker News",
+					"href": "https://news.ycombinator.com/item?id=17506753"
+				}
+			]
+		},
+		"tags": [
+			"javascript",
+			"html",
+			"css",
+			"extension",
+			"web"
+		]
+	},
+	{
+		"name": "Sanskriti School",
+		"emoji": "🎒",
+		"caption": "The official website of Sanskriti School, New Delhi",
+		"details": [
+			"In late 2017 I was tasked with making my school a new website, solo. It was the first time I was handling a project of such scale &ndash; the development of which featured extensive cross-browser and cross-device testing, multiple revisions and beta-testers to ensure a uniform and accessible experience to all thirty-thousand of its monthly visitors.",
+			"All in all, the entire project took almost a year to finish, primarily due to my engagements with grade 12 studies and competitive examination preparations. The website was finally pushed to production in July of 2018."
+		],
+		"date": "November 2017&ndash;July 2018",
+		"image": true,
+		"links": {
+			"main": "http://sanskritischool.edu.in",
+			"source": "https://github.com/Project-Beta/sanskriti-school",
+			"others": []
+		},
+		"tags": [
+			"html",
+			"css",
+			"web",
+			"website"
+		]
+	},
+	{
+		"name": "Made With Love In",
+		"emoji": "❤️",
+		"caption": "Mircoservice for serving and listing \"Made with love in &lt;country-name&gt;\" badges",
+		"details": [
+			"Inspired by the <a href='https://madewithlove.org.in' target='_blank' rel='noopener'>Made With Love in India Campaign</a>, and driven by the urge to publish something on ZEIT's Now platform to understand what <em>serverless deployments</em> were all about, I created a microservice to serve SVG \"Made with ♥️ in &lt;country-name&gt;\" badges for developers to show off their and their project's country of origin.",
+			"Here is what it looks like: <img src='https://madewithlove.now.sh/in'>"
+		],
+		"date": "March 2019",
+		"image": "https://madewithlove.now.sh/in?heart=true&template=for-the-badge",
+		"links": {
+			"main": "https://madewithlove.now.sh",
+			"source": "https://github.com/plibither8/made-with-love-in",
+			"others": [
+				{
+					"text": "madewithlove.now.sh",
+					"href": "https://madewithlove.now.sh"
+				}
+			]
+		},
+		"tags": [
+			"javascript",
+			"serverless",
+			"api",
+			"web"
+		]
+	}
+]

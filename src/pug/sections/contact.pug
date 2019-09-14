@@ -1,0 +1,33 @@
+//- 'options' variable and 'networkLink' mixin
+//- have been declared and included in projects.pug
+//- and implicitly inherited into this template.
+//- This is very hacky and makes me unhappy, but until
+//- I find a solution for this, it is how it's going to be.
+
+section#contact
+
+	h2 ☎️ Contact
+
+	p.status I am currently accepting new freelance projects.
+
+	p The best way to get in touch with me is to email at <a href="mailto:mihir@chaturvedi.dev">mihir@chaturvedi.dev</a> or fill in the form below. <br> For a more informal tête-à-tête, you can contact me on <a href="https://t.me/plibither8">Telegram</a>.
+
+	p You can also connect with or follow me on any of the following networks too:
+
+	.networks
+
+		each network in options.networks
+			+networkLink(network)
+
+	form(name="contact" method="POST" action="https://formspree.io/plibither8@gmail.com")
+
+		label(for="contact-form_name") Name
+		input(name="name" type="text" placeholder="Enter your name" id="contact-form_name" required)
+
+		label(for="contact-form_email") Email
+		input(name="email" type="email" placeholder="Enter your email" id="contact-form_email" required)
+
+		label(for="contact-form_message") Message
+		textarea(name="message" placeholder="Enter your message" id="contact-form_message" required)
+
+		input(type="submit" value="Send")

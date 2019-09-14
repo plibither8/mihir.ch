@@ -1,0 +1,10 @@
+- const {options} = htmlWebpackPlugin
+
+nav
+
+	each link in options.navigation
+		a(
+			href=link.href
+			target=(link.external ? '_blank' : false)
+			rel=(link.external ? 'noopener' : false)
+		) !{link.label}

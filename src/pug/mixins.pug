@@ -1,0 +1,68 @@
+//- Section: #projects
+mixin projectCard(project)
+
+	.card
+
+		a(
+			href=project.links.main
+			target="_blank"
+			rel="noopener"
+		)
+			h3 !{project.name}
+
+		p.caption
+			time !{project.date} &mdash;&nbsp;
+			span.emoji !{project.emoji}
+			| &nbsp;!{project.caption}
+			button ++
+
+		.details.nodisplay
+			- if(project.image)
+
+				- if (typeof project.image === 'string')
+					picture
+						img(
+							data-src=project.image
+							alt=`Graphic for ${project.name}`
+							class='lazyload'
+						)
+
+				- else
+					- const kebab = project.name.toLowerCase().split(' ').join('-');
+					- const baseDir = '/static/img/projects';
+
+					picture
+						source(
+							type="image/webp"
+							data-srcset=`${baseDir}/${kebab}.webp`
+						)
+						source(
+							type="image/png"
+							data-srcset=`${baseDir}/${kebab}.png`
+						)
+						img(
+							data-src=`${baseDir}/${kebab}.png`
+							alt=`Graphic for ${project.name}`
+							class='lazyload'
+						)
+
+			each para in project.details
+				p.text !{para}
+
+			a(href=project.links.source target="_blank" rel="noopener").links.source Source
+
+			each link in project.links.others
+				a(href=link.href target="_blank" rel="noopener").links !{link.text}
+
+//- Section: #contact
+mixin networkLink(network)
+
+	a(href=network.link rel="noopener" target="_blank")
+
+		img(
+			src=network.icon
+			alt=`${network.name} Logo`
+			draggable="false"
+		)
+
+		| !{network.name}

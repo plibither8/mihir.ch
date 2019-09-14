@@ -1,0 +1,23 @@
+[
+	{
+		"label": "Home",
+		"href": "/",
+		"external": false
+	}, {
+		"label": "Projects",
+		"href": "#projects",
+		"external": false
+	}, {
+		"label": "Contact",
+		"href": "#contact",
+		"external": false
+	}, {
+		"label": "GitHub",
+		"href": "https://github.com/plibither8",
+		"external": true
+	}, {
+		"label": "Twitter",
+		"href": "https://twitter.com/plibither8",
+		"external": true
+	}
+]
