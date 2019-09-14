@@ -46,16 +46,16 @@
 			"source": "https://github.com/plibither8/refined-hacker-news",
 			"others": [
 				{
-					"text": "Discussion on Hacker News",
-					"href": "https://news.ycombinator.com/item?id=20173974"
-				},
-				{
 					"text": "Chrome Extension",
 					"href": "https://chrome.google.com/webstore/detail/gcibdgjaladjjloeocimnijdgopejkfk"
 				},
 				{
 					"text": "Firefox Add-on",
 					"href": "https://addons.mozilla.org/en-US/firefox/addon/refined-hacker-news/"
+				},
+				{
+					"text": "Discussion on Hacker News",
+					"href": "https://news.ycombinator.com/item?id=20173974"
 				}
 			]
 		},
@@ -131,8 +131,8 @@
 		"emoji": "🎒",
 		"caption": "The official website of Sanskriti School, New Delhi",
 		"details": [
-			"In late 2017 I was given the responsibility of making my school a new website, solo. It was the first time I was handling a project of such scale, featuring extensive cross-browser testing, multiple revisions and beta-testers to ensure a uniform and accessible experience to all thirty-thousand of its daily visitors.",
-			"All in all, the entire project took almost a year to finish, primarily due to grade 12 studies and competitive examination preparations. The website was finally pushed to production in July of 2018."
+			"In late 2017 I was tasked with making my school a new website, solo. It was the first time I was handling a project of such scale &ndash; the development of which featured extensive cross-browser and cross-device testing, multiple revisions and beta-testers to ensure a uniform and accessible experience to all thirty-thousand of its monthly visitors.",
+			"All in all, the entire project took almost a year to finish, primarily due to my engagements with grade 12 studies and competitive examination preparations. The website was finally pushed to production in July of 2018."
 		],
 		"date": "November 2017&ndash;July 2018",
 		"image": true,
@@ -153,7 +153,7 @@
 		"emoji": "❤️",
 		"caption": "Mircoservice for serving and listing \"Made with love in &lt;country-name&gt;\" badges",
 		"details": [
-			"Inspired by the <a href='https://madewithlove.org.in' target='_blank' rel='noopener'>Made With Love in India Campaign</a>, and driven by the urge to publish something on ZEIT's Now platform to understand what <em>serverless deployments</em> were all about, I created a microservice to serve SVG \"Made with ♥️ in &lt;country-name&gt;\" badges to show off your and your project's country of origin.",
+			"Inspired by the <a href='https://madewithlove.org.in' target='_blank' rel='noopener'>Made With Love in India Campaign</a>, and driven by the urge to publish something on ZEIT's Now platform to understand what <em>serverless deployments</em> were all about, I created a microservice to serve SVG \"Made with ♥️ in &lt;country-name&gt;\" badges for developers to show off their and their project's country of origin.",
 			"Here is what it looks like: <img src='https://madewithlove.now.sh/in'>"
 		],
 		"date": "March 2019",
