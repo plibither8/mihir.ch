@@ -27,7 +27,7 @@ window.addEventListener('load', () => {
 	const baseUrl = 'https://analytics.mihir.ch/a';
 	const referrer = encodeURIComponent(document.referrer)
 	const pageUrl = encodeURIComponent(location.href)
-	const fullUrl = `${baseUrl}?p=${referrer}&u=${pageUrl}`
+	const fullUrl = `${baseUrl}?r=${referrer}&u=${pageUrl}`
 
 	setTimeout(() => {
 		dummyImage.src = fullUrl;
