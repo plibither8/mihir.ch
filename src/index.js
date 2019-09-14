@@ -19,3 +19,17 @@ for (const card of projectCards) {
 		button.innerHTML = button.innerHTML == '++' ? '--' : '++';
 	});
 }
+
+// Analytics
+window.addEventListener('load', () => {
+	const dummyImage = document.querySelector('img#analytics');
+
+	const baseUrl = 'https://analytics.mihir.ch/a';
+	const referrer = encodeURIComponent(document.referrer)
+	const pageUrl = encodeURIComponent(location.href)
+	const fullUrl = `${baseUrl}?p=${referrer}&u=${pageUrl}`
+
+	setTimeout(() => {
+		dummyImage.src = fullUrl;
+	}, 5000)
+})
