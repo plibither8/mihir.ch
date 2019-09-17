@@ -31,8 +31,7 @@
 			"terminal",
 			"game"
 		]
-	},
-	{
+	}, {
 		"name": "Refined Hacker News",
 		"emoji": "✨",
 		"caption": "Browser extension: Hacker News, but refined — Interface tweaks and features to make the HN experience better",
@@ -64,8 +63,7 @@
 			"extension",
 			"web"
 		]
-	},
-	{
+	}, {
 		"name": "licensed",
 		"emoji": "⚖️",
 		"caption": "licensed is an interactive command line tool to help you choose and add licenses to your projects",
@@ -90,8 +88,7 @@
 			"cli",
 			"node.js"
 		]
-	},
-	{
+	}, {
 		"name": "Markdown New Tab",
 		"emoji": "🗒️ ⏰ ✔️",
 		"caption": "Browser New Tab: Save notes in Markdown directly in the 'New Tab' page",
@@ -125,8 +122,7 @@
 			"extension",
 			"web"
 		]
-	},
-	{
+	}, {
 		"name": "Sanskriti School",
 		"emoji": "🎒",
 		"caption": "The official website of Sanskriti School, New Delhi",
@@ -147,8 +143,7 @@
 			"web",
 			"website"
 		]
-	},
-	{
+	}, {
 		"name": "Made With Love In",
 		"emoji": "❤️",
 		"caption": "Mircoservice for serving and listing \"Made with love in &lt;country-name&gt;\" badges",
