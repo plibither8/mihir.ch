@@ -39,10 +39,10 @@ module.exports = (env, argv) => ({
 		new WriteFilePlugin(),
 		new CopyWebpackPlugin([
 			{
-				from: 'src/static/assets',
-				to: 'static'
+				from: 'src/assets',
+				to: 'assets'
 			}, {
-				from: 'src/static/pages',
+				from: 'src/static',
 				to: ''
 			}
 		]),
@@ -57,7 +57,7 @@ module.exports = (env, argv) => ({
 		new ImageminWebpWebpackPlugin({
 			config:[
 				{
-					test: /static\/img\/projects/
+					test: /assets\/img\/projects/
 				}
 			],
 			detailedLogs: true

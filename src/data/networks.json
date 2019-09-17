@@ -1,35 +1,35 @@
 [
 	{
 		"name": "GitHub",
-		"icon": "/static/img/networks/github.svg",
+		"icon": "/assets/img/networks/github.svg",
 		"link": "https://github.com/plibither8"
 	}, {
 		"name": "Twitter",
-		"icon": "/static/img/networks/twitter.svg",
+		"icon": "/assets/img/networks/twitter.svg",
 		"link": "https://twitter.com/plibither8"
 	}, {
 		"name": "Hacker News",
-		"icon": "/static/img/networks/ycombinator.svg",
+		"icon": "/assets/img/networks/ycombinator.svg",
 		"link": "https://news.ycombinator.com/user?id=plibither8"
 	}, {
 		"name": "Keybase",
-		"icon": "/static/img/networks/keybase.svg",
+		"icon": "/assets/img/networks/keybase.svg",
 		"link": "https://keybase.io/plibither8"
 	}, {
 		"name": "Facebook",
-		"icon": "/static/img/networks/facebook.svg",
+		"icon": "/assets/img/networks/facebook.svg",
 		"link": "https://facebook.com/plibither8"
 	}, {
 		"name": "Instagram",
-		"icon": "/static/img/networks/instagram.svg",
+		"icon": "/assets/img/networks/instagram.svg",
 		"link": "https://www.instagram.com/plibither8"
 	}, {
 		"name": "Last.fm",
-		"icon": "/static/img/networks/last-dot-fm.svg",
+		"icon": "/assets/img/networks/last-dot-fm.svg",
 		"link": "https://last.fm/user/plibither8"
 	}, {
 		"name": "Telegram",
-		"icon": "/static/img/networks/telegram.svg",
+		"icon": "/assets/img/networks/telegram.svg",
 		"link": "https://t.me/plibither8"
 	}
 ]
