@@ -22,11 +22,13 @@ module.exports = (env, argv) => ({
 	},
 	stats: 'errors-only',
 	entry: {
-		index: './src/index'
+		index: './src/pages/index/index',
+		blog: './src/pages/blog/blog'
 	},
 	output: {
 		path: path.join(__dirname, 'dist'),
-		filename: '[name].js'
+		filename: 'assets/js/[name].js',
+		publicPath: '',
 	},
 	module: {
 		rules: [{
@@ -47,11 +49,18 @@ module.exports = (env, argv) => ({
 			}
 		]),
 		new HtmlWebpackPlugin({
-			title: 'Mihir Chaturvedi',
-			template: './src/index.pug',
+			template: './src/pages/index/index.pug',
 			projects: require('./src/data/projects.json'),
 			networks: require('./src/data/networks.json'),
-			navigation: require('./src/data/navigation.json')
+			navigation: require('./src/data/navigation.json'),
+			filename: 'index.html',
+			inject: false
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/pages/blog/blog.pug',
+			navigation: require('./src/data/navigation.json'),
+			filename: 'blog.html',
+			inject: false
 		}),
 		new ImageminPlugin(),
 		new ImageminWebpWebpackPlugin({
@@ -69,7 +78,6 @@ module.exports = (env, argv) => ({
 		]
 	},
 	optimization: {
-		// Without this, function names will be garbled and enableFeature won't work
 		concatenateModules: true,
 	}
 });
