@@ -39,7 +39,7 @@ function lastfm(data) {
 		const listItem = document.createElement('li');
 		listItem.innerHTML = `
 				<p class='rank'>${index + 1}.</p>
-				<img src='${artist.image}'>
+				<img src='${artist.image}' alt='${artist.name} image'>
 				<p class='name'><a href='${artist.url}' target='_blank' rel='noopener'>${artist.name}</a><span class='count'>${artist.playcount}</span></p>
 			`;
 
