@@ -1,0 +1,42 @@
+//- Head generator mixin
+include ../../templates/head.pug
+
+doctype html
+
+html(lang="en")
+
+	head
+		//- Generate head with default values
+		+head()
+
+		// Styles
+		link(rel="stylesheet" href='/assets/css/index.css')
+
+	body
+
+		//- Navigation
+		include ../../templates/nav.pug
+
+		main
+
+			//- Heading
+			include ./pug/heading.pug
+
+			//- Intro
+			include ./pug/intro.pug
+
+			hr
+
+			//- Featured Projects
+			include ./pug/projects.pug
+
+			hr
+
+			//- Contact
+			include ./pug/contact.pug
+
+		//- Footer
+		include ../../templates/footer.pug
+
+	//- Load scripts after </body> and before </html>
+	script(src="/assets/js/index.js" defer)
