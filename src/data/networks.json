@@ -1,35 +1,35 @@
 [
 	{
 		"name": "GitHub",
-		"icon": "/assets/img/networks/github.svg",
-		"link": "https://github.com/plibither8"
+		"link": "https://github.com/plibither8",
+		"icon": "/assets/img/networks/github.svg"
 	}, {
 		"name": "Twitter",
-		"icon": "/assets/img/networks/twitter.svg",
-		"link": "https://twitter.com/plibither8"
+		"link": "https://twitter.com/plibither8",
+		"icon": "/assets/img/networks/twitter.svg"
 	}, {
 		"name": "Hacker News",
-		"icon": "/assets/img/networks/ycombinator.svg",
-		"link": "https://news.ycombinator.com/user?id=plibither8"
+		"link": "https://news.ycombinator.com/user?id=plibither8",
+		"icon": "/assets/img/networks/ycombinator.svg"
 	}, {
 		"name": "Keybase",
-		"icon": "/assets/img/networks/keybase.svg",
-		"link": "https://keybase.io/plibither8"
+		"link": "https://keybase.io/plibither8",
+		"icon": "/assets/img/networks/keybase.svg"
 	}, {
 		"name": "Facebook",
-		"icon": "/assets/img/networks/facebook.svg",
-		"link": "https://facebook.com/plibither8"
+		"link": "https://facebook.com/plibither8",
+		"icon": "/assets/img/networks/facebook.svg"
 	}, {
 		"name": "Instagram",
-		"icon": "/assets/img/networks/instagram.svg",
-		"link": "https://www.instagram.com/plibither8"
+		"link": "https://www.instagram.com/plibither8",
+		"icon": "/assets/img/networks/instagram.svg"
 	}, {
 		"name": "Last.fm",
-		"icon": "/assets/img/networks/last-dot-fm.svg",
-		"link": "https://last.fm/user/plibither8"
+		"link": "https://last.fm/user/plibither8",
+		"icon": "/assets/img/networks/last-dot-fm.svg"
 	}, {
 		"name": "Telegram",
-		"icon": "/assets/img/networks/telegram.svg",
-		"link": "https://t.me/plibither8"
+		"link": "https://t.me/plibither8",
+		"icon": "/assets/img/networks/telegram.svg"
 	}
 ]

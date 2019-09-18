@@ -1,0 +1,30 @@
+//- Head generator mixin
+include ../../templates/head.pug
+
+doctype html
+
+html(lang="en")
+
+	head
+		//- Generate head
+		+head(
+			'Blog · Mihir Chaturvedi',
+			'Mihir\'s, or perhaps, plibither8\'s blog',
+			'https://mihir.ch/blog'
+		)
+
+		// Styles
+		link(rel="stylesheet" href="/assets/css/blog.css")
+
+	body
+
+		//- Navigation
+		include ../../templates/nav.pug
+
+		main
+
+		//- Footer
+		include ../../templates/footer.pug
+
+	//- Load scripts after </body> and before </html>
+	script(src="/assets/js/blog.js" defer)

@@ -1,8 +1,16 @@
+//- Head generator mixin
+include ../../templates/head.pug
+
 doctype html
 
 html(lang="en")
 
-	include ../../templates/head.pug
+	head
+		//- Generate head with default values
+		+head()
+
+		// Styles
+		link(rel="stylesheet" href='/assets/css/index.css')
 
 	body
 
@@ -35,4 +43,5 @@ html(lang="en")
 		//- Footer
 		include ../../templates/footer.pug
 
+	//- Load scripts after </body> and before </html>
 	script(src="/assets/js/index.js" defer)

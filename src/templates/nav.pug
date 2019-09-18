@@ -2,9 +2,9 @@
 
 nav
 
-	each link in options.navigation
+	each item in options.navigation
 		a(
-			href=link.href
-			target=(link.external ? '_blank' : false)
-			rel=(link.external ? 'noopener' : false)
-		) !{link.label}
+			href=item.link
+			target=(item.external ? '_blank' : false)
+			rel=(item.external ? 'noopener' : false)
+		) !{item.name}
