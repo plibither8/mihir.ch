@@ -14,13 +14,15 @@ section#activity
 		margin: 30px 0
 
 	.activity-card
-		width: 50%
+		width: 46%
 		min-width: 350px
-		padding: 0 15px
-		flex: 1
-		margin: 20px 0
+		margin: 20px 20px 20px 0
 		display: flex
 		flex-direction: column
+
+		@media only screen and (max-width:800px)
+			width: 100%
+			margin: 20px 0
 
 	h3
 		font-size: 25px
