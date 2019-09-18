@@ -5,9 +5,16 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
+const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const SizePlugin = require('size-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
+
+// Site paths for sitemap generator
+const sitePaths = [
+	'/',
+	'/blog'
+];
 
 module.exports = (env, argv) => ({
 	devtool: 'sourcemap',
@@ -70,7 +77,8 @@ module.exports = (env, argv) => ({
 				}
 			],
 			detailedLogs: true
-		})
+		}),
+		new SitemapPlugin('https://mihir.ch', sitePaths)
 	],
 	resolve: {
 		extensions: [

@@ -29,6 +29,7 @@
 		"pug-html-loader": "^1.1.5",
 		"pug-loader": "https://github.com/pugjs/pug-loader/tarball/master",
 		"rimraf": "^2.6.3",
+		"sitemap-webpack-plugin": "^0.6.0",
 		"size-plugin": "^1.2.0",
 		"stylint": "^2.0.0",
 		"stylus": "^0.54.5",
