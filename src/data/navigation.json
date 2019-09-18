@@ -9,11 +9,11 @@
 		"external": false
 	}, {
 		"name": "Projects",
-		"link": "#projects",
+		"link": "/#projects",
 		"external": false
 	}, {
 		"name": "Contact",
-		"link": "#contact",
+		"link": "/#contact",
 		"external": false
 	}, {
 		"name": "GitHub",
