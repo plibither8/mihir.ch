@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require('path');
+const { readdirSync, statSync } = require('fs');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -10,11 +11,19 @@ const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const SizePlugin = require('size-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 
-// Site paths for sitemap generator
-const sitePaths = [
-	'/',
-	'/blog'
-];
+const pagesDir = path.join(__dirname, 'src/pages/');
+// Get all page roots
+const pages = readdirSync(pagesDir).filter(f => statSync(path.join(pagesDir, f)).isDirectory());
+const pagesToExclude = ['404'];
+
+// Site paths for sitemap generator - exclude some pages
+const sitePaths = pages.filter(p => !pagesToExclude.includes(p)).map(p => '/' + p);
+
+// webpack entry object
+const entryObj = {};
+pages.map(page => {
+	entryObj[page] = `./src/pages/${page}/${page}`
+});
 
 module.exports = (env, argv) => ({
 	devtool: 'sourcemap',
@@ -28,11 +37,7 @@ module.exports = (env, argv) => ({
 		watchContentBase: true
 	},
 	stats: 'errors-only',
-	entry: {
-		index: './src/pages/index/index',
-		blog: './src/pages/blog/blog',
-		'404': './src/pages/404/404'
-	},
+	entry: entryObj,
 	output: {
 		path: path.join(__dirname, 'dist'),
 		filename: 'assets/js/[name].js',
