@@ -19,3 +19,47 @@ for (const card of projectCards) {
 		button.innerHTML = button.innerHTML == '++' ? '--' : '++';
 	});
 }
+
+// Recent Activity
+const GIST_URL = 'https://api.github.com/gists/ea3780e4764315e354bc3f0655c81814';
+
+function lastfm(data) {
+	const musicCard = document.querySelector('#music');
+	const artistsList = musicCard.querySelector('ul');
+	const scrobbledTracks = musicCard.querySelector('p span.stat');
+
+	scrobbledTracks.innerText = data.weeklyScrobbledTracks;
+
+	let maxCount;
+	for (const [index, artist] of data.entries()) {
+		if (index === 0) {
+			maxCount = artist.playcount;
+		}
+
+		const listItem = document.createElement('li');
+		listItem.innerHTML = `
+				<span class='rank'>${index + 1}.</span>
+				<img src='${artist.image}'>
+				<span class='name'>${artist.name}</span>
+				<span class='count'>${artist.playcount}</span>
+			`;
+
+		const percentage = artist.playcount / maxCount * 100;
+		listItem.querySelector('span.name').style.background =
+			`linear-gradient(90deg, var(--accent-color-0) ${
+				percentage}%, transparent ${percentage}%)`;
+
+		artistsList.append(listItem)
+	}
+}
+
+// get data
+(async () => {
+	const activityData =
+		await fetch(GIST_URL)
+		.then(res => res.json())
+		.then(res => Object.values(res.files)[0])
+		.then(res => JSON.parse(res.content));
+
+	lastfm(activityData.lastfm);
+})();

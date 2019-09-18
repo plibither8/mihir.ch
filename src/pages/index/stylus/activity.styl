@@ -1,0 +1,60 @@
+section#activity
+	.gallery
+		display: flex
+		flex-wrap: wrap
+		width: 100%
+		justify-content: space-between
+		margin: 30px 0
+
+	.activity-card
+		width: 50%
+		min-width: 350px
+		padding: 0 15px
+		flex: 1
+		margin: 15px 0
+
+	h3
+		font-size: 25px
+		font-weight: normal
+		font-family: var(--mono-font-stack)
+		margin-bottom: 10px
+
+	.stats
+		margin: 10px 0 20px 0
+		font-size: 18px
+
+		p
+			display: flex
+			margin: 5px 0
+
+		span.label
+			flex: 1
+
+		span.stat
+			font-family: var(--mono-font-stack)
+			font-weight: bold
+
+	ul.artists
+
+		li
+			display: flex
+			height: 50px
+			font-size: 18px
+			align-items: center
+			margin: 10px 0
+
+			span
+				height: 100%
+				display: flex
+				align-items: center
+
+				&.name
+					flex: 1
+					padding-left: 10px
+
+				&.count
+					padding-left: 10px
+
+			img
+				height: 100%
+				margin: 0 0 0 10px
