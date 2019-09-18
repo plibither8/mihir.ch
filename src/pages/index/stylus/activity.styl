@@ -1,4 +1,5 @@
 section#activity
+
 	.gallery
 		display: flex
 		flex-wrap: wrap
@@ -11,7 +12,9 @@ section#activity
 		min-width: 350px
 		padding: 0 15px
 		flex: 1
-		margin: 15px 0
+		margin: 20px 0
+		display: flex
+		flex-direction: column
 
 	h3
 		font-size: 25px
@@ -22,6 +25,7 @@ section#activity
 	.stats
 		margin: 10px 0 20px 0
 		font-size: 18px
+		flex: 1
 
 		p
 			display: flex
@@ -43,7 +47,7 @@ section#activity
 			align-items: center
 			margin: 10px 0
 
-			span
+			p
 				height: 100%
 				display: flex
 				align-items: center
@@ -53,10 +57,22 @@ section#activity
 
 				&.name
 					flex: 1
-					padding-left: 10px
-
-				&.count
-					padding-left: 10px
+					padding: 0 10px
+					display: flex
+					justify-content: space-between
 
 			img
 				height: 100%
+
+	a::after
+		content: '↗'
+		color: #666
+		margin-left: 3px
+
+	p.source
+		margin-top: 10px
+		font-size: 16px
+		color: #757575
+
+		a
+			color: var(--accent-color-7)

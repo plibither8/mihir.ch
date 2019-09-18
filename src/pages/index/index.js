@@ -38,18 +38,16 @@ function lastfm(data) {
 
 		const listItem = document.createElement('li');
 		listItem.innerHTML = `
-				<span class='rank'>${index + 1}.</span>
+				<p class='rank'>${index + 1}.</p>
 				<img src='${artist.image}'>
-				<span class='name'>${artist.name}</span>
-				<span class='count'>${artist.playcount}</span>
+				<p class='name'><a href='${artist.url}' target='_blank' rel='noopener'>${artist.name}</a><span class='count'>${artist.playcount}</span></p>
 			`;
 
 		const percentage = artist.playcount / maxCount * 100;
-		listItem.querySelector('span.name').style.background =
-			`linear-gradient(90deg, var(--accent-color-0) ${
-				percentage}%, transparent ${percentage}%)`;
+		listItem.querySelector('p.name').style.background =
+			`linear-gradient(90deg, rgba(179, 157, 219, ${1 - index * 0.15}) ${percentage}%, transparent ${percentage}%)`;
 
-		list.append(listItem)
+		list.append(listItem);
 	}
 }
 
@@ -61,18 +59,23 @@ function wakatime(data) {
 	totalTime.innerText = data.total;
 	dailyAverage.innerText = data.average;
 
+	let maxCount;
 	for (const [index, lang] of data.languages.entries()) {
+		if (index === 0) {
+			maxCount = lang.percent;
+		}
+
 		const listItem = document.createElement('li');
 		listItem.innerHTML = `
-				<span class='rank'>${index + 1}.</span>
-				<span class='name'>${lang.name}</span>
-				<span class='count'>${lang.time}</span>
+				<p class='rank'>${index + 1}.</p>
+				<p class='name'>${lang.name}<span class='count'>${lang.time}</span></p>
 			`;
 
-		listItem.querySelector('span.name').style.background =
-			`linear-gradient(90deg, ${lang.color}88 ${lang.percent}%, transparent ${lang.percent}%)`;
+		const percentage = lang.percent / maxCount * 100;
+		listItem.querySelector('p.name').style.background =
+			`linear-gradient(90deg, ${lang.color}88 ${percentage}%, transparent ${percentage}%)`;
 
-		list.append(listItem)
+		list.append(listItem);
 	}
 }
 
