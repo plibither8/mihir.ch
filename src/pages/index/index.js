@@ -25,13 +25,13 @@ const GIST_URL = 'https://api.github.com/gists/ea3780e4764315e354bc3f0655c81814'
 
 function lastfm(data) {
 	const musicCard = document.querySelector('#music');
-	const artistsList = musicCard.querySelector('ul');
+	const list = musicCard.querySelector('ul');
 	const scrobbledTracks = musicCard.querySelector('p span.stat');
 
-	scrobbledTracks.innerText = data.weeklyScrobbledTracks;
+	scrobbledTracks.innerText = data.totalPlayCount;
 
 	let maxCount;
-	for (const [index, artist] of data.entries()) {
+	for (const [index, artist] of data.topFive.entries()) {
 		if (index === 0) {
 			maxCount = artist.playcount;
 		}
@@ -49,7 +49,30 @@ function lastfm(data) {
 			`linear-gradient(90deg, var(--accent-color-0) ${
 				percentage}%, transparent ${percentage}%)`;
 
-		artistsList.append(listItem)
+		list.append(listItem)
+	}
+}
+
+function wakatime(data) {
+	const progCard = document.querySelector('#programming');
+	const list = progCard.querySelector('ul');
+	const [totalTime, dailyAverage] = [...progCard.querySelectorAll('p span.stat')];
+
+	totalTime.innerText = data.total;
+	dailyAverage.innerText = data.average;
+
+	for (const [index, lang] of data.languages.entries()) {
+		const listItem = document.createElement('li');
+		listItem.innerHTML = `
+				<span class='rank'>${index + 1}.</span>
+				<span class='name'>${lang.name}</span>
+				<span class='count'>${lang.time}</span>
+			`;
+
+		listItem.querySelector('span.name').style.background =
+			`linear-gradient(90deg, ${lang.color}88 ${lang.percent}%, transparent ${lang.percent}%)`;
+
+		list.append(listItem)
 	}
 }
 
@@ -62,4 +85,5 @@ function lastfm(data) {
 		.then(res => JSON.parse(res.content));
 
 	lastfm(activityData.lastfm);
+	wakatime(activityData.wakatime);
 })();
