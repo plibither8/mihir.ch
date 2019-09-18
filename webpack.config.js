@@ -30,7 +30,8 @@ module.exports = (env, argv) => ({
 	stats: 'errors-only',
 	entry: {
 		index: './src/pages/index/index',
-		blog: './src/pages/blog/blog'
+		blog: './src/pages/blog/blog',
+		'404': './src/pages/404/404'
 	},
 	output: {
 		path: path.join(__dirname, 'dist'),
@@ -67,6 +68,12 @@ module.exports = (env, argv) => ({
 			template: './src/pages/blog/blog.pug',
 			navigation: require('./src/data/navigation.json'),
 			filename: 'blog.html',
+			inject: false
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/pages/404/404.pug',
+			navigation: require('./src/data/navigation.json'),
+			filename: '404.html',
 			inject: false
 		}),
 		new ImageminPlugin(),

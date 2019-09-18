@@ -1,0 +1,42 @@
+//- Head generator mixin
+include ../../templates/head.pug
+
+doctype html
+
+html(lang="en")
+
+	head
+		//- Generate head
+		+head(
+			'404 · Mihir Chaturvedi'
+		)
+
+		// Styles
+		link(rel="stylesheet" href="/assets/css/404.css")
+
+	body
+
+		//- Navigation
+		include ../../templates/nav.pug
+
+		main
+
+			section#error
+
+				img(src="/assets/img/muh.svg" alt="" draggable="false")
+
+				a.song(href="https://youtu.be/qU9mHegkTc4" target="_blank" rel="noopener")
+
+					p 🎶 I'm going back to
+
+					h1 404
+
+					p if it's a seven-hour flight or a 45-minute drive. 🎶
+
+				p.error <strong>ERROR 404:</strong> Requested path <span></span> could not be found. <a href="mailto:mihir@chaturvedi.dev">Contact me?</a>
+
+		//- Footer
+		include ../../templates/footer.pug
+
+	//- Load scripts after </body> and before </html>
+	script(src="/assets/js/404.js" defer)

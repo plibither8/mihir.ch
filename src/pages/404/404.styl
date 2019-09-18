@@ -1,0 +1,61 @@
+@require "../../stylesheets/base"
+@import "../../stylesheets/nav"
+@import "../../stylesheets/footer"
+
+body
+	display: flex
+	flex-direction: column
+
+main
+	width: 95%
+	margin: 0 auto
+	padding: 10px
+	overflow: hidden
+	max-width: 800px
+	flex: 1
+
+	img
+		position: absolute
+		width: 40vh
+		right: -50px
+		top: -50px
+		opacity: 0.1
+
+section
+	width: 100%
+	height: 100%
+	text-align: center
+	display: flex
+	align-items: center
+	justify-content: center
+	flex-direction: column
+
+	h1
+		font-size: 17vh
+		padding: 10px 0
+		color: var(--accent-color-9)
+		font-family: var(--mono-font-stack)
+		text-shadow: 7px 6px 0 var(--accent-color-3),
+					-7px -6px 0 var(--accent-color-1)
+
+	> a:hover
+		p, h1
+			text-decoration: underline
+
+	p
+		font-size: 16px
+		color: #444
+
+		&.error
+			color: #bd2f2f
+			font-size: 18px
+			margin: 40px 0
+
+			span
+				font-family: var(--mono-font-stack)
+				background: #eee
+				padding: 5px
+				border-radius: 3px
+
+			a
+				text-decoration: underline
