@@ -14,10 +14,13 @@ const WriteFilePlugin = require('write-file-webpack-plugin');
 const pagesDir = path.join(__dirname, 'src/pages/');
 // Get all page roots
 const pages = readdirSync(pagesDir).filter(f => statSync(path.join(pagesDir, f)).isDirectory());
-const pagesToExclude = ['404'];
+const pagesToExclude = ['404', 'index'];
 
 // Site paths for sitemap generator - exclude some pages
-const sitePaths = pages.filter(p => !pagesToExclude.includes(p)).map(p => '/' + p);
+const sitePaths = [
+	'/',
+	...pages.filter(p => !pagesToExclude.includes(p)).map(p => '/' + p)
+];
 
 // webpack entry object
 const entryObj = {};
