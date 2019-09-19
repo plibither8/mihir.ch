@@ -79,6 +79,35 @@ function wakatime(data) {
 	}
 }
 
+let hackernewsStart = 0;
+
+function hackernews(data, start) {
+	const hnCard = document.querySelector('#hn');
+	const list = hnCard.querySelector('ol');
+
+	for (const [index, item] of data.slice(start, start + 5).entries()) {
+		const listItem = document.createElement('li');
+		listItem.innerHTML = `
+			<a href='${item.link}' target='_blank' rel='noopener'>${item.title}</a>
+			<p>
+				${new Date(item.time).toLocaleDateString()}
+				&middot;&nbsp;
+				<a href='https://news.ycombinator.com/item?id=${item.id}' target='_blank' rel='noopener'>show on hn</a>
+			</p>
+		`;
+		list.append(listItem);
+	}
+
+	if (start === 0) {
+		const button = hnCard.querySelector('button');
+		button.addEventListener('click', () => {
+			hackernews(data, hackernewsStart);
+		});
+	}
+
+	hackernewsStart += 5;
+}
+
 // get data
 (async () => {
 	const activityData =
@@ -89,4 +118,5 @@ function wakatime(data) {
 
 	lastfm(activityData.lastfm);
 	wakatime(activityData.wakatime);
+	hackernews(activityData.hackernews, hackernewsStart);
 })();
