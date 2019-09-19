@@ -53,7 +53,7 @@ section#activity
 			font-family: var(--mono-font-stack)
 			font-weight: bold
 
-	ul
+	ul, ol
 
 		li
 			display: flex
@@ -69,6 +69,7 @@ section#activity
 
 				&.rank
 					padding-right: 10px
+					color: #757575
 
 				&.name
 					flex: 1
@@ -91,3 +92,38 @@ section#activity
 
 		a
 			color: var(--accent-color-7)
+
+	.card#hn
+		ol li
+			height: unset
+			margin: 20px 0 0 30px
+			display: list-item
+			color: #757575
+
+			> a
+				display: inline-block
+				margin-bottom: 5px
+				vertical-align: top
+				color: #000000
+				line-height: 1.5
+
+			p
+				color: #757575
+				font-size: 15px
+
+				a
+					color: var(--accent-color-7)
+					&::after
+						content: ''
+
+		button
+			margin: 20px 0
+			display: inline-block
+			width: fit-content
+			background: none
+			border: none
+			font-size: 16px
+			font-family: var(--default-font-stack)
+			color: var(--accent-color-9)
+			text-decoration: underline
+			cursor: pointer
