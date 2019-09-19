@@ -12,6 +12,10 @@
 		"link": "https://news.ycombinator.com/user?id=plibither8",
 		"icon": "/assets/img/networks/ycombinator.svg"
 	}, {
+		"name": "LinkedIn",
+		"link": "https://linkedin.com/in/plibither8",
+		"icon": "/assets/img/networks/linkedin.svg"
+	}, {
 		"name": "Keybase",
 		"link": "https://keybase.io/plibither8",
 		"icon": "/assets/img/networks/keybase.svg"
