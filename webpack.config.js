@@ -11,7 +11,7 @@ const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const SizePlugin = require('size-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 
-const pagesDir = path.join(__dirname, 'src/pages/');
+const pagesDir = path.join(__dirname, 'pages/');
 // Get all page roots
 const pages = readdirSync(pagesDir).filter(f => statSync(path.join(pagesDir, f)).isDirectory());
 const pagesToExclude = ['404', 'index'];
@@ -25,7 +25,7 @@ const sitePaths = [
 // webpack entry object
 const entryObj = {};
 pages.map(page => {
-	entryObj[page] = `./src/pages/${page}/${page}`
+	entryObj[page] = `./pages/${page}/${page}`
 });
 
 module.exports = (env, argv) => ({
@@ -33,7 +33,7 @@ module.exports = (env, argv) => ({
 	devServer: {
 		contentBase: [
 			'./dist',
-			'./src'
+			'./'
 		],
 		hot: true,
 		writeToDisk: true,
@@ -57,30 +57,30 @@ module.exports = (env, argv) => ({
 		new WriteFilePlugin(),
 		new CopyWebpackPlugin([
 			{
-				from: 'src/assets',
+				from: 'assets',
 				to: 'assets'
 			}, {
-				from: 'src/static',
+				from: 'static',
 				to: ''
 			}
 		]),
 		new HtmlWebpackPlugin({
-			template: './src/pages/index/index.pug',
-			projects: require('./src/data/projects.json'),
-			networks: require('./src/data/networks.json'),
-			navigation: require('./src/data/navigation.json'),
+			template: './pages/index/index.pug',
+			projects: require('./data/projects.json'),
+			networks: require('./data/networks.json'),
+			navigation: require('./data/navigation.json'),
 			filename: 'index.html',
 			inject: false
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/pages/blog/blog.pug',
-			navigation: require('./src/data/navigation.json'),
+			template: './pages/blog/blog.pug',
+			navigation: require('./data/navigation.json'),
 			filename: 'blog.html',
 			inject: false
 		}),
 		new HtmlWebpackPlugin({
-			template: './src/pages/404/404.pug',
-			navigation: require('./src/data/navigation.json'),
+			template: './pages/404/404.pug',
+			navigation: require('./data/navigation.json'),
 			filename: '404.html',
 			inject: false
 		}),
