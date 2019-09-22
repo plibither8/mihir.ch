@@ -15,7 +15,7 @@
 		"postcss": "postcss ./dist/assets/css/*.css -r --no-map -u cssnano",
 		"build": "run-s clean dist webpack.build stylus.build postcss",
 		"watch": "run-p dist webpack.watch stylus.watch",
-		"start": "run-p dist webpack.dev-server stylus.watch",
+		"start": "run-p dist webpack.dev-server stylus.watch"
 	},
 	"devDependencies": {
 		"copy-webpack-plugin": "^5.0.4",
