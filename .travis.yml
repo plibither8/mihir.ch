@@ -2,6 +2,6 @@ language: node_js
 node_js:
 - 10.16.0
 install:
-- npm install
+- npm install @octokit/rest node-fetch js-yaml
 script:
-- npm update-activity
+- node scripts/update-activity
