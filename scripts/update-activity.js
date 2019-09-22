@@ -126,7 +126,7 @@ async function lastfm() {
 
 
 // WAKATIME
-async function wakaktime() {
+async function wakatime() {
 	// this will hold all the color data
 	let colorData
 
@@ -214,6 +214,7 @@ async function main() {
 			}
 		}
 	})
+	console.log('done: update gist')
 }
 
 (async () => {
