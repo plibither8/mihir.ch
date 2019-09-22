@@ -1,5 +1,6 @@
 // Lazy-load offscreen images
 import 'lazysizes';
+import { render } from 'timeago.js'
 
 // Expand the "Psst! ++" button
 const introExpandButton = document.querySelector('#intro button.expand');
@@ -20,7 +21,6 @@ for (const card of projectCards) {
 	});
 }
 
-// Recent Activity
 const GIST_URL = 'https://api.github.com/gists/ea3780e4764315e354bc3f0655c81814';
 
 function lastfm(data) {
@@ -113,7 +113,13 @@ function hackernews(data, start) {
 	const activityData =
 		await fetch(GIST_URL)
 		.then(res => res.json())
-		.then(res => Object.values(res.files)[0])
+		.then(res => {
+			const lastUpdatedSpan = document.querySelector('#activity p.update span');
+			lastUpdatedSpan.setAttribute('datetime', res.updated_at);
+			render(lastUpdatedSpan);
+
+			return Object.values(res.files)[0];
+		})
 		.then(res => JSON.parse(res.content));
 
 	lastfm(activityData.lastfm);
