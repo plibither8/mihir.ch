@@ -23,8 +23,10 @@ const {
 
 // HACKER NEWS
 async function hackernews() {
-	const HN_FAVES_URL = 'https://reactual.lib.id/hnfavs@dev?id=plibither8&limit=10'
-	const faves = await fetch(HN_FAVES_URL).then(res => res.json())
+	const HN_FAVES_URL = 'https://hn-faves.mihir.ch/plibither8?all=true'
+	const faves = await fetch(HN_FAVES_URL)
+		.then(res => res.json())
+		.then(res => Object.values(res).flat())
 	console.log('done: hacker news faves')
 
 	const HN_API_URL = 'https://hacker-news.firebaseio.com/v0/item'
@@ -33,11 +35,15 @@ async function hackernews() {
 		const details = await fetch(`${HN_API_URL}/${item.id}.json`).then(res => res.json())
 		faves[index] = {
 			...item,
-			time: details.time * 1000
+			time: details.time * 1000,
+			text: item.type === 'comment' ? details.text : undefined
 		}
 		console.log(`done item: ${count++} / ${faves.length}`)
 	}
 	console.log('done: hacker news fave dates')
+
+	// sort comments and stories by time
+	faves.sort((a, b) => a.time < b.time ? 1 : -1)
 
 	return faves
 }
