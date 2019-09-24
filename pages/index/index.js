@@ -87,14 +87,24 @@ function hackernews(data, start) {
 
 	for (const [index, item] of data.slice(start, start + 5).entries()) {
 		const listItem = document.createElement('li');
-		listItem.innerHTML = `
-			<a href='${item.link}' target='_blank' rel='noopener'>${item.title}</a>
-			<p>
-				${new Date(item.time).toLocaleDateString()}
-				&middot;&nbsp;
-				<a href='https://news.ycombinator.com/item?id=${item.id}' target='_blank' rel='noopener'>show on hn</a>
-			</p>
-		`;
+		listItem.innerHTML = item.type === 'comment' ?
+			`
+				<div class='comment'>${item.text}</div>
+				<p class='sub'>
+					${new Date(item.time).toLocaleDateString()}
+					&middot;&nbsp;
+					<a href='https://news.ycombinator.com/item?id=${item.id}' target='_blank' rel='noopener'>show on hn</a>
+				</p>
+			` :
+			`
+				<a href='${item.link}' target='_blank' rel='noopener'>${item.title}</a>
+				<p class='sub'>
+					${new Date(item.time).toLocaleDateString()}
+					&middot;&nbsp;
+					<a href='https://news.ycombinator.com/item?id=${item.id}' target='_blank' rel='noopener'>show on hn</a>
+				</p>
+			`;
+
 		list.append(listItem);
 	}
 
