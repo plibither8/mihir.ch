@@ -28,7 +28,7 @@ function lastfm(data) {
 	const list = musicCard.querySelector('ul');
 	const scrobbledTracks = musicCard.querySelector('p span.stat');
 
-	scrobbledTracks.innerText = data.totalPlayCount;
+	scrobbledTracks.innerText = data.totalPlayCount.toLocaleString();
 
 	let maxCount;
 	for (const [index, artist] of data.topFive.entries()) {
