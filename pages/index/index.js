@@ -124,9 +124,15 @@ function hackernews(data, start) {
 		await fetch(GIST_URL)
 		.then(res => res.json())
 		.then(res => {
-			const lastUpdatedSpan = document.querySelector('#activity p.update span');
-			lastUpdatedSpan.setAttribute('datetime', res.updated_at);
-			render(lastUpdatedSpan);
+			const lastUpdated = document.createElement('p');
+			lastUpdated.innerHTML = `Last updated <span datetime="${res.updated_at}"></span>`;
+			lastUpdated.classList.add('update');
+
+			const activitySection = document.querySelector('#activity');
+			const activityPara = activitySection.querySelector('p');
+			activitySection.insertBefore(lastUpdated, activityPara);
+
+			render(lastUpdated.querySelector('span'));
 
 			return Object.values(res.files)[0];
 		})
