@@ -20,10 +20,9 @@ html(lang="en")
 		main
 
 			//- Heading
-			include ./pug/heading.pug
+			section#heading
 
-			//- Intro
-			include ./pug/intro.pug
+				include:markdown-it(html=true) ../../content/index/heading.md
 
 			hr
 
