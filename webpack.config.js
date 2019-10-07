@@ -11,8 +11,11 @@ const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const SizePlugin = require('size-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 
-const pagesDir = path.join(__dirname, 'pages/');
+// Get all that YAML data
+const data = require('./scripts/get-yaml-data');
+
 // Get all page roots
+const pagesDir = path.join(__dirname, 'pages/');
 const pages = readdirSync(pagesDir).filter(f => statSync(path.join(pagesDir, f)).isDirectory());
 const pagesToExclude = ['404', 'index'];
 
@@ -66,21 +69,21 @@ module.exports = (env, argv) => ({
 		]),
 		new HtmlWebpackPlugin({
 			template: './pages/index/index.pug',
-			projects: require('./data/projects.json'),
-			networks: require('./data/networks.json'),
-			navigation: require('./data/navigation.json'),
+			projects: data.projects,
+			networks: data.networks,
+			navigation: data.navigation,
 			filename: 'index.html',
 			inject: false
 		}),
 		new HtmlWebpackPlugin({
 			template: './pages/blog/blog.pug',
-			navigation: require('./data/navigation.json'),
+			navigation: data.navigation,
 			filename: 'blog.html',
 			inject: false
 		}),
 		new HtmlWebpackPlugin({
 			template: './pages/404/404.pug',
-			navigation: require('./data/navigation.json'),
+			navigation: data.navigation,
 			filename: '404.html',
 			inject: false
 		}),
