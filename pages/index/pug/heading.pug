@@ -4,6 +4,13 @@ section#heading
 
 	h1 Mihir Chaturvedi
 
-	p.caption
-		:markdown-it
-			...or perhap _plibither8_...
+	p.caption ...or perhaps, <em>plibither8</em>...
+
+	include:markdown-it(html=true) ../../../content/index/intro.md
+
+	p.small
+		button.expand Psst! ++
+		span.more.nodisplay
+			:markdown-it(inline)
+				**Psst!** I can also be described as a "maker of things 👷", "coffee-lover ☕" and a "`10x engineer 😲`".&nbsp;
+			button(class="tooltip" aria-label="Satire disclaimer tooltip") /s

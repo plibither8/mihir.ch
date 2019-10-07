@@ -3,10 +3,10 @@ import 'lazysizes';
 import { render } from 'timeago.js'
 
 // Expand the "Psst! ++" button
-const introExpandButton = document.querySelector('#intro button.expand');
-introExpandButton.addEventListener('click', () => {
-	introExpandButton.nextElementSibling.classList.remove('nodisplay');
-	introExpandButton.remove();
+const psstButton = document.querySelector('#heading button.expand');
+psstButton.addEventListener('click', () => {
+	psstButton.nextElementSibling.classList.remove('nodisplay');
+	psstButton.remove();
 });
 
 // Expand/collapse projects' "++" buttons
