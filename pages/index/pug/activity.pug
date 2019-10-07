@@ -1,11 +1,6 @@
 section#activity
 
-	h2 🕒 Recent Activity
-
-	p.update Last updated <span></span>.
-
-	p Sundry statistics for this week in music and programming passively collected in the background, and a curated list of my favorite Hacker News stories and comments. I'm a data hoarder, so be it <span class='nowrap'>ヽ(`Д´)ﾉ</span>.
-	p.sub PS: This updates at most every 24 hours, it's not really <em>live</em>.
+	include:markdown-it(html=true) ../../../content/index/activity.md
 
 	.gallery
 
@@ -56,4 +51,3 @@ section#activity
 
 			p.source View on:&nbsp;
 				a(href="https://news.ycombinator.com/favorites?id=plibither8" target="_blank" rel="noopener") Hacker News
-
