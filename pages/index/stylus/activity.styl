@@ -18,11 +18,28 @@ section#activity
 		span.nowrap
 			white-space: nowrap
 
+	svg.loader
+		display: none
+		position: absolute
+		z-index: 1
+		height: 250px
+
 	.gallery
 		display: flex
 		flex-wrap: wrap
 		justify-content: space-between
 		margin: 30px -20px
+
+		&.gallery--loading
+			justify-content: center
+			align-items: center
+
+			svg.loader
+				display: block
+
+			.card
+				filter: blur(2px)
+				opacity: 0.5
 
 	.card
 		min-width: 350px

@@ -141,4 +141,7 @@ function hackernews(data, start) {
 	lastfm(activityData.lastfm);
 	wakatime(activityData.wakatime);
 	hackernews(activityData.hackernews, hackernewsStart);
+
+	const gallery = document.querySelector('#activity div.gallery');
+	gallery.classList.remove('gallery--loading');
 })();
