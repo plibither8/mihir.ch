@@ -27,9 +27,7 @@ html(lang="en")
 
 				img(src="/assets/img/muh.svg" alt="" draggable="false")
 
-				h1 Blog
-
-				p Currently working up a new post - hold up!
+				include:markdown-it(html=true) ../../../content/blog/_index.md
 
 		//- Footer
 		include ../../templates/footer.pug
