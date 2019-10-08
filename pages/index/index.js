@@ -125,7 +125,7 @@ function hackernews(data, start) {
 		.then(res => res.json())
 		.then(res => {
 			const lastUpdated = document.createElement('p');
-			lastUpdated.innerHTML = `Last updated <span datetime="${res.updated_at}"></span>`;
+			lastUpdated.innerHTML = `Last updated <span datetime="${res.updated_at}"></span>.`;
 			lastUpdated.classList.add('update');
 
 			const activitySection = document.querySelector('#activity');
