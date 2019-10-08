@@ -21,8 +21,7 @@ for (const card of projectCards) {
 	});
 }
 
-const GIST_URL = 'https://api.github.com/gists/ea3780e4764315e354bc3f0655c81814';
-
+// Activity
 function lastfm(data) {
 	const musicCard = document.querySelector('#music');
 	const list = musicCard.querySelector('ul');
@@ -120,6 +119,8 @@ function hackernews(data, start) {
 
 // get data
 (async () => {
+	const GIST_URL = 'https://api.github.com/gists/ea3780e4764315e354bc3f0655c81814';
+
 	const activityData =
 		await fetch(GIST_URL)
 		.then(res => res.json())
