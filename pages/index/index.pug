@@ -1,5 +1,9 @@
+- const {options} = htmlWebpackPlugin;
+
 //- Head generator mixin
 include ../../templates/head.pug
+//- Navigation
+include ../../templates/nav.pug
 
 doctype html
 
@@ -15,7 +19,7 @@ html(lang="en")
 	body
 
 		//- Navigation
-		include ../../templates/nav.pug
+		+nav('Home')
 
 		main
 
