@@ -1,10 +1,15 @@
-- const {options} = htmlWebpackPlugin
+mixin nav(active, small=false)
+	nav
+		a.nav__name(href="/")
+			img(src="/assets/img/muh.svg")
+			| Mihir Chaturvedi
 
-nav
-
-	each item in options.navigation
-		a(
-			href=item.link
-			target=(item.external ? '_blank' : false)
-			rel=(item.external ? 'noopener' : false)
-		) !{item.name}
+		ul
+			each item in (small ? options.navigation.slice(0, -2) : options.navigation)
+				li
+					a(
+						href=item.link
+						target=(item.external ? '_blank' : false)
+						rel=(item.external ? 'noopener' : false)
+						class=(active && item.name === active ? 'nav__link--active' : false)
+					) !{item.name}
