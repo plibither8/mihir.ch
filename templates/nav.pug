@@ -1,11 +1,11 @@
-mixin nav(active, small=false)
+mixin nav(active=false)
 	nav
 		a.nav__name(href="/")
 			img(src="/assets/img/muh.svg")
 			| Mihir Chaturvedi
 
 		ul
-			each item in (small ? options.navigation.slice(0, -2) : options.navigation)
+			each item in options.navigation
 				li
 					a(
 						href=item.link

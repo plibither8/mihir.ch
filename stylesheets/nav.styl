@@ -1,5 +1,5 @@
 nav
-	width: 95%
+	width: 100%
 	max-width: 1000px
 	margin: 2vh auto 0 auto
 	color: var(--accent-color-9)
@@ -10,7 +10,8 @@ nav
 	flex-wrap: wrap
 
 	a.nav__name
-		display: inline-block
+		display: flex
+		margin: 0 calc(2vh - 10px)
 		&:before
 			display: none
 
@@ -22,18 +23,18 @@ nav
 	ul
 		display: flex
 		overflow-x: auto
-		padding: 5px 0
+		padding: 5px 2vh
 
 		li
 			list-style-type: none
-			&:last-child
-				margin-right: 20px
+			&:first-child a
+				margin-left: 0
 
 	a
 		display: flex
 		justify-content: center
 		align-items: center
-		margin: 5px
+		margin: 5px 10px
 		padding: 5px 10px
 		font-weight: 500
 		font-size: 18px
