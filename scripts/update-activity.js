@@ -180,7 +180,7 @@ async function wakatime() {
 		languages: [] // top five langs
 	}
 
-	for (let i = 0; filteredStats.languages.length < 5; i++) {
+	for (let i = 0; filteredStats.languages.length < 5 && i < stats.languages.length; i++) {
 		const lang = stats.languages[i]
 		if (lang.name === 'Other') {
 			continue

@@ -55,6 +55,7 @@
 		}
 	},
 	"dependencies": {
+		"@octokit/rest": "^16.34.0",
 		"lazysizes": "^5.1.1",
 		"timeago.js": "^4.0.0-beta.2"
 	}
