@@ -76,6 +76,12 @@ function wakatime(data) {
 
 		list.append(listItem);
 	}
+
+	// Create ghost list items so that 5 list items appear
+	for (let i = 0; i < 5 - Object.keys(data.languages).length; i++)  {
+		const listItem = document.createElement('li');
+		list.append(listItem);
+	}
 }
 
 let hackernewsStart = 0;
