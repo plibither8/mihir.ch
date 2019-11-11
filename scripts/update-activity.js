@@ -134,18 +134,13 @@ async function lastfm() {
 // WAKATIME
 async function wakatime() {
 	// this will hold all the color data
-	let colorData
+	let colorData = await fetch('https://rawgit.com/github/linguist/master/lib/linguist/languages.yml')
+		.then(res => res.text())
+		.then(text => jsyaml.safeLoad(text))
+	console.log('done: github linguist colors')
 
 	// get a language color data
 	async function getLanguageColor(name) {
-		// first iteration
-		if (!colorData) {
-			colorData = await fetch('https://rawgit.com/github/linguist/master/lib/linguist/languages.yml')
-				.then(res => res.text())
-				.then(text => jsyaml.safeLoad(text))
-			console.log('done: github linguist colors')
-		}
-
 		// default color
 		let color = '#cccccc'
 		// important checks
