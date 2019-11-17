@@ -84,6 +84,8 @@
     main: https://github.com/plibither8/markdown-new-tab
     source: https://github.com/plibither8/markdown-new-tab
     others:
+    - text: Try it out!
+      href: https://mdnt.mihir.ch
     - text: Chrome Extension
       href: https://chrome.google.com/webstore/detail/demppioeofcekpjcnlkmdjbabifjnokj
     - text: Firefox Add-on
