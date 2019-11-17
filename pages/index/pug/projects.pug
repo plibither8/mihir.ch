@@ -1,8 +1,9 @@
 include ./mixins.pug
 
-section#projects
+section#projects.--collapsed
 
 	h2 ✨ Featured Projects
+		button.toggler.parent-controller ++
 
 	.gallery
 		each project in options.projects

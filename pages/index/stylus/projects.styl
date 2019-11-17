@@ -32,19 +32,6 @@ section#projects
 			span
 				font-style: normal
 
-			button
-				border: none
-				background: var(--accent-color-0)
-				font-family: monospace
-				color: var(--accent-color-5)
-				font-size: 20px
-				font-weight: 500
-				cursor: pointer
-				margin-left: 5px
-				padding: 0 5px
-				border-radius: 3px
-				z-index: 2
-
 		.details
 			font-size: 17px
 			color: #000
@@ -86,3 +73,23 @@ section#projects
 
 				&.source
 					font-weight: 500
+
+		&.card--collapsed
+			.details
+				display: none
+
+	button.toggler
+		border: none
+		background: var(--accent-color-0)
+		font-family: monospace
+		color: var(--accent-color-5)
+		font-size: 20px
+		font-weight: 500
+		cursor: pointer
+		margin-left: 5px
+		padding: 0 5px
+		border-radius: 3px
+		z-index: 2
+
+	button.parent-controller
+		margin-left: 15px

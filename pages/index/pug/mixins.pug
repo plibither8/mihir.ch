@@ -1,7 +1,7 @@
 //- Section: #projects
 mixin projectCard(project)
 
-	.card
+	.card.card--collapsed
 
 		a(
 			href=project.links.main
@@ -14,9 +14,9 @@ mixin projectCard(project)
 			time !{project.date} &mdash;&nbsp;
 			span.emoji !{project.emoji}
 			| &nbsp;!{project.caption}
-			button ++
+			button.toggler ++
 
-		.details.nodisplay
+		.details
 			- if(project.image)
 
 				- if (typeof project.image === 'string')
