@@ -29,14 +29,15 @@ async function hackernews() {
 		.then(res => Object.values(res).flat())
 	console.log('done: hacker news faves')
 
-	const HN_API_URL = 'https://hacker-news.firebaseio.com/v0/item'
+	const HN_API_URL = 'http://hn.algolia.com/api/v1/items'
 	let count = 1
 	for (const [index, item] of faves.entries()) {
-		const details = await fetch(`${HN_API_URL}/${item.id}.json`).then(res => res.json())
+		const details = await fetch(`${HN_API_URL}/${item.id}`).then(res => res.json())
 		faves[index] = {
-			...item,
-			time: details.time * 1000,
-			text: item.type === 'comment' ? details.text : undefined
+			id: item.id,
+			link: item.url,
+			time: details.created_at_i * 1000,
+			text: item.text
 		}
 		console.log(`done item: ${count++} / ${faves.length}`)
 	}
