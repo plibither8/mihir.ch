@@ -34,10 +34,10 @@ async function hackernews() {
 	for (const [index, item] of faves.entries()) {
 		const details = await fetch(`${HN_API_URL}/${item.id}`).then(res => res.json())
 		faves[index] = {
-			id: item.id,
-			link: item.url,
+			id: details.id,
+			link: details.url,
 			time: details.created_at_i * 1000,
-			text: item.text
+			text: details.text
 		}
 		console.log(`done item: ${count++} / ${faves.length}`)
 	}
