@@ -113,7 +113,7 @@ function hackernews(data, start) {
 
 	for (const [index, item] of data.slice(start, start + 5).entries()) {
 		const listItem = document.createElement('li');
-		listItem.innerHTML = item.text ?
+		listItem.innerHTML = item.type === 'comment' ?
 			`
 				<div class='comment'>${item.text}</div>
 				<p class='sub'>

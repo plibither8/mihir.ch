@@ -38,6 +38,7 @@ async function hackernews() {
 			link: details.url,
 			time: details.created_at_i * 1000,
 			text: details.text,
+			type: details.type,
 			title: details.title
 		}
 		console.log(`done item: ${count++} / ${faves.length}`)
