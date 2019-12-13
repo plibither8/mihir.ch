@@ -14,7 +14,7 @@ mixin projectCard(project)
 			time !{project.date} &mdash;&nbsp;
 			span.emoji !{project.emoji}
 			| &nbsp;!{project.caption}
-			button.toggler ++
+			button.toggler(aria-label="Expand") ++
 
 		.details
 			- if(project.image)

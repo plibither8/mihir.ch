@@ -3,7 +3,7 @@ include ./mixins.pug
 section#projects.--collapsed
 
 	h2 ✨ Featured Projects
-		button.toggler.parent-controller ++
+		button.toggler.parent-controller(aria-label="Expand") ++
 
 	.gallery
 		each project in options.projects
