@@ -69,7 +69,9 @@ module.exports = async (env, argv) => ({
 	module: {
 		rules: [{
 			test: /\.pug/,
-			use: 'pug-loader'
+			use: [{
+				loader: 'pug-loader'
+			}]
 		}]
 	},
 	plugins: [
