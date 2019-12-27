@@ -32,9 +32,11 @@ section#activity
 
 			ul
 				- let maxCount = wakatime.languages[0].percent;
+				- let listCount = 0;
 				- for (const [index, lang] of wakatime.languages.entries()) {
 					- const percentage = lang.percent / maxCount * 100;
 					- const backgroundStyle = `background:linear-gradient(90deg, ${lang.color}88 ${percentage}%, transparent ${percentage}%)`
+					- listCount++;
 
 					li
 						p.rank !{index + 1}.
@@ -44,9 +46,8 @@ section#activity
 				- }
 
 				//- Create ghost list items so that 5 list items appear
-				- for (let i = 0; i < 5 - Object.keys(wakatime.languages).length; i++)  {
+				while listCount++ < 5
 					li
-				- }
 
 			p.source Source:&nbsp;
 				a(href="https://wakatime.com/@plibither8" target="_blank" rel="noopener") WakaTime
@@ -66,9 +67,11 @@ section#activity
 
 			ul
 				- maxCount = lastfm.topFive[0].playcount;
+				- listCount = 0;
 				- for (const [index, artist] of lastfm.topFive.entries()) {
 					- const percentage = artist.playcount / maxCount * 100;
 					- const backgroundStyle = `background:linear-gradient(90deg, rgba(179, 157, 219, ${1 - index * 0.15}) ${percentage}%, transparent ${percentage}%)`;
+					- listCount++;
 
 					li
 						p.rank !{index + 1}.
@@ -78,6 +81,10 @@ section#activity
 							span.count=artist.playcount
 
 				- }
+
+				//- Create ghost list items so that 5 list items appear
+				while listCount++ < 5
+					li
 
 			p.source Source:&nbsp;
 				a(href="https://last.fm/user/plibither8" target="_blank" rel="noopener") Last.fm
@@ -97,7 +104,7 @@ section#activity
 							div.comment !{item.text}
 						else
 							a(href=item.link target="_blank" rel="noopener")=item.title
-						p.sub !{new Date(item.time).toLocaleDateString()} &middot;&nbsp;
+						p.sub !{new Date(item.time).toDateString()} &middot;&nbsp;
 							a(href=`https://news.ycombinator.com/item?id=${item.id}` target="_blank" rel="noopener") show on hn
 
 				- }
