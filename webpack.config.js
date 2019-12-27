@@ -31,7 +31,16 @@ pages.map(page => {
 	entryObj[page] = `./pages/${page}/${page}`
 });
 
-module.exports = (env, argv) => ({
+// get recent-activity.json
+const getRecentActivity = async () => {
+	const recentActivity = await fetch('https://api.github.com/gists/ea3780e4764315e354bc3f0655c81814')
+		.then(res => res.json())
+		.then(data => data.files['recent-activity.json'].content)
+		.then(content => JSON.parse(content));
+	return recentActivity;
+}
+
+module.exports = async (env, argv) => ({
 	devtool: 'sourcemap',
 	devServer: {
 		contentBase: [
@@ -72,6 +81,7 @@ module.exports = (env, argv) => ({
 			projects: data.projects,
 			networks: data.networks,
 			navigation: data.navigation,
+			activity: await getRecentActivity(),
 			filename: 'index.html',
 			inject: false
 		}),
