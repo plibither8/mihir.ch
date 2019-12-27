@@ -7,13 +7,13 @@
   link: https://twitter.com/plibither8
   icon: "/assets/img/networks/twitter.svg"
 
-- name: Hacker News
-  link: https://news.ycombinator.com/user?id=plibither8
-  icon: "/assets/img/networks/ycombinator.svg"
-
 - name: LinkedIn
   link: https://linkedin.com/in/plibither8
   icon: "/assets/img/networks/linkedin.svg"
+
+- name: Hacker News
+  link: https://news.ycombinator.com/user?id=plibither8
+  icon: "/assets/img/networks/ycombinator.svg"
 
 - name: Keybase
   link: https://keybase.io/plibither8
