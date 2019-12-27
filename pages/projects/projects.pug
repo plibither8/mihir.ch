@@ -5,6 +5,16 @@ include ../../templates/head.pug
 //- Navigation
 include ../../templates/nav.pug
 
+mixin projectSectionList(itemList)
+	ul
+		each project in itemList
+			li
+				a(href=project.link target='_blank')=project.name
+				if project.archived
+					| &nbsp;&ndash;&nbsp;
+					em Archived
+				| &nbsp;&ndash; !{project.description}
+
 doctype html
 
 html(lang="en")
@@ -32,12 +42,23 @@ html(lang="en")
 
 				p Enim ea sunt sit laborum voluptate et velit amet ullamco aliquip consectetur aliqua.
 
-			section.markdown-body#content
+			section#content
 
-				include:markdown-it(html=true) ../../content/projects.md
+				- const {projectIndex} = options;
+
+				- for (const [headingLvl1, itemsLvl1] of Object.entries(projectIndex)) {
+					.listBody
+						h2=headingLvl1
+
+						if Array.isArray(itemsLvl1)
+							+projectSectionList(itemsLvl1)
+
+						else
+							- for (const [headingLvl2, itemsLvl2] of Object.entries(itemsLvl1)) {
+								h3=headingLvl2
+								+projectSectionList(itemsLvl2)
+							- }
+				- }
 
 		//- Footer
 		include ../../templates/footer.pug
-
-	//- Load scripts after </body> and before </html>
-	script(src="/assets/js/projects.js" defer)
