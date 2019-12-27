@@ -1,5 +1,6 @@
 # Custom
 dist/
+data/projectIndex.yml
 
 # Created by https://www.gitignore.io/api/node,macos,windows,webstorm,sublimetext,visualstudiocode
 
