@@ -74,10 +74,10 @@ function lastfm(data) {
 function wakatime(data) {
 	const progCard = document.querySelector('#programming');
 	const list = progCard.querySelector('ul');
-	const [totalTime, dailyAverage] = [...progCard.querySelectorAll('p span.stat')];
+	// const [totalTime, dailyAverage] = [...progCard.querySelectorAll('p span.stat')];
 
-	totalTime.innerText = data.total;
-	dailyAverage.innerText = data.average;
+	// totalTime.innerText = data.total;
+	// dailyAverage.innerText = data.average;
 
 	let maxCount;
 	for (const [index, lang] of data.languages.entries()) {
@@ -167,9 +167,9 @@ function hackernews(data, start) {
 		.then(res => JSON.parse(res.content));
 
 	lastfm(activityData.lastfm);
-	wakatime(activityData.wakatime);
+	// wakatime(activityData.wakatime);
 	hackernews(activityData.hackernews, hackernewsStart);
 
-	const gallery = document.querySelector('#activity div.gallery');
-	gallery.classList.remove('gallery--loading');
+	// const gallery = document.querySelector('#activity div.gallery');
+	// gallery.classList.remove('gallery--loading');
 })();
