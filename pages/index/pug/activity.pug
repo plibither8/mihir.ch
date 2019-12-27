@@ -84,10 +84,23 @@ section#activity
 
 		.card#hn
 
+			- const {hackernews} = data.activityData
+
 			h3 Favorited on HN
 				span , recently
 
 			ol
+				- for (const [index, item] of hackernews.entries()) {
+
+					li(class=index > 4 ? 'nodisplay' : false)
+						if item.type === "comment"
+							div.comment !{item.text}
+						else
+							a(href=item.link target="_blank" rel="noopener")=item.title
+						p.sub !{new Date(item.time).toLocaleDateString()} &middot;&nbsp;
+							a(href=`https://news.ycombinator.com/item?id=${item.id}` target="_blank" rel="noopener") show on hn
+
+				- }
 
 			button Load more
 
