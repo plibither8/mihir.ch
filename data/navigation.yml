@@ -8,7 +8,7 @@
   external: false
 
 - name: Projects
-  link: "/#projects"
+  link: "/projects"
   external: false
 
 - name: Contact

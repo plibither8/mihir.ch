@@ -1,0 +1,45 @@
+- const {options} = htmlWebpackPlugin;
+
+//- Head generator mixin
+include ../../templates/head.pug
+//- Navigation
+include ../../templates/nav.pug
+
+doctype html
+
+html(lang="en")
+
+	head
+		//- Generate head
+		+head(
+			'Projects · Mihir Chaturvedi',
+			undefined,
+			'https://mihir.ch/projects'
+		)
+
+		// Styles
+		link(rel="stylesheet" href="/assets/css/projects.css")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css")
+
+
+	body
+
+		+nav('Projects')
+
+		main
+
+			section#intro
+
+				h1 Projects
+
+				p Enim ea sunt sit laborum voluptate et velit amet ullamco aliquip consectetur aliqua.
+
+			section.markdown-body#content
+
+				include:markdown-it(html=true) ../../content/projects.md
+
+		//- Footer
+		include ../../templates/footer.pug
+
+	//- Load scripts after </body> and before </html>
+	script(src="/assets/js/projects.js" defer)

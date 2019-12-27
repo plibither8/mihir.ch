@@ -25,7 +25,7 @@ const pages = readdirSync(pagesDir).filter(f => statSync(path.join(pagesDir, f))
 const pagesToExclude = ['404', 'index'];
 
 // Site paths for sitemap generator - exclude some pages
-const sitePaths = [
+const sitemapPaths = [
 	'/',
 	...pages.filter(p => !pagesToExclude.includes(p)).map(p => '/' + p)
 ];
@@ -35,6 +35,17 @@ const entryObj = {};
 pages.map(page => {
 	entryObj[page] = `./pages/${page}/${page}`
 });
+
+// HTML Webpack plugin generator
+const htmlPlugins = pages
+	.filter(page => page !== 'index')
+	.map(page => new HtmlWebpackPlugin({
+			template: `./pages/${page}/${page}.pug`,
+			navigation: data.navigation,
+			filename: page + '.html',
+			inject: false
+		})
+	);
 
 // get recent-activity.json
 const getRecentActivity = async () => {
@@ -95,18 +106,7 @@ module.exports = async (env, argv) => ({
 			filename: 'index.html',
 			inject: false
 		}),
-		new HtmlWebpackPlugin({
-			template: './pages/blog/blog.pug',
-			navigation: data.navigation,
-			filename: 'blog.html',
-			inject: false
-		}),
-		new HtmlWebpackPlugin({
-			template: './pages/404/404.pug',
-			navigation: data.navigation,
-			filename: '404.html',
-			inject: false
-		}),
+		...htmlPlugins,
 		new ImageminPlugin(),
 		new ImageminWebpWebpackPlugin({
 			config:[
@@ -116,7 +116,7 @@ module.exports = async (env, argv) => ({
 			],
 			detailedLogs: true
 		}),
-		new SitemapPlugin('https://mihir.ch', sitePaths)
+		new SitemapPlugin('https://mihir.ch', sitemapPaths)
 	],
 	resolve: {
 		extensions: [
