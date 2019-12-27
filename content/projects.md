@@ -1,9 +1,3 @@
-# 📂 index
-
-All my public repositories and projects I have worked on, indexed. <br>
-
-_Repetitions are allowed :P_
-
 ## Websites
 
 * [mihir.ch](https://github.com/plibither8/mihir.ch) - 🌐 My personal website's source code

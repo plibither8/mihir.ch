@@ -14,7 +14,7 @@ main
 	max-width: 800px
 	flex: 1
 
-section
+section#intro
 	margin: 7vh auto
 	width: 100%
 
@@ -31,6 +31,56 @@ section
 		opacity: 0.1
 
 	p
-		color: #222
-		font-size: 18px
+		color: #000
+		font-size: 20px
 		margin: 30px 0
+		line-height: 1.5
+
+section#content
+	width: 100%
+	margin: 7vh auto
+
+	h1
+		font-size: 26px
+		color: #222
+		margin: 20px 0
+
+	h2
+		font-size: 23px
+		color: #333
+		margin: 30px 0
+		display: flex
+
+		// &::after
+		// 	content: ''
+		// 	height: 3px
+		// 	background: var(--accent-color-1)
+		// 	flex: 1
+		// 	align-self: flex-end
+		// 	margin-left: 20px
+		// 	position: relative
+		// 	bottom: 3px
+
+	h3
+		font-size: 21px
+		color: #444
+		margin: 20px 0
+
+	ul
+		border-left: 3px solid var(--accent-color-0)
+		border-bottom: 3px solid var(--accent-color-0)
+		padding-left: 15px
+
+	li
+		font-size: 16px
+		line-height: 1.4
+		list-style-position: inside
+		list-style-type: none
+		margin: 15px 0
+
+		a
+			font-weight: 500
+			font-size: 18px
+			color: var(--accent-color-9)
+			text-decoration: underline
+			text-decoration-color: var(--accent-color-2)
