@@ -48,7 +48,7 @@ function lastfm(data) {
 	const list = musicCard.querySelector('ul');
 	const scrobbledTracks = musicCard.querySelector('p span.stat');
 
-	scrobbledTracks.innerText = data.totalPlayCount.toLocaleString();
+	// scrobbledTracks.innerText = data.totalPlayCount.toLocaleString();
 
 	let maxCount;
 	for (const [index, artist] of data.topFive.entries()) {
@@ -166,7 +166,7 @@ function hackernews(data, start) {
 		})
 		.then(res => JSON.parse(res.content));
 
-	lastfm(activityData.lastfm);
+	// lastfm(activityData.lastfm);
 	// wakatime(activityData.wakatime);
 	hackernews(activityData.hackernews, hackernewsStart);
 

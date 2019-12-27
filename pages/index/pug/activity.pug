@@ -12,7 +12,6 @@ section#activity
 	p.sub PS: This updates at most every 24 hours, it's not really <em>live</em>.
 
 	.gallery
-		//- include ./loader.html
 
 		.card#programming
 
@@ -54,6 +53,8 @@ section#activity
 
 		.card#music
 
+			- const {lastfm} = data.activityData
+
 			h3 Music
 				span , this week in
 
@@ -61,9 +62,22 @@ section#activity
 
 				p
 					span.label Total tracks scrobbled
-					span.stat
+					span.stat=lastfm.totalPlayCount.toLocaleString()
 
 			ul
+				- maxCount = lastfm.topFive[0].playcount;
+				- for (const [index, artist] of lastfm.topFive.entries()) {
+					- const percentage = artist.playcount / maxCount * 100;
+					- const backgroundStyle = `background:linear-gradient(90deg, rgba(179, 157, 219, ${1 - index * 0.15}) ${percentage}%, transparent ${percentage}%)`;
+
+					li
+						p.rank !{index + 1}.
+						img(src=artist.image alt=`${artist.name} image`)
+						p.name(style=backgroundStyle)
+							a(href=artist.url target='_blank' rel='noopener')=artist.name
+							span.count=artist.playcount
+
+				- }
 
 			p.source Source:&nbsp;
 				a(href="https://last.fm/user/plibither8" target="_blank" rel="noopener") Last.fm
