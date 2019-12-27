@@ -1,4 +1,11 @@
+- const data = htmlWebpackPlugin.options.activity;
+
 section#activity
+
+	h2 🕒 Recent Activity
+
+	p.update Last updated&nbsp;
+		span(datetime=data.lastUpdated)
 
 	include:markdown-it(html=true) ../../../content/index/activity.md
 
