@@ -1,0 +1,62 @@
+- const {options} = htmlWebpackPlugin;
+
+//- Head generator mixin
+include ../../templates/head.pug
+//- Navigation
+include ../../templates/nav.pug
+
+mixin projectSectionList(itemList)
+	ul
+		each project in itemList
+			li
+				a(href=project.link target='_blank')=project.name
+				if project.archived
+					| &nbsp;&ndash;&nbsp;
+					em Archived
+				| &nbsp;&ndash; !{project.description}
+
+doctype html
+
+html(lang="en")
+
+	head
+		//- Generate head
+		+head(
+			'Projects · Mihir Chaturvedi',
+			undefined,
+			'https://mihir.ch/projects'
+		)
+
+		// Styles
+		link(rel="stylesheet" href="/assets/css/projects.css")
+
+	body
+
+		+nav('Projects')
+
+		main
+
+			section#intro
+
+				include:markdown-it(html=true) ../../content/projects-intro.md
+
+			section#content
+
+				- const {projectIndex} = options;
+
+				- for (const [headingLvl1, itemsLvl1] of Object.entries(projectIndex)) {
+					.listBody
+						h2=headingLvl1
+
+						if Array.isArray(itemsLvl1)
+							+projectSectionList(itemsLvl1)
+
+						else
+							- for (const [headingLvl2, itemsLvl2] of Object.entries(itemsLvl1)) {
+								h3=headingLvl2
+								+projectSectionList(itemsLvl2)
+							- }
+				- }
+
+		//- Footer
+		include ../../templates/footer.pug
