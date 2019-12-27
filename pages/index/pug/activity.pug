@@ -1,11 +1,21 @@
+- const data = htmlWebpackPlugin.options.activity;
+
 section#activity
 
-	include:markdown-it(html=true) ../../../content/index/activity.md
+	h2 🕒 Recent Activity
 
-	.gallery.gallery--loading
-		include ./loader.html
+	p.update Last updated&nbsp;
+		span(datetime=data.lastUpdated)
+
+	p Sundry statistics for this week in music and programming passively collected in the background, and a curated list of my favorite Hacker News stories and comments. I'm a data hoarder, so be it ヽ(`Д´)ﾉ.
+
+	p.sub PS: This updates at most every 24 hours, it's not really <em>live</em>.
+
+	.gallery
 
 		.card#programming
+
+			- const {wakatime} = data.activityData
 
 			h3 Programming
 				span , this week in
@@ -14,18 +24,37 @@ section#activity
 
 				p
 					span.label Total time
-					span.stat
+					span.stat=wakatime.total
 
 				p
 					span.label Daily average
-					span.stat
+					span.stat=wakatime.average
 
 			ul
+				- let maxCount = wakatime.languages[0].percent;
+				- let listCount = 0;
+				- for (const [index, lang] of wakatime.languages.entries()) {
+					- const percentage = lang.percent / maxCount * 100;
+					- const backgroundStyle = `background:linear-gradient(90deg, ${lang.color}88 ${percentage}%, transparent ${percentage}%)`
+					- listCount++;
+
+					li
+						p.rank !{index + 1}.
+						p.name(style=backgroundStyle) !{lang.name}
+							span.count=lang.time
+
+				- }
+
+				//- Create ghost list items so that 5 list items appear
+				while listCount++ < 5
+					li
 
 			p.source Source:&nbsp;
 				a(href="https://wakatime.com/@plibither8" target="_blank" rel="noopener") WakaTime
 
 		.card#music
+
+			- const {lastfm} = data.activityData
 
 			h3 Music
 				span , this week in
@@ -34,19 +63,51 @@ section#activity
 
 				p
 					span.label Total tracks scrobbled
-					span.stat
+					span.stat=lastfm.totalPlayCount.toLocaleString()
 
 			ul
+				- maxCount = lastfm.topFive[0].playcount;
+				- listCount = 0;
+				- for (const [index, artist] of lastfm.topFive.entries()) {
+					- const percentage = artist.playcount / maxCount * 100;
+					- const backgroundStyle = `background:linear-gradient(90deg, rgba(179, 157, 219, ${1 - index * 0.15}) ${percentage}%, transparent ${percentage}%)`;
+					- listCount++;
+
+					li
+						p.rank !{index + 1}.
+						img(src=artist.image alt=`${artist.name} image`)
+						p.name(style=backgroundStyle)
+							a(href=artist.url target='_blank' rel='noopener')=artist.name
+							span.count=artist.playcount
+
+				- }
+
+				//- Create ghost list items so that 5 list items appear
+				while listCount++ < 5
+					li
 
 			p.source Source:&nbsp;
 				a(href="https://last.fm/user/plibither8" target="_blank" rel="noopener") Last.fm
 
 		.card#hn
 
+			- const {hackernews} = data.activityData
+
 			h3 Favorited on HN
 				span , recently
 
 			ol
+				- for (const [index, item] of hackernews.entries()) {
+
+					li(class=index > 4 ? 'nodisplay' : false)
+						if item.type === "comment"
+							div.comment !{item.text}
+						else
+							a(href=item.link target="_blank" rel="noopener")=item.title
+						p.sub !{new Date(item.time).toDateString()} &middot;&nbsp;
+							a(href=`https://news.ycombinator.com/item?id=${item.id}` target="_blank" rel="noopener") show on hn
+
+				- }
 
 			button Load more
 

@@ -1,8 +1,10 @@
 'use strict';
 
+// Local modules
 const path = require('path');
 const { readdirSync, statSync } = require('fs');
 
+// Webpack plugins
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
@@ -10,6 +12,9 @@ const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const SizePlugin = require('size-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
+
+// Other modules
+const fetch = require('node-fetch');
 
 // Get all that YAML data
 const data = require('./scripts/get-yaml-data');
@@ -31,7 +36,19 @@ pages.map(page => {
 	entryObj[page] = `./pages/${page}/${page}`
 });
 
-module.exports = (env, argv) => ({
+// get recent-activity.json
+const getRecentActivity = async () => {
+	const GIST_API_URL = 'https://api.github.com/gists/ea3780e4764315e354bc3f0655c81814';
+	const remoteData = await fetch(GIST_API_URL).then(res => res.json());
+	const content = JSON.parse(remoteData.files['recent-activity.json'].content);
+
+	return {
+		activityData: content,
+		lastUpdated: remoteData.updated_at
+	};
+}
+
+module.exports = async (env, argv) => ({
 	devtool: 'sourcemap',
 	devServer: {
 		contentBase: [
@@ -52,7 +69,9 @@ module.exports = (env, argv) => ({
 	module: {
 		rules: [{
 			test: /\.pug/,
-			use: 'pug-loader'
+			use: [{
+				loader: 'pug-loader'
+			}]
 		}]
 	},
 	plugins: [
@@ -72,6 +91,7 @@ module.exports = (env, argv) => ({
 			projects: data.projects,
 			networks: data.networks,
 			navigation: data.navigation,
+			activity: await getRecentActivity(),
 			filename: 'index.html',
 			inject: false
 		}),
