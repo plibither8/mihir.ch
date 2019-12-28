@@ -66,7 +66,7 @@ const main = () => {
 	psstButtonHandler();
 	projectButtonsHandler();
 	hnMoreHandler();
-	render(document.querySelector('p.update span')); // Render the "Last updated" timestamp
+	render(document.querySelector('a.update span')); // Render the "Last updated" timestamp
 }
 
 main();
