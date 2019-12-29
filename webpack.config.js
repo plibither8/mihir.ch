@@ -106,7 +106,8 @@ module.exports = async (env, argv) => {
 				...htmlPluginBaseOptions('index'),
 				projects: data.projects,
 				networks: data.networks,
-				activity: await getRecentActivity()
+				activity: await getRecentActivity(),
+				dateFormat: require('dateformat')
 			}),
 			new HtmlWebpackPlugin({
 				...htmlPluginBaseOptions('projects'),

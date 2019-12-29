@@ -1,3 +1,4 @@
+- const format = htmlWebpackPlugin.options.dateFormat;
 - const data = htmlWebpackPlugin.options.activity;
 
 section#activity
@@ -115,7 +116,7 @@ section#activity
 							div.comment !{item.text}
 						else
 							a(href=item.link target="_blank" rel="noopener")=item.title
-						p.sub !{new Date(item.time).toDateString()} &middot;&nbsp;
+						p.sub !{format(new Date(item.time), "mmmm dS, yyyy")} &middot;&nbsp;
 							a(href=`https://news.ycombinator.com/item?id=${item.id}` target="_blank" rel="noopener") show on hn
 
 				- }
