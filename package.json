@@ -12,12 +12,18 @@
 		"webpack.dev-server": "webpack-dev-server --open",
 		"stylus.build": "stylus ./pages/*/*.styl --out ./dist/assets/css --compress",
 		"stylus.watch": "stylus ./pages/*/*.styl --out ./dist/assets/css -m --watch",
-		"postcss": "postcss ./dist/assets/css/*.css -r --no-map -u cssnano",
+		"postcss": "postcss ./dist/assets/css/*.css -r --no-map --use cssnano autoprefixer",
 		"build": "run-s clean dist webpack.build stylus.build postcss",
 		"watch": "run-p dist webpack.watch stylus.watch",
 		"start": "run-p dist webpack.dev-server stylus.watch"
 	},
+	"dependencies": {
+		"@octokit/rest": "^16.34.0",
+		"lazysizes": "^5.1.1",
+		"timeago.js": "^4.0.0-beta.2"
+	},
 	"devDependencies": {
+		"autoprefixer": "^9.7.3",
 		"copy-webpack-plugin": "^5.0.4",
 		"cssnano": "^4.1.10",
 		"dateformat": "^3.0.3",
@@ -55,10 +61,5 @@
 			"import/no-named-as-default": 0,
 			"no-script-url": 0
 		}
-	},
-	"dependencies": {
-		"@octokit/rest": "^16.34.0",
-		"lazysizes": "^5.1.1",
-		"timeago.js": "^4.0.0-beta.2"
 	}
 }
