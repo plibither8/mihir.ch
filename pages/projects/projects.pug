@@ -1,4 +1,4 @@
-- const {options} = htmlWebpackPlugin;
+- const {projectIndex} = htmlWebpackPlugin.options;
 
 //- Head generator mixin
 include ../../templates/head.pug
@@ -41,8 +41,6 @@ html(lang="en")
 				include:markdown-it(html=true) ../../content/projects-intro.md
 
 			section#content
-
-				- const {projectIndex} = options;
 
 				- for (const [headingLvl1, itemsLvl1] of Object.entries(projectIndex)) {
 					.listBody
