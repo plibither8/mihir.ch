@@ -1,8 +1,4 @@
-//- 'options' variable and 'networkLink' mixin
-//- have been declared and included in activity.pug, index.pug
-//- and implicitly inherited into this template.
-//- This is very hacky and makes me unhappy, but until
-//- I find a solution for this, it is how it's going to be.
+- const {networks} = htmlWebpackPlugin.options;
 
 section#contact
 
@@ -10,7 +6,7 @@ section#contact
 
 	.networks
 
-		each network in options.networks
+		each network in networks
 			+networkLink(network)
 
 	form(name="contact" method="POST" action="https://formspree.io/plibither8@gmail.com")

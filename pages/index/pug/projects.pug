@@ -1,4 +1,4 @@
-include ./mixins.pug
+- const {projects} = htmlWebpackPlugin.options;
 
 section#projects.--collapsed
 
@@ -6,7 +6,7 @@ section#projects.--collapsed
 		button.toggler.parent-controller(aria-label="Expand") ++
 
 	.gallery
-		each project in options.projects
+		each project in projects
 			+projectCard(project)
 
 	a(href="/projects").viewAll View all projects...

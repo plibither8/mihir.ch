@@ -1,3 +1,5 @@
+- const {navigation} = htmlWebpackPlugin.options;
+
 mixin nav(active=false)
 	nav
 		a.nav__name(href="/")
@@ -5,7 +7,7 @@ mixin nav(active=false)
 			| Mihir Chaturvedi <span>&middot;</span> plibither8
 
 		ul
-			each item in options.navigation
+			each item in navigation
 				li
 					a(
 						href=item.link
