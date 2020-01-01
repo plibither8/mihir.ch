@@ -1,0 +1,26 @@
+//- Head generator mixin
+include ../../templates/head.pug
+//- Navigation
+include ../../templates/nav.pug
+
+doctype html
+
+html(lang="en")
+
+	head
+		//- Generate head
+		+head(title=', · Mihir Chaturvedi')
+
+		// Styles
+		link(rel="stylesheet" href="/assets/css/,.css")
+
+	body
+
+		+nav()
+
+		main
+
+			section
+
+		//- Footer
+		include ../../templates/footer.pug
