@@ -1,17 +1,20 @@
 const path = require('path');
-const {writeFile, mkdir} = require('fs').promises;
+const {
+	writeFile,
+	mkdir
+} = require('fs').promises;
 
 const PAGES_DIR = path.join(__dirname, '../pages');
 const PAGE_NAME = process.argv[2];
 
-const sanitize = str => str.toString().replace(/\n\t\t/g, '\n').trim() + '\n';
+const sanitize = str => str.replace(/\n\t\t/g, '\n').trim() + '\n';
 
 const fileContents = {
 	// No default JS content, only required as an entry file for Webpack
-	"js": "",
+	js: "",
 
 	// Customisation required for each page
-	"pug": sanitize`
+	pug: sanitize(`
 		//- Head generator mixin
 		include ../../templates/head.pug
 		//- Navigation
@@ -23,7 +26,7 @@ const fileContents = {
 
 			head
 				//- Generate head
-				+head(title='${PAGE_NAME[0].toUpperCase() + PAGE_NAME.slice(1)} · Mihir Chaturvedi')
+				+head(title="${PAGE_NAME[0].toUpperCase() + PAGE_NAME.slice(1)} · Mihir Chaturvedi")
 
 				// Styles
 				link(rel="stylesheet" href="/assets/css/${PAGE_NAME}.css")
@@ -38,13 +41,13 @@ const fileContents = {
 
 				//- Footer
 				include ../../templates/footer.pug
-	`,
+	`),
 
-	"styl": sanitize`
+	styl: sanitize(`
 		@require "../../stylesheets/base"
 		@import "../../stylesheets/nav"
 		@import "../../stylesheets/footer"
-	`
+	`)
 };
 
 const main = async () => {
