@@ -15,7 +15,8 @@
 		"postcss": "postcss ./dist/assets/css/*.css -r --no-map --use cssnano autoprefixer",
 		"build": "run-s clean dist webpack.build stylus.build postcss",
 		"watch": "run-p dist webpack.watch stylus.watch",
-		"start": "run-p dist webpack.dev-server stylus.watch"
+		"start": "run-p dist webpack.dev-server stylus.watch",
+		"create-page": "node ./scripts/create-new-page"
 	},
 	"dependencies": {
 		"@octokit/rest": "^16.34.0",
