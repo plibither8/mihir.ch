@@ -9,7 +9,11 @@ html(lang="en")
 
 	head
 		//- Generate head
-		+head(title="Thanks · Mihir Chaturvedi")
+		+head(
+			'Thanks · Mihir Chaturvedi',
+			undefined,
+			'https://mihir.ch/projects'
+		)
 
 		// Styles
 		link(rel="stylesheet" href="/assets/css/thanks.css")
@@ -21,6 +25,8 @@ html(lang="en")
 		main
 
 			section
+
+				include:markdown-it(html=true) ../../content/thanks.md
 
 		//- Footer
 		include ../../templates/footer.pug
