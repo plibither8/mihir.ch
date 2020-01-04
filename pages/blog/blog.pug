@@ -1,7 +1,5 @@
-//- Head generator mixin
-include ../../templates/head.pug
-//- Navigation
-include ../../templates/nav.pug
+//- Include all common mixins
+include ../../templates/common.pug
 
 doctype html
 
@@ -29,7 +27,4 @@ html(lang="en")
 				include:markdown-it(html=true) ../../content/blog/_index.md
 
 		//- Footer
-		include ../../templates/footer.pug
-
-	//- Load scripts after </body> and before </html>
-	script(src="/assets/js/blog.js" defer)
+		+footer()

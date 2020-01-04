@@ -53,16 +53,3 @@ mixin projectCard(project)
 
 			each link in project.links.others
 				a(href=link.href target="_blank" rel="noopener").links !{link.text}
-
-//- Section: #contact
-mixin networkLink(network)
-
-	a(href=network.link rel="noopener" target="_blank")
-
-		img(
-			src=network.icon
-			alt=`${network.name} Logo`
-			draggable="false"
-		)
-
-		| !{network.name}

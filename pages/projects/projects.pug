@@ -1,9 +1,7 @@
 - const {projectIndex} = htmlWebpackPlugin.options;
 
-//- Head generator mixin
-include ../../templates/head.pug
-//- Navigation
-include ../../templates/nav.pug
+//- Include all common mixins
+include ../../templates/common.pug
 
 mixin projectSectionList(itemList)
 	ul
@@ -57,4 +55,4 @@ html(lang="en")
 				- }
 
 		//- Footer
-		include ../../templates/footer.pug
+		+footer()

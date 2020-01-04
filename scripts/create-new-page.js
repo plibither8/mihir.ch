@@ -15,10 +15,8 @@ const fileContents = {
 
 	// Customisation required for each page
 	pug: sanitize(`
-		//- Head generator mixin
-		include ../../templates/head.pug
-		//- Navigation
-		include ../../templates/nav.pug
+		//- Include all common mixins
+		include ../../templates/common.pug
 
 		doctype html
 
@@ -40,7 +38,7 @@ const fileContents = {
 					section
 
 				//- Footer
-				include ../../templates/footer.pug
+				+footer()
 	`),
 
 	styl: sanitize(`

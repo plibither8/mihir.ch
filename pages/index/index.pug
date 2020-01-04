@@ -1,10 +1,8 @@
-//- Mixins, required by "projects" and "contact"
+//- Mixins, required by "projects"
 include ./pug/mixins.pug
 
-//- Head generator mixin
-include ../../templates/head.pug
-//- Navigation
-include ../../templates/nav.pug
+//- Include all common mixins
+include ../../templates/common.pug
 
 doctype html
 
@@ -43,7 +41,7 @@ html(lang="en")
 			include ./pug/contact.pug
 
 		//- Footer
-		include ../../templates/footer.pug
+		+footer()
 
 	//- Load scripts after </body> and before </html>
 	script(src="/assets/js/index.js" defer)

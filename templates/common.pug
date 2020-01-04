@@ -1,0 +1,23 @@
+//- Common mixins, to be included in all files
+
+//- Head generator mixin
+include ./head.pug
+
+//- Navigation
+include ./nav.pug
+
+//- Footer
+include ./footer.pug
+
+//- For contacts
+mixin networkLink(network)
+
+	a(href=network.link rel="noopener" target="_blank")
+
+		img(
+			src=network.icon
+			alt=`${network.name} Logo`
+			draggable="false"
+		)
+
+		| !{network.name}

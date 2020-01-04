@@ -54,12 +54,12 @@ module.exports = async (env, argv) => {
 	// HTML Webpack plugin generator
 	const htmlPluginBaseOptions = page => ({
 		template: `./pages/${page}/${page}.pug`,
-		navigation: data.navigation,
 		filename: page + '.html',
-		inject: false
+		inject: false,
+		...data
 	});
 
-	const htmlPluginExcludes = ['index', 'projects']
+	const htmlPluginExcludes = ['index']
 	const htmlPlugins = pages
 		.filter(page => !htmlPluginExcludes.includes(page))
 		.map(page => new HtmlWebpackPlugin(htmlPluginBaseOptions(page)));
@@ -104,14 +104,8 @@ module.exports = async (env, argv) => {
 			]),
 			new HtmlWebpackPlugin({
 				...htmlPluginBaseOptions('index'),
-				projects: data.projects,
-				networks: data.networks,
 				activity: await getRecentActivity(),
 				dateFormat: require('dateformat')
-			}),
-			new HtmlWebpackPlugin({
-				...htmlPluginBaseOptions('projects'),
-				projectIndex: data.projectIndex
 			}),
 			...htmlPlugins,
 			new ImageminPlugin(),

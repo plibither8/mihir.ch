@@ -1,7 +1,5 @@
-//- Head generator mixin
-include ../../templates/head.pug
-//- Navigation
-include ../../templates/nav.pug
+//- Include all common mixins
+include ../../templates/common.pug
 
 doctype html
 
@@ -35,7 +33,7 @@ html(lang="en")
 				p.error <strong>ERROR 404:</strong> Requested path <span></span> could not be found. <a href="mailto:mihir@chaturvedi.dev">Contact me?</a>
 
 		//- Footer
-		include ../../templates/footer.pug
+		+footer()
 
 	//- Load scripts after </body> and before </html>
 	script(src="/assets/js/404.js" defer)
