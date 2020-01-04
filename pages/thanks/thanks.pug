@@ -1,7 +1,5 @@
 //- Head generator mixin
-include ../../templates/head.pug
-//- Navigation
-include ../../templates/nav.pug
+include ../../templates/common.pug
 
 doctype html
 
@@ -12,7 +10,7 @@ html(lang="en")
 		+head(
 			'Thanks · Mihir Chaturvedi',
 			undefined,
-			'https://mihir.ch/projects'
+			'https://mihir.ch/thanks'
 		)
 
 		// Styles
@@ -29,4 +27,4 @@ html(lang="en")
 				include:markdown-it(html=true) ../../content/thanks.md
 
 		//- Footer
-		include ../../templates/footer.pug
+		+footer()
