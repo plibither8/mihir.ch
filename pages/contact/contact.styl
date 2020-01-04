@@ -1,0 +1,107 @@
+@require "../../stylesheets/base"
+@import "../../stylesheets/nav"
+@import "../../stylesheets/footer"
+
+body
+	display: flex
+	flex-direction: column
+
+main
+	width: 100%
+	margin: 0 auto
+	padding: 2vh
+	overflow: hidden
+	max-width: 800px
+	flex: 1
+
+section
+	margin: 7vh auto
+	width: 100%
+
+	h1
+		font-size: 40px
+		padding: 10px 0
+		color: var(--accent-color-9)
+
+	p
+		color: #222
+		font-size: 18px
+		margin: 30px 0
+		line-height: 1.5
+
+		a
+			color: var(--accent-color-9)
+			anchorLinkBottomBar(25%, alpha($accent-colors[4], 0.15))
+
+	em
+		font-style: normal
+		color: #000
+		font-size: 20px
+		padding-left: 10px
+		border-left: 3px solid var(--accent-color-1)
+		display: inline-block
+
+	.networks
+		width: 100%
+		display: flex
+		flex-flow: wrap
+		margin: 0px -15px
+		color: var(--accent-color-9)
+
+		a
+			display: flex
+			justify-content: center
+			align-items: center
+			margin: 10px 15px
+			padding: 5px 10px
+			font-weight: 500
+			anchorLinkBottomBar(35%, alpha($accent-colors[4], 0.15))
+
+			img
+				height: 25px
+				margin-right: 5px
+
+	form
+		display: flex
+		flex-direction: column
+		max-width: 600px
+		margin-top: 2vh
+
+		label
+			font-size: 20px
+			font-weight: 500
+			color: #444
+			margin-top: 20px
+
+		input, textarea
+			border: 3px solid var(--accent-color-0)
+			margin: 5px 0
+			padding: 10px
+			font-size: 16px
+			border-radius: 3px
+			font-family: var(--default-font-stack)
+			transition: .1s
+			color: #222
+			line-height: 1.5
+
+			&[type="submit"]
+				width: 100px
+				color: var(--accent-color-5)
+				background: var(--accent-color-0)
+				cursor: pointer
+				margin-top: 20px
+				font-weight: 500
+
+			&[type="email"]
+				font-family: var(--mono-font-stack)
+
+			&:active, &:focus
+				border-color: var(--accent-color-2)
+				outline: none
+
+			&:hover
+				box-shadow: 0 0 10px var(--accent-color-0)
+
+		textarea
+			resize: vertical
+			height: 150px

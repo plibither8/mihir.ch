@@ -12,7 +12,7 @@
   external: false
 
 - name: Contact
-  link: "/#contact"
+  link: "/contact"
   external: false
 
 - name: GitHub
