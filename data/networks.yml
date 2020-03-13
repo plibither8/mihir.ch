@@ -31,6 +31,10 @@
   link: https://last.fm/user/plibither8
   icon: "/assets/img/networks/last-dot-fm.svg"
 
+- name: Goodreads
+  link: https://www.goodreads.com/plibither8
+  icon: "/assets/img/networks/goodreads.svg"
+
 - name: Telegram
   link: https://t.me/plibither8
   icon: "/assets/img/networks/telegram.svg"
