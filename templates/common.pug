@@ -11,11 +11,13 @@ include ./footer.pug
 
 //- For contacts
 mixin networkLink(network)
+	- const NETWORKS_IMG_DIR = "/assets/img/networks/"
+	- const fileName = network.name.toLowerCase().split(" ").join("-") + ".svg"
 
 	a(href=network.link rel="noopener" target="_blank")
 
 		img(
-			src=network.icon
+			src=NETWORKS_IMG_DIR+fileName
 			alt=`${network.name} Logo`
 			draggable="false"
 		)

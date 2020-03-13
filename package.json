@@ -40,6 +40,7 @@
 		"pug-html-loader": "^1.1.5",
 		"pug-loader": "https://github.com/pugjs/pug-loader/tarball/master",
 		"rimraf": "^2.6.3",
+		"simple-icons": "^2.6.0",
 		"sitemap-webpack-plugin": "^0.6.0",
 		"size-plugin": "^1.2.0",
 		"stylint": "^2.0.0",

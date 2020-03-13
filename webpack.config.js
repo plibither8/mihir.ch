@@ -37,6 +37,8 @@ module.exports = async (env, argv) => {
 	await require('./scripts/download-project-index')();
 	// Get all that YAML data
 	const data = require('./scripts/get-yaml-data');
+	// Generate simple icons' svg files
+	await require('./scripts/generate-simple-icons')(data.networks);
 
 	// Site paths for sitemap generator - exclude some pages
 	const sitemapExcludes = ['404', 'index'];
