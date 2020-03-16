@@ -2,6 +2,8 @@
 
 I am truly grateful to all the people that have supported me and my endevours in development, which enables me to continue building free and open source software.
 
+Specifically for this site, you can see my [humans.txt](/humans.txt).
+
 ## Sponsors
 
 * [Anand Chowdhary](https://anandchowdhary.com)
@@ -25,6 +27,5 @@ I am truly grateful to all the people that have supported me and my endevours in
 
 ## One-time Contribution
 
-PayPal: [paypal.me/plibither8](https://paypal.me/plibither8)
-
-Buy Me a Coffee: [buymeacoffee.com/plibither8](https://www.buymeacoffee.com/plibither8)
+* PayPal: [paypal.me/plibither8](https://paypal.me/plibither8)
+* Buy Me a Coffee: [buymeacoffee.com/plibither8](https://www.buymeacoffee.com/plibither8)
