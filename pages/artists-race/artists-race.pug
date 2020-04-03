@@ -1,0 +1,26 @@
+//- Include all common mixins
+include ../../templates/common.pug
+
+doctype html
+
+html(lang="en")
+
+	head
+		//- Generate head
+		+head(title="Artists-race · Mihir Chaturvedi")
+
+		// Styles
+		link(rel="stylesheet" href="/assets/css/artists-race.css")
+
+	body
+
+		+nav()
+
+		main
+
+			section
+
+				h1 Top Artists' Race
+
+		//- Footer
+		+footer()
