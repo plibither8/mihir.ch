@@ -6,11 +6,8 @@ include ../../templates/common.pug
 mixin projectSectionList(itemList)
 	ul
 		each project in itemList
-			li
+			li(class=project.archived ? 'archived' : false)
 				a(href=project.link target='_blank')=project.name
-				if project.archived
-					| &nbsp;&ndash;&nbsp;
-					em Archived
 				| &nbsp;&ndash; !{project.description}
 
 doctype html
