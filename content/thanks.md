@@ -1,6 +1,6 @@
 # Thanks! ❤️
 
-I am truly grateful to all the people that have supported me and my endevours in development, which enables me to continue building free and open source software.
+I am truly grateful to all the people that have supported me and my endeavours in development, which enables me to continue building free and open source software.
 
 Specifically for this site, you can see my [humans.txt](/humans.txt).
 
