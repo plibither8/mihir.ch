@@ -10,7 +10,7 @@ const psstButtonHandler = () => {
 		button.nextElementSibling.classList.remove('nodisplay');
 		button.remove();
 	});
-}
+};
 
 // Expand/collapse projects' "++" buttons
 const projectButtonsHandler = () => {
@@ -45,28 +45,53 @@ const projectButtonsHandler = () => {
 		const button = project.querySelector('button');
 		button.addEventListener('click', () => toggleProjectVisibility(project));
 	}
-}
+};
 
 // "Load more" button to load five more HN items
 const hnMoreHandler = () => {
 	const hnCard = document.querySelector('#hn');
-	const itemList = [...hnCard.querySelectorAll('li')];
 	const moreButton = hnCard.querySelector('button');
+	const allButton = hnCard.querySelector('button#load-all');
 
-	let startIndex = 5;
+	let startIndex = 0;
 	moreButton.addEventListener('click', () => {
-		itemList
+		hnItems
 			.slice(startIndex, startIndex + 5)
-			.map(item => item.classList.remove('nodisplay'));
+			.map(createListItem);
 		startIndex += 5;
 	});
-}
+
+	allButton.addEventListener('click', () => {
+		hnItems.slice(startIndex).map(createListItem);
+		startIndex = hnItems.length;
+	});
+};
+
+const createListItem = item => {
+	const hnList = document.querySelector('#hn ol');
+	const listEl = document.createElement('li');
+
+	if (item.type === 'comment') {
+		listEl.innerHTML += `<div class="comment">${item.text}</div>`;
+	} else {
+		listEl.innerHTML += `<a href="${item.link}" target="_blank" rel="noopener">${item.title}</a>`;
+	}
+
+	listEl.innerHTML += `<p class="sub">
+		${item.date} &middot;&nbsp;
+		<a href="https://news.ycombinator.com/item?id=${item.id}" target="_blank" rel="noopener">
+			show on hn
+		</a>
+	</p>`
+
+	hnList.append(listEl);
+};
 
 const main = () => {
 	psstButtonHandler();
 	projectButtonsHandler();
 	hnMoreHandler();
 	render(document.querySelector('a.update span')); // Render the "Last updated" timestamp
-}
+};
 
 main();

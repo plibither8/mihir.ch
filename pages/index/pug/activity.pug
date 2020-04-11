@@ -2,22 +2,24 @@
 
 section#activity
 
+	- const lastUpdatedFormatted = format(new Date(data.lastUpdated), "mmmm dS yyyy, HH:MM:ss o")
+
 	h2 🕒 Recent Activity
 
 	a(
 		href="https://github.com/plibither8/recent-activity-updater"
 		target="_blank"
 		rel="noopener"
-		title=new Date(data.lastUpdated).toISOString()
+		title=lastUpdatedFormatted
 	).update Last updated&nbsp;
-		span(datetime=data.lastUpdated)
+		span(datetime=data.lastUpdated) lastUpdatedFormatted
 
 	p Sundry statistics for this week in music and programming passively collected in the background, and a curated list of my favorite Hacker News stories and comments. I'm a data hoarder, so be it ヽ(`Д´)ﾉ.
 
 	p.sub
 		| PS: This updates at most&nbsp;
 		a(
-			href="https://github.com/plibither8/recent-activity-updater/blob/master/.github/workflows/main.yaml"
+			href="https://github.com/plibither8/recent-activity-updater/actions?query=workflow%3A%22Recent+Activity+Updater+Bot%22"
 			target="_blank"
 			rel="noopener"
 		) every 6 hours
@@ -110,18 +112,38 @@ section#activity
 
 			ol
 				- for (const [index, item] of hackernews.entries()) {
+					- const parsedDate = format(new Date(item.time), "mmmm dS, yyyy")
+					- hackernews[index].date = parsedDate
 
-					li(class=index > 4 ? 'nodisplay' : false)
+					if index > 4
+						- continue
+
+					li
 						if item.type === "comment"
 							div.comment !{item.text}
 						else
 							a(href=item.link target="_blank" rel="noopener")=item.title
-						p.sub !{format(new Date(item.time), "mmmm dS, yyyy")} &middot;&nbsp;
+						p.sub !{parsedDate} &middot;&nbsp;
 							a(href=`https://news.ycombinator.com/item?id=${item.id}` target="_blank" rel="noopener") show on hn
 
 				- }
 
-			button Load more
+			.buttons
+				button Load more
+				span &bullet;
+				button#load-all Load all (!{hackernews.length})
 
 			p.source View on:&nbsp;
 				a(href="https://news.ycombinator.com/favorites?id=plibither8" target="_blank" rel="noopener") Hacker News
+
+			//- Super verbose and ugly, but only (?) way to stop it from erroring
+			- const removeTime = item => ({
+			-	id: item.id,
+			-	title: item.title,
+			-	link: item.link,
+			-	type: item.type,
+			-	text: item.text,
+			-	date: item.date
+			- })
+			script.
+				const hnItems = !{JSON.stringify(hackernews.slice(5).map(removeTime))}

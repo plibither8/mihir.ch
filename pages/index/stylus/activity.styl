@@ -151,8 +151,12 @@ section#activity
 					&::after
 						content: ''
 
+		.buttons
+			display: flex
+			align-items: center
+
 		button
-			margin: 20px 0 20px 30px
+			margin: 20px 10px 20px 30px
 			display: inline-block
 			width: fit-content
 			background: none
@@ -162,3 +166,6 @@ section#activity
 			color: var(--accent-color-9)
 			text-decoration: underline
 			cursor: pointer
+
+			&#load-all
+				margin-left: 10px
