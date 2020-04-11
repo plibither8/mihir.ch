@@ -89,7 +89,25 @@ section#activity
 
 					li
 						p.rank !{index + 1}.
-						img(src=artist.image alt=`${artist.name} image`)
+
+						- const kebab = artist.name.split(' ').join('-').toLowerCase()
+						- const baseDir = '/assets/img/artists'
+
+						picture
+							source(
+								type="image/webp"
+								data-srcset=`${baseDir}/${kebab}.webp`
+							)
+							source(
+								type="image/jpeg"
+								data-srcset=`${baseDir}/${kebab}.jpg`
+							)
+							img(
+								data-src=`${baseDir}/${kebab}.jpg`
+								alt=`${artist.name} image`
+								class='lazyload'
+							)
+
 						p.name(style=backgroundStyle)
 							a(href=artist.url target='_blank' rel='noopener')=artist.name
 							span.count=artist.playcount

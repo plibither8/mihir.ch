@@ -39,6 +39,8 @@ module.exports = async (env, argv) => {
 	const data = require('./scripts/get-yaml-data');
 	// Generate simple icons' svg files
 	await require('./scripts/generate-simple-icons')(data.networks);
+	// Get recent-activity.json
+	const recentActivity = await require('./scripts/download-artist-images')(await getRecentActivity());
 
 	// Site paths for sitemap generator - exclude some pages
 	const sitemapExcludes = ['404', 'index'];
@@ -106,7 +108,7 @@ module.exports = async (env, argv) => {
 			]),
 			new HtmlWebpackPlugin({
 				...htmlPluginBaseOptions('index'),
-				activity: await getRecentActivity(),
+				activity: recentActivity,
 				dateFormat: require('dateformat')
 			}),
 			...htmlPlugins,
@@ -115,6 +117,8 @@ module.exports = async (env, argv) => {
 				config:[
 					{
 						test: /assets\/img\/projects/
+					}, {
+						test: /assets\/img\/artists/
 					}
 				],
 				detailedLogs: true

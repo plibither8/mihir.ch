@@ -1,6 +1,7 @@
 # Custom
 dist/
 assets/img/networks/
+assets/img/artists/
 data/projectIndex.yml
 
 # Created by https://www.gitignore.io/api/node,macos,windows,webstorm,sublimetext,visualstudiocode
