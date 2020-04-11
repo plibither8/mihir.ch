@@ -100,7 +100,8 @@ module.exports = async (env, argv) => {
 			new CopyWebpackPlugin([
 				{
 					from: 'assets',
-					to: 'assets'
+					to: 'assets',
+					ignore: ['img/temp/*']
 				}, {
 					from: 'static',
 					to: ''
