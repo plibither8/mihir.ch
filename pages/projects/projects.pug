@@ -1,18 +1,27 @@
-- const {projectIndex} = htmlWebpackPlugin.options;
+- const {projectIndex, dateFormat: format} = htmlWebpackPlugin.options;
 
 //- Include all common mixins
 include ../../templates/common.pug
 
 mixin projectSectionList(itemList)
 	ul
-		each project in itemList
-			li(class=(project.archived ? 'archived' : false) style=`border-color:${project.details.color}55`)
+		each project in itemList.sort((a, b) => a.details.updated < b.details.updated ? 1 : -1)
+			- const updatedDate = new Date(project.details.updated)
+			li(class=project.archived ? 'archived' : false)
 				.title
 					a(href=`https://github.com/${project.repo}` target='_blank')=project.name
 					.language
 						.circle(style=`background:${project.details.color}`)
 						| !{project.details.language}
+
 				p.description=project.description
+
+				.sub
+					strong=(project.details.stars === 0 ? '' : `★ ${project.details.stars}`)
+					p(title=format(updatedDate, "mmmm dS yyyy, HH:MM:ss o"))
+						span Updated&nbsp;
+						span.timeago(datetime=updatedDate)
+							| on !{format(updatedDate, "mmmm dS yyyy")}
 
 doctype html
 
@@ -57,3 +66,6 @@ html(lang="en")
 
 		//- Footer
 		+footer()
+
+	//- Load scripts after </body> and before </html>
+	script(src="/assets/js/projects.js" defer)

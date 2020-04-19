@@ -60,6 +60,7 @@ module.exports = async (env, argv) => {
 		template: `./pages/${page}/${page}.pug`,
 		filename: page + '.html',
 		inject: false,
+		dateFormat: require('dateformat'),
 		...data
 	});
 
@@ -109,8 +110,7 @@ module.exports = async (env, argv) => {
 			]),
 			new HtmlWebpackPlugin({
 				...htmlPluginBaseOptions('index'),
-				activity: recentActivity,
-				dateFormat: require('dateformat')
+				activity: recentActivity
 			}),
 			...htmlPlugins,
 			new ImageminPlugin(),
