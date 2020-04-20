@@ -56,15 +56,25 @@ module.exports = async (env, argv) => {
 	});
 
 	// HTML Webpack plugin generator
+	const customData = {
+		projects: {
+			dateFormat: require('dateformat')
+		},
+		index: {
+			activity: recentActivity,
+			dateFormat: require('dateformat')
+		}
+	}
+
 	const htmlPluginBaseOptions = page => ({
 		template: `./pages/${page}/${page}.pug`,
 		filename: page + '.html',
 		inject: false,
-		dateFormat: require('dateformat'),
-		...data
+		...data,
+		...customData[page]
 	});
 
-	const htmlPluginExcludes = ['index']
+	const htmlPluginExcludes = []
 	const htmlPlugins = pages
 		.filter(page => !htmlPluginExcludes.includes(page))
 		.map(page => new HtmlWebpackPlugin(htmlPluginBaseOptions(page)));
@@ -108,10 +118,6 @@ module.exports = async (env, argv) => {
 					to: ''
 				}
 			]),
-			new HtmlWebpackPlugin({
-				...htmlPluginBaseOptions('index'),
-				activity: recentActivity
-			}),
 			...htmlPlugins,
 			new ImageminPlugin(),
 			new ImageminWebpWebpackPlugin({
