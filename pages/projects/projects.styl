@@ -71,13 +71,20 @@ section#content
 			display: flex
 			justify-content: space-between
 
+			strong
+				font-style: normal
+
 		&:last-child
 			margin-bottom: 0
 
-		.title
+		.top
 			display: flex
 			justify-content: space-between
 			align-items: center
+			overflow-x: auto
+
+		.created
+			text-transform: uppercase
 
 		.language
 			display: flex
@@ -91,7 +98,7 @@ section#content
 				height: 10px
 				width: 10px
 				border-radius: 50%
-				margin-right: 5px
+				margin: 0 5px
 
 		a
 			font-weight: 500

@@ -8,16 +8,18 @@ mixin projectSectionList(itemList)
 		each project in itemList.sort((a, b) => a.details.updated < b.details.updated ? 1 : -1)
 			- const updatedDate = new Date(project.details.updated)
 			li(class=project.archived ? 'archived' : false)
-				.title
+				.top
+					//- .title
 					a(href=`https://github.com/${project.repo}` target='_blank')=project.name
 					.language
+						span.created !{format(project.details.created, "mmm 'yy")}
 						.circle(style=`background:${project.details.color}`)
 						| !{project.details.language}
 
 				p.description=project.description
 
 				.sub
-					strong=(project.details.stars === 0 ? '' : `★ ${project.details.stars}`)
+					strong=(project.details.stars === 0 ? '' : `★ ${new Intl.NumberFormat().format(project.details.stars)}`)
 					p(title=format(updatedDate, "mmmm dS yyyy, HH:MM:ss o"))
 						span Updated&nbsp;
 						span.timeago(datetime=updatedDate)
