@@ -81,10 +81,18 @@ section#content
 			display: flex
 			justify-content: space-between
 			align-items: center
-			overflow-x: auto
 
-		.created
-			text-transform: uppercase
+			a
+				font-weight: 500
+				font-size: 18px
+				color: var(--accent-color-9)
+				display: flex
+				align-items: center
+
+				img
+					margin-left: 5px
+					height: 15px
+
 
 		.language
 			display: flex
@@ -94,18 +102,15 @@ section#content
 			margin-left: 10px
 			font-weight: bold
 
+			.created
+				text-transform: uppercase
+				white-space: nowrap
+
 			.circle
 				height: 10px
 				width: 10px
 				border-radius: 50%
 				margin: 0 5px
-
-		a
-			font-weight: 500
-			font-size: 18px
-			color: var(--accent-color-9)
-			text-decoration: underline
-			text-decoration-color: var(--accent-color-2)
 
 		&.archived
 			opacity: 0.3

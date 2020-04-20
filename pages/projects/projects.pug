@@ -9,8 +9,8 @@ mixin projectSectionList(itemList)
 			- const updatedDate = new Date(project.details.updated)
 			li(class=project.archived ? 'archived' : false)
 				.top
-					//- .title
 					a(href=`https://github.com/${project.repo}` target='_blank')=project.name
+						img(src="/assets/img/link.svg" alt="External link")
 					.language
 						span.created !{format(project.details.created, "mmm 'yy")}
 						.circle(style=`background:${project.details.color}`)
