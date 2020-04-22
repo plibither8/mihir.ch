@@ -50,19 +50,34 @@ html(lang="en")
 
 				include:markdown-it(html=true) ../../content/projects.md
 
+				ul.toc
+
+					h2 Tree
+
+					- for (const [heading1, items1] of Object.entries(projectIndex)) {
+						li(class='h1')
+							a(href=`#${heading1}`)=`${heading1}${Array.isArray(items1) ? ' ('+items1.length+')' : ''}`
+
+						if (!Array.isArray(items1))
+							- for (const [heading2, items2] of Object.entries(items1)) {
+								li(class='h2')
+									a(href=`#${heading2}`)=`${heading2} (${items2.length})`
+							- }
+					- }
+
 			section#content
 
-				- for (const [headingLvl1, itemsLvl1] of Object.entries(projectIndex)) {
+				- for (const [heading1, items1] of Object.entries(projectIndex)) {
 					.listBody
-						h2(id=headingLvl1)=headingLvl1
+						h2(id=heading1)=heading1
 
-						if Array.isArray(itemsLvl1)
-							+projectSectionList(itemsLvl1)
+						if Array.isArray(items1)
+							+projectSectionList(items1)
 
 						else
-							- for (const [headingLvl2, itemsLvl2] of Object.entries(itemsLvl1)) {
-								h3(id=headingLvl2)=headingLvl2
-								+projectSectionList(itemsLvl2)
+							- for (const [heading2, items2] of Object.entries(items1)) {
+								h3(id=heading2)=heading2
+								+projectSectionList(items2)
 							- }
 				- }
 
