@@ -1,0 +1,30 @@
+//- Include all common mixins
+include ../../templates/common.pug
+
+doctype html
+
+html(lang="en")
+
+	head
+		//- Generate head
+		+head(
+			'Uses · Mihir Chaturvedi',
+			undefined,
+			'https://mihir.ch/uses'
+		)
+
+		// Styles
+		link(rel="stylesheet" href="/assets/css/uses.css")
+
+	body
+
+		+nav()
+
+		main
+
+			section
+
+				include:markdown-it(html=true) ../../content/uses.md
+
+		//- Footer
+		+footer()
