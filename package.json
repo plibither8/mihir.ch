@@ -5,7 +5,7 @@
 		"lint:js": "xo",
 		"lint:styl": "stylint ./**/*.styl",
 		"lint-fix": "run-p --silent 'lint:* -- --fix'",
-		"clean": "rimraf dist",
+		"clean": "rimraf dist assets/img/artists assets/img/networks assets/img/temp",
 		"dist": "mkdir -p dist/assets/css dist/assets/js",
 		"webpack.build": "webpack --mode=production",
 		"webpack.watch": "webpack --mode=development --watch",
