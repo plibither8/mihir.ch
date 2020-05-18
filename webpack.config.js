@@ -121,7 +121,7 @@ module.exports = async (env, argv) => {
 			...htmlPlugins,
 			new ImageminPlugin(),
 			new ImageminWebpWebpackPlugin({
-				config:[
+				config: [
 					{
 						test: /assets\/img\/projects/
 					}, {
