@@ -6,33 +6,15 @@ const fetch = require('node-fetch')
 // use the .env file
 require('dotenv').config()
 
-const { TG_BOT_NAME, TG_BOT_SECRET, BAD_IP } = process.env;
-
-async function sendToTelegram(message) {
-	await fetch(`https://tg.mihir.ch/${TG_BOT_NAME}`, {
-		method: 'POST',
-		body: JSON.stringify({
-			text: message,
-			secret: TG_BOT_SECRET
-		}),
-		headers: {
-			'Content-Type': 'application/json'
-		}
-	})
-}
+const { BAD_IP, BAD_IP_REDIRECT } = process.env;
 
 app.register(require('fastify-static'), {
 	root: path.join(__dirname, 'dist')
 })
 
 app.get('/', async (request, response) => {
-	const {headers, query, ip} = request
-
-	if (ip === BAD_IP) {
-		const telegramMessage = `*⚠️ AJAY IS HERE!*\n*Page URL:* https://mihir.ch`
-		await sendToTelegram(telegramMessage)
-		const stream = fs.createReadStream('dist/hello.html?ip='+BAD_IP)
-		return response.type('text/html').send(stream)
+	if (request.ip === BAD_IP) {
+		return response.redirect(BAD_IP_REDIRECT);
 	}
 
 	const stream = fs.createReadStream('dist/index.html')
@@ -40,13 +22,9 @@ app.get('/', async (request, response) => {
 })
 
 app.get('/:page', async (request, response) => {
-	const {headers, query, ip, params} = request
-
-	if (ip === BAD_IP) {
-		const telegramMessage = `*⚠️ AJAY IS HERE!*\n*Page URL:* https://mihir.ch`
-		await sendToTelegram(telegramMessage)
-		const stream = fs.createReadStream('dist/hello.html?ip='+BAD_IP)
-		return response.type('text/html').send(stream)
+	const {ip, params} = request
+	if (request.ip === BAD_IP) {
+		return response.redirect(BAD_IP_REDIRECT);
 	}
 
 	const { page } = params
