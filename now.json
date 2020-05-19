@@ -1,0 +1,36 @@
+{
+	"version": 2,
+	"env": {
+		"TG_BOT_NAME": "@tg-bots-mihir-ch-bot",
+		"TG_BOT_SECRET": "@tg-bots-secret",
+		"BAD_IP": "@ajay-ip"
+	},
+	"github": {
+		"enabled": true,
+		"silent": true
+	},
+	"builds": [
+		{
+			"src": "package.json",
+			"use": "@now/static-build"
+		},
+		{
+			"src": "dist/**/*",
+			"use": "@now/static"
+		},
+		{
+			"src": "server.js",
+			"use": "@now/node-server"
+		}
+	],
+	"routes": [
+		{
+			"src": "/assets/js/(.*)",
+			"dest": "/assets/js/$1"
+		},
+		{
+			"src": "/(.*)",
+			"dest": "server.js"
+		}
+	]
+}
