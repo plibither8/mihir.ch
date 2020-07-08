@@ -1,24 +1,24 @@
 ---
 - name: Home
-  link: "/"
+  path: "/"
   external: false
 
 - name: Blog
-  link: "/blog"
+  path: "/blog"
   external: false
 
 - name: Projects
-  link: "/projects"
+  path: "/projects"
   external: false
 
 - name: Contact
-  link: "/contact"
+  path: "/contact"
   external: false
 
 - name: GitHub
-  link: https://github.com/plibither8
+  path: https://github.com/plibither8
   external: true
 
 - name: Twitter
-  link: https://twitter.com/plibither8
+  path: https://twitter.com/plibither8
   external: true

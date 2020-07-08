@@ -1,3 +1,6 @@
+@import "variables"
+@import "functions"
+
 nav
 	width: 100%
 	max-width: 1000px
@@ -44,5 +47,5 @@ nav
 		anchorLinkBottomBar(35%, alpha($accent-colors[4], 0.1))
 		white-space: nowrap
 
-		&.nav__link--active::before
+		&.active::before
 			border-bottom: 3px solid var(--accent-color-1)

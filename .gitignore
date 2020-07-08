@@ -5,6 +5,11 @@ assets/img/artists
 assets/img/temp
 data/projectIndex.yml
 
+# From Routify
+**/.history
+/src/tmp/
+.routify
+
 # Created by https://www.gitignore.io/api/node,macos,windows,webstorm,sublimetext,visualstudiocode
 
 ### macOS ###
