@@ -5,7 +5,7 @@ const path = require('path');
 const fetch = require('node-fetch');
 const sharp = require('sharp');
 
-const kebab = str => str.split(' ').join('-').toLowerCase();
+const kebab = str => str.replace(/[^\w]/g, '-').toLowerCase();
 
 const main = async data => {
 	const FALLBACK_URL = 'https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png';

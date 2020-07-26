@@ -90,7 +90,7 @@ section#activity
 					li
 						p.rank !{index + 1}.
 
-						- const kebab = artist.name.split(' ').join('-').toLowerCase()
+						- const kebab = artist.name.replace(/[^\w]/g, '-').toLowerCase()
 						- const baseDir = '/assets/img/artists'
 
 						picture
