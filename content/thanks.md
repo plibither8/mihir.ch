@@ -11,7 +11,7 @@ Specifically for this site, you can see my [humans.txt](/humans.txt).
 ## In the Background
 
 * Ma famille
-* Mehul Agarwal
+* [Mehul Agarwal](https://mehul.al)
 * Pranav Bhatnagar
 
 ## Become a Supporter
