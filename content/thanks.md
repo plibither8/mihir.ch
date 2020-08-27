@@ -20,9 +20,9 @@ Specifically for this site, you can see my [humans.txt](/humans.txt).
 	<a href="https://github.com/sponsors/plibither8">
 		<img src="/assets/img/thanks/gh-sponsors.png" alt="GitHub Sponsors">
 	</a>
-	<a href="https://www.patreon.com/plibither8">
+	<!-- <a href="https://www.patreon.com/plibither8">
 		<img src="/assets/img/thanks/patreon.png" alt="Patreon">
-	</a>
+	</a> -->
 </div>
 
 ## One-time Contribution
