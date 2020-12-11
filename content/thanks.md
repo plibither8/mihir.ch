@@ -27,5 +27,7 @@ Specifically for this site, you can see my [humans.txt](/humans.txt).
 
 ## One-time Contribution
 
-* PayPal: [paypal.me/plibither8](https://paypal.me/plibither8)
+<!-- * PayPal: [paypal.me/plibither8](https://paypal.me/plibither8) -->
+* BTC: **`176ZkuGjEbCHSoa7FsmS8zgLoYd9t7m6Uj`**
+* ETH: **`0x4FA61D2EA60f948f916d12C78dBFA2bF365fC2Fa`**
 * Buy Me a Coffee: [buymeacoffee.com/plibither8](https://www.buymeacoffee.com/plibither8)
