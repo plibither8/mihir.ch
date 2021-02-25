@@ -1,3 +1,0 @@
-# Mihir.ch
-
-Personal website
