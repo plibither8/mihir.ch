@@ -9,7 +9,8 @@ body,
   font-family: $font-default;
   color: $color-text;
   background: $color-bg;
-  -webkit-font-smoothing: antialiased;
+  font-smooth: always;
+  -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-overflow-scrolling: touch;
 }
