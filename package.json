@@ -1,68 +1,33 @@
 {
-	"private": true,
-	"scripts": {
-		"lint": "run-p --silent lint:*",
-		"lint:js": "xo",
-		"lint:styl": "stylint ./**/*.styl",
-		"lint-fix": "run-p --silent 'lint:* -- --fix'",
-		"clean": "rimraf dist assets/img/artists assets/img/networks assets/img/temp",
-		"dist": "mkdir -p dist/assets/css dist/assets/js",
-		"webpack.build": "webpack --mode=production",
-		"webpack.watch": "webpack --mode=development --watch",
-		"webpack.dev-server": "webpack-dev-server --open",
-		"stylus.build": "stylus ./pages/*/*.styl --out ./dist/assets/css --compress",
-		"stylus.watch": "stylus ./pages/*/*.styl --out ./dist/assets/css -m --watch",
-		"postcss": "postcss ./dist/assets/css/*.css -r --no-map --use cssnano autoprefixer",
-		"build": "run-s clean dist webpack.build stylus.build postcss",
-		"watch": "run-p dist webpack.watch stylus.watch",
-		"start": "run-p dist webpack.dev-server stylus.watch",
-		"create-page": "node ./scripts/create-new-page"
-	},
-	"dependencies": {
-		"@octokit/rest": "^16.34.0",
-		"lazysizes": "^5.1.1",
-		"timeago.js": "^4.0.0-beta.2"
-	},
-	"devDependencies": {
-		"autoprefixer": "^9.7.3",
-		"copy-webpack-plugin": "^5.0.4",
-		"cssnano": "^4.1.10",
-		"dateformat": "^3.0.3",
-		"html-webpack-plugin": "^3.2.0",
-		"imagemin-webp-webpack-plugin": "^3.2.1",
-		"imagemin-webpack-plugin": "^2.4.2",
-		"js-yaml": "^3.13.1",
-		"jstransformer-markdown-it": "^2.1.0",
-		"node-fetch": "^2.6.0",
-		"npm-run-all": "^4.1.5",
-		"postcss-cli": "^6.1.3",
-		"pug": "^2.0.4",
-		"pug-html-loader": "^1.1.5",
-		"pug-loader": "https://github.com/pugjs/pug-loader/tarball/master",
-		"rimraf": "^2.6.3",
-		"sharp": "^0.25.2",
-		"simple-icons": "^2.6.0",
-		"sitemap-webpack-plugin": "^0.6.0",
-		"size-plugin": "^1.2.0",
-		"stylint": "^2.0.0",
-		"stylus": "^0.54.5",
-		"webpack": "^4.38.0",
-		"webpack-cli": "^3.3.6",
-		"webpack-dev-server": "^3.7.2",
-		"write-file-webpack-plugin": "^4.5.1",
-		"xo": "^0.24.0"
-	},
-	"xo": {
-		"envs": [
-			"browser"
-		],
-		"globals": [
-			"browser"
-		],
-		"rules": {
-			"import/no-unassigned-import": 0,
-			"import/no-named-as-default": 0,
-			"no-script-url": 0
-		}
-	}
+  "name": "mihir.ch",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "start": "svelte-kit start",
+    "lint": "prettier --check . && eslint --ignore-path .gitignore .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-node": "next",
+    "@sveltejs/kit": "next",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
+    "autoprefixer": "^10.2.5",
+    "cssnano": "^5.0.0",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-svelte3": "^3.1.0",
+    "postcss": "^8.2.10",
+    "postcss-load-config": "^3.0.1",
+    "prettier": "~2.2.1",
+    "prettier-plugin-svelte": "^2.2.0",
+    "svelte": "^3.29.0",
+    "svelte-preprocess": "^4.7.0",
+    "tailwindcss": "^2.1.1",
+    "tslib": "^2.0.0",
+    "typescript": "^4.0.0",
+    "vite": "^2.1.0"
+  },
+  "type": "module"
 }
