@@ -1,0 +1,28 @@
+[
+  {
+    "text": "Home",
+    "href": "/"
+  },
+  {
+    "text": "About",
+    "href": "/about"
+  },
+  {
+    "text": "Writing",
+    "href": "/writing"
+  },
+  {
+    "text": "Code",
+    "href": "/code"
+  },
+  {
+    "text": "GitHub",
+    "href": "https://github.com/plibither8",
+    "external": true
+  },
+  {
+    "text": "Twitter",
+    "href": "https://twitter.com/plibither8",
+    "external": true
+  }
+]

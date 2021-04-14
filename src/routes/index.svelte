@@ -1,52 +1,34 @@
 <script lang="ts">
-  import Counter from '$lib/Counter.svelte';
+  import DirectoryLink from '$lib/DirectoryLink.svelte';
+  import FeaturedWorkCard from '$lib/FeaturedWorkCard.svelte';
+  import Page from '$lib/Page.svelte';
+  import Section from '$lib/Section.svelte';
+  import directory from '../data/directory.json';
+  import featuredWork from '../data/featured-work.json';
 </script>
 
 <svelte:head>
-  <title>Hello world!</title>
+  <title>Mihir Chaturvedi</title>
 </svelte:head>
 
-<main>
-  <h1>Hello world!</h1>
+<Page noPadding>
+  <Section title="Featured work" specialWidth>
+    <div class="horizontal-scroll-padding px-5 md:px-0 py-5 -mt-5 flex space-x-5 overflow-auto">
+      {#each featuredWork as item}
+        <FeaturedWorkCard {...item} />
+      {/each}
+    </div>
+  </Section>
 
-  <Counter />
+  <Section title="Directory">
+    <div class="space-y-5">
+      {#each directory as item}
+        <DirectoryLink {...item} />
+      {/each}
+    </div>
+  </Section>
 
-  <p>
-    Visit <a class="text-blue-600" href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte
-    apps.
-  </p>
-</main>
+  <Section title="Recent activity" />
 
-<style style lang="postcss">
-  main {
-    @apply text-center;
-    @apply p-4;
-    @apply mx-auto;
-  }
-
-  h1 {
-    @apply text-red-600;
-    @apply uppercase;
-    @apply text-6xl;
-    @apply font-thin;
-    @apply leading-tight;
-    @apply my-16 mx-auto;
-    @apply max-w-xs;
-  }
-
-  p {
-    @apply max-w-xs;
-    @apply my-8 mx-auto;
-    @apply leading-snug;
-  }
-
-  @screen sm {
-    h1 {
-      @apply max-w-none;
-    }
-
-    p {
-      @apply max-w-none;
-    }
-  }
-</style>
+  <Section title="Contact" />
+</Page>

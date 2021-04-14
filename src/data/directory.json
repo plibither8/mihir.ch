@@ -1,0 +1,22 @@
+[
+  {
+    "href": "https://git.mihir.ch",
+    "text": "git.mihir.ch",
+    "description": "Self hosted Last.fm clone where I scrobble all my songs. Super fast, searchable, highly recommend it!"
+  },
+  {
+    "href": "https://maloja.mihir.ch",
+    "text": "maloja.mihir.ch",
+    "description": "Personal git server and mirror of my public git(hub) repositories, for when GitHub goes down."
+  },
+  {
+    "href": "http://mihirchm6o3badyr.onion",
+    "text": "mihirchm6o3badyr.onion",
+    "description": "Mirror of this site on the Tor network."
+  },
+  {
+    "href": "http://mhr.cx",
+    "text": "mhr.cx",
+    "description": "My URL shortener controlled and managed via a Telegram."
+  }
+]

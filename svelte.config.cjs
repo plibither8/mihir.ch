@@ -1,6 +1,7 @@
 const sveltePreprocess = require('svelte-preprocess');
 const node = require('@sveltejs/adapter-node');
 const pkg = require('./package.json');
+const yaml = require('@rollup/plugin-yaml');
 
 /** @type {import('@sveltejs/kit').Config} */
 module.exports = {
@@ -21,9 +22,10 @@ module.exports = {
     adapter: node(),
 
     // hydrate the <div id="svelte"> element in src/app.html
-    target: '#svelte',
+    target: 'body',
 
     vite: {
+      plugins: [yaml],
       ssr: {
         noExternal: Object.keys(pkg.dependencies || {})
       }
