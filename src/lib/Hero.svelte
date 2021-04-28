@@ -4,14 +4,14 @@
   export let collapsed: boolean;
 </script>
 
-<section class="bg-indigo-100 border-b border-indigo-200 text-indigo-900 {collapsed && 'mb-0'}">
+<section class="bg-indigo-50 border-b border-indigo-200 text-indigo-900 {collapsed && 'mb-0'}">
   {#if collapsed}
     <div class="py-5">
       <div class="max-w-3xl mx-auto w-11/12">
         <h1 class="font-serif space-x-2">
           <a href="/" class="hover:underline text-2xl font-bold">{$activePage}</a>
           <span class="text-lg">«</span>
-          <a href="/" class="hover:underline text-lg">Mihir Chaturvedi</a>
+          <a href="/" class="hover:underline text-lg font-serif">Mihir Chaturvedi</a>
         </h1>
       </div>
     </div>
