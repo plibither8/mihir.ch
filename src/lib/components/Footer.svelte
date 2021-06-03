@@ -12,7 +12,7 @@
     <div class="flex flex-col space-y-3">
       <a href="#" class="text-sm">Source on GitHub (MIT licensed)</a>
       <a href="#">Version 3.0.0</a>
-      <a href="">Last updated 3 days ago, <code>commit #434edc2</code></a>
+      <a href="#">Last updated 3 days ago, <code>commit #434edc2</code></a>
     </div>
   </Container>
 </footer>
