@@ -1,6 +1,6 @@
 <script>
   import Container from "$lib/components/Container.svelte";
-  import FeaturedWork from "$lib/components/FeaturedWork.svelte";
+  import FeaturedProjects from "$lib/components/FeaturedProjects.svelte";
   import Hero from "$lib/components/Hero.svelte";
   import Nav from "$lib/components/Nav.svelte";
 </script>
@@ -11,10 +11,10 @@
 
 <main class="">
   <Container stretch>
-    <FeaturedWork />
-    <FeaturedWork />
-    <FeaturedWork />
-    <FeaturedWork />
+    <FeaturedProjects />
+    <FeaturedProjects />
+    <FeaturedProjects />
+    <FeaturedProjects />
     
   </Container>
 </main>

@@ -1,17 +1,17 @@
 <script>
   import { chunkify } from "$lib/utils";
   import Container from "./Container.svelte";
-  import FeaturedWorkItem from "./FeaturedWorkItem.svelte";
+  import FeaturedProjectsItem from "./FeaturedProjectsItem.svelte";
   import HorizontalScrollContainer from "./HorizontalScrollContainer.svelte";
-  import data from "../../data/featured-work.json";
+  import data from "../../data/featured-projects.json";
   import Icon, { Link, ArrowsExpand } from "svelte-hero-icons";
   let expanded = false;
 </script>
 
-<section class="py-10 space-y-3" id="featured-work">
+<section class="py-10 space-y-3" id="featured-projects">
   <Container className="space-y-5">
     <div class="group flex items-center relative">
-      <a class="group-hover:opacity-100 opacity-0 absolute right-full pr-2 transition-opacity" href="#featured-work">
+      <a class="group-hover:opacity-100 opacity-0 absolute right-full pr-2 transition-opacity" href="#featured-projects">
         <Icon src={Link} size="20" class="text-gray-300" />
       </a>
       <h2 class="text-gray-300 text-2xl font-black">Featured projects</h2>
@@ -28,7 +28,7 @@
       {#each chunkify(data, 2) as row}
         <div class="flex space-x-5">
           {#each row as item}
-            <FeaturedWorkItem {...item} groupExpanded={expanded} />
+            <FeaturedProjectsItem {...item} groupExpanded={expanded} />
           {/each}
         </div>
       {/each}
