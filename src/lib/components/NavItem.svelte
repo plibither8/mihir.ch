@@ -6,5 +6,5 @@
 
 <a
   {href}
-  class="text-gray-300 text-sm rounded py-2 px-2 md:px-4 flex items-center {strong && 'font-black'}"
+  class="text-gray-300 text-sm rounded py-2 px-2 md:px-4 flex items-center {strong ? 'font-black' : 'font-medium'}"
 >{label}</a>
