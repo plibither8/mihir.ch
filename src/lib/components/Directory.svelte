@@ -15,7 +15,7 @@
       </a>
       <h2 class="text-gray-300 text-2xl font-black">Directory</h2>
     </div>
-    <p class="text-gray-400 leading-normal">Links around the web.</p>
+    <p class="text-gray-400 leading-normal">Links around the web that I own.</p>
   </Container>
   <HorizontalScrollContainer>
     <div class="flex flex-col space-y-5">
