@@ -1,0 +1,32 @@
+[
+  {
+    "name": "git.mihir.ch",
+    "href": "https://git.mihir.ch",
+    "description": "Personal git server and mirror of my public git(hub) repositories, for if (read when) GitHub goes down."
+  },
+  {
+    "name": "maloja.mihir.ch",
+    "href": "https://maloja.mihir.ch",
+    "description": "Self hosted Last.fm clone where I scrobble all my songs. Super fast, searchable, highly recommend it!"
+  },
+  {
+    "name": "mihirchm6o3badyr.onion",
+    "href": "http://mihirchm6o3badyr.onion",
+    "description": "Mirror of this site on the Tor network."
+  },
+  {
+    "name": "mhr.cx",
+    "href": "http://mhr.cx",
+    "description": "My URL shortener controlled and managed via a Telegram. mhr = mihir, but shortened."
+  },
+  {
+    "name": "status.mhr.cx",
+    "href": "http://status.mhr.cx",
+    "description": "Up/downtime status pages of my various self-hosted services. Based on Upptime."
+  },
+  {
+    "name": "chaturvedi.dev",
+    "href": "http://chaturvedi.dev",
+    "description": "Alias for this domain. Bought it in a moment of weakness, to secure a vanity (albeit esoteric) domain name. Already used it too much so now I've no choice but to renew it every year. Take note, children."
+  }
+]

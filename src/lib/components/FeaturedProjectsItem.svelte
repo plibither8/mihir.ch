@@ -16,7 +16,7 @@
 </script>
 
 <div
-  class="card w-full flex-grow bg-black-700 p-5 rounded-lg relative overflow-hidden"
+  class="card group w-full flex-grow bg-black-700 p-5 rounded-lg relative overflow-hidden"
   bind:this={header.element}
   bind:clientWidth={header.width}
   bind:clientHeight={header.height}
