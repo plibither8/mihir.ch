@@ -1,6 +1,11 @@
 <script lang="ts">
+  import { page } from "$app/stores"
+  import Nav from '$lib/components/Nav.svelte';
   import '../global.postcss'
-  import { onMount } from 'svelte'
 </script>
+
+{#if $page.path !== "/"}
+  <Nav persistLogo />
+{/if}
 
 <slot />

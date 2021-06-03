@@ -1,5 +1,6 @@
 <script lang="ts">
-  export let barColors: string[] = ["#74007a", "#a53faa", "#da70dc"];
+  import { purple } from "$lib/constants";
+  export let barColors: string[] = purple.slice(-5, -2);
   export let width: string = "20";
   export let height: string = "20";
 </script>
