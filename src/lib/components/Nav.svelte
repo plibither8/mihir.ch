@@ -46,9 +46,13 @@
       </button>
     </div>
     {#if expand}
-      <nav transition:slide={{ duration: 200 }} class="py-5 flex flex-col space-y-5 text-sm">
+      <nav transition:slide={{ duration: 200 }} class="py-5 grid grid-cols-2 lg:grid-cols-3 gap-5 text-sm">
         <a href="/" class="flex flex-col space-y-1 hover:text-purple-400 text-gray-300">
-          <span class="font-medium">Thanks and attributions ❤️</span>
+          <span class="font-medium">About</span>
+          <span class="text-xs text-gray-500">A bit about myself, as a person.</span>
+        </a>
+        <a href="/" class="flex flex-col space-y-1 hover:text-purple-400 text-gray-300">
+          <span class="font-medium">Thanks! ❤️</span>
           <span class="text-xs text-gray-500">Acknowledgement to the people who have helped me :)</span>
         </a>
         <a href="/" class="flex flex-col space-y-1 hover:text-purple-400 text-gray-300">

@@ -116,7 +116,7 @@
 
 <canvas
   bind:this={canvas}
-  class="absolute top-0 left-0 transition-transform transform group-hover:scale-x-125"
+  class="absolute top-0 left-0 transition-transform transform group-hover:scale-110"
 />
 
 <div class="absolute top-0 left-0 h-full w-full bg-black-900 bg-opacity-80 backdrop-filter backdrop-blur-lg" />
