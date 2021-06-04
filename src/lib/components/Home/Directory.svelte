@@ -1,9 +1,9 @@
 <script>
   import { chunkify } from "$lib/utils";
-  import Container from "./Container.svelte";
-  import DirectoryItem from "./DirectoryItem.svelte";
-  import HorizontalScrollContainer from "./HorizontalScrollContainer.svelte";
-  import data from "../../data/directory.json";
+  import Container from "$lib/components/Container.svelte";
+  import DirectoryItem from "$lib/components/Home/DirectoryItem.svelte";
+  import HorizontalScrollContainer from "$lib/components/HorizontalScrollContainer.svelte";
+  import data from "$lib/data/directory.json";
 </script>
 
 <Container className="space-y-5">

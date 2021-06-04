@@ -1,10 +1,11 @@
 <script>
   import Container from "$lib/components/Container.svelte";
-  import Directory from "$lib/components/Directory.svelte";
-  import FeaturedProjects from "$lib/components/FeaturedProjects.svelte";
-  import Hero from "$lib/components/Hero.svelte";
-  import HomeSection from "$lib/components/HomeSection.svelte";
   import Nav from "$lib/components/Nav.svelte";
+  import Directory from "$lib/components/Home/Directory.svelte";
+  import FeaturedProjects from "$lib/components/Home/FeaturedProjects.svelte";
+  import Hero from "$lib/components/Home/Hero.svelte";
+  import HomeSection from "$lib/components/Home/Section.svelte";
+  import WhatsUp from "$lib/components/Home/WhatsUp.svelte";
 </script>
 
 <Hero />
@@ -22,11 +23,11 @@
     </HomeSection>
 
     <HomeSection heading="What's up?">
-      <Directory />
+      <WhatsUp />
     </HomeSection>
 
     <HomeSection heading="Contact">
-      <Directory />
+      <!-- <Directory /> -->
     </HomeSection>
   </Container>
 </main>

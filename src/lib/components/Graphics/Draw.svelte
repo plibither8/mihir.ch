@@ -6,7 +6,7 @@
 
 <script lang="ts">
   import { onMount } from "svelte";
-  import type { HeaderInfo } from "../Hero.svelte";
+  import type { HeaderInfo } from "$lib/components/Home/Hero.svelte";
   import { purple } from "$lib/constants";
 
   export let header: HeaderInfo;

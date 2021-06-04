@@ -1,7 +1,7 @@
 <script lang="ts">
   import { normalizeForId } from "$lib/utils";
-  import Container from "./Container.svelte";
-  import DeepLink from "./DeepLink.svelte";
+  import Container from "$lib/components/Container.svelte";
+  import DeepLink from "$lib/components/DeepLink.svelte";
 
   export let heading: string;
   export let className: string = "";

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { slide } from "svelte/transition";
   import Icon, { ArrowsExpand, X, ExternalLink } from "svelte-hero-icons";
-  import Draw from "./Graphics/Draw.svelte";
+  import Draw from "$lib/components/Graphics/Draw.svelte";
   export let name: string;
   export let description: string;
   export let colors: string[];

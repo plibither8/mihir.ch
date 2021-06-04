@@ -1,10 +1,10 @@
 <script>
   import { chunkify } from "$lib/utils";
-  import Container from "./Container.svelte";
-  import FeaturedProjectsItem from "./FeaturedProjectsItem.svelte";
-  import HorizontalScrollContainer from "./HorizontalScrollContainer.svelte";
-  import data from "../../data/featured-projects.json";
   import Icon, { ArrowsExpand } from "svelte-hero-icons";
+  import Container from "$lib/components/Container.svelte";
+  import HorizontalScrollContainer from "$lib/components/HorizontalScrollContainer.svelte";
+  import FeaturedProjectsItem from "$lib/components/Home/FeaturedProjectsItem.svelte";
+  import data from "$lib/data/featured-projects.json";
   let expanded = false;
 </script>
 

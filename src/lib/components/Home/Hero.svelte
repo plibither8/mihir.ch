@@ -7,9 +7,9 @@
 </script>
 
 <script lang="ts">
-  import Container from "./Container.svelte";
-  import SoundBars from "./SoundBars.svelte";
-  import Circles from "./Graphics/Circles.svelte";
+  import Container from "$lib/components/Container.svelte";
+  import SoundBars from "$lib/components/Graphics/SoundBars.svelte";
+  import Circles from "$lib/components/Graphics/Circles.svelte";
 
   const header: HeaderInfo = {
     element: undefined,

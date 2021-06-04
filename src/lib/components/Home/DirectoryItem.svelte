@@ -1,6 +1,5 @@
 <script lang="ts">
-import Icon, { ExternalLink } from "svelte-hero-icons";
-
+  import Icon, { ExternalLink } from "svelte-hero-icons";
   export let name: string;
   export let href: string;
   export let description: string;

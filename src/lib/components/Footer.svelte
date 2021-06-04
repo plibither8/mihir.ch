@@ -1,5 +1,5 @@
 <script>
-  import Container from "./Container.svelte";
+  import Container from "$lib/components/Container.svelte";
 </script>
 
 <footer class="bg-black-900 border-t border-black-500 py-6 w-full text-xs text-gray-500 leading-normal">

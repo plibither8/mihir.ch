@@ -1,10 +1,10 @@
 <script lang="ts">
-  import Container from "./Container.svelte";
-  import NavItem from "./NavItem.svelte";
-  import Logo from "./Logo.svelte";
   import { slide } from "svelte/transition";
   import { horizontalSlide } from "$lib/transitions";
   import Icon, { ChevronDoubleLeft } from "svelte-hero-icons";
+  import Container from "$lib/components/Container.svelte";
+  import NavItem from "$lib/components/NavItem.svelte";
+  import Logo from "$lib/components/Logo.svelte";
 
   export let persistLogo: boolean = false;
 
