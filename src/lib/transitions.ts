@@ -1,11 +1,10 @@
 import type { SlideParams, TransitionConfig } from 'svelte/transition';
 import { cubicOut } from 'svelte/easing';
 
-export function horizontalSlide (node: Element, {
-  delay = 0,
-  duration = 400,
-  easing = cubicOut,
-}: SlideParams = {}): TransitionConfig {
+export function horizontalSlide(
+  node: Element,
+  { delay = 0, duration = 400, easing = cubicOut }: SlideParams = {}
+): TransitionConfig {
   const style = getComputedStyle(node);
   const opacity = +style.opacity;
   const width = parseFloat(style.width);
@@ -20,7 +19,7 @@ export function horizontalSlide (node: Element, {
     delay,
     duration,
     easing,
-    css: t =>
+    css: (t) =>
       'overflow: hidden;' +
       `opacity: ${Math.min(t * 20, 1) * opacity};` +
       `width: ${t * width}px;` +
@@ -29,6 +28,6 @@ export function horizontalSlide (node: Element, {
       `margin-left: ${t * margin_left}px;` +
       `margin-right: ${t * margin_right}px;` +
       `border-left-width: ${t * border_left_width}px;` +
-      `border-right-width: ${t * border_right_width}px;`
+      `border-right-width: ${t * border_right_width}px;`,
   };
 }

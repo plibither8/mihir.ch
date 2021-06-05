@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { purple } from "$lib/constants";
+  import { purple } from '$lib/constants';
   export let barColors: string[] = purple.slice(-5, -2);
-  export let width: string = "20";
-  export let height: string = "20";
+  export let width = '20';
+  export let height = '20';
 </script>
 
 <svg
@@ -13,13 +13,7 @@
   class="transform rotate-180"
 >
   {#each barColors as color, index}
-    <rect
-      fill="{color}"
-      x="{12.5 + 25 * index}"
-      y="24.5"
-      width="25"
-      height="40"
-    >
+    <rect fill={color} x={12.5 + 25 * index} y="24.5" width="25" height="40">
       <animate
         attributeName="height"
         calcMode="spline"

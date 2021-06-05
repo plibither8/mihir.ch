@@ -1,8 +1,10 @@
 <script>
-  import Container from "$lib/components/Container.svelte";
+  import Container from '$lib/components/Container.svelte';
 </script>
 
-<footer class="bg-black-900 border-t border-black-500 py-6 w-full text-xs text-gray-500 hover:text-gray-400 transition-colors leading-normal">
+<footer
+  class="bg-black-900 border-t border-black-500 py-6 w-full text-xs text-gray-500 hover:text-gray-400 transition-colors leading-normal"
+>
   <Container className="grid grid-cols-2 gap-x-5 gap-y-3">
     <a class="text-sm" href="#">Thanks! ❤️</a>
     <a class="text-sm" href="#">Source on GitHub (MIT licensed)</a>

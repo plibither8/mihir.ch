@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { normalizeForId } from "$lib/utils";
-  import Container from "$lib/components/Container.svelte";
-  import DeepLink from "$lib/components/DeepLink.svelte";
+  import { normalizeForId } from '$lib/utils';
+  import Container from '$lib/components/Container.svelte';
+  import DeepLink from '$lib/components/DeepLink.svelte';
 
   export let heading: string;
-  export let className: string = "";
+  export let className = '';
   const id = normalizeForId(heading);
 </script>
 
@@ -14,5 +14,5 @@
       <h2 class="text-gray-300 text-2xl font-black">{heading}</h2>
     </DeepLink>
   </Container>
-  <slot/>
+  <slot />
 </section>

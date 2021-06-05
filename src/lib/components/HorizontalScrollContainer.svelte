@@ -1,20 +1,21 @@
 <script lang="ts">
-  export let className: string = "";
+  export let className = '';
   let container: HTMLDivElement;
   let containerWidth: number;
-  let overflow: boolean = false;
+  let overflow = false;
   $: overflow = container && containerWidth < container.scrollWidth;
 </script>
 
 <div
   bind:this={container}
   bind:clientWidth={containerWidth}
-  class="scroll-container flex overflow-auto w-full p-5 {overflow && "pr-4"} {className}"
+  class="scroll-container flex overflow-auto w-full p-5 {overflow &&
+    'pr-4'} {className}"
 >
-  <slot/>
+  <slot />
 
   {#if overflow}
-    <div class="pr-1"/>
+    <div class="pr-1" />
   {/if}
 </div>
 

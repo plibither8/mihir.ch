@@ -1,11 +1,11 @@
 <script>
-  import Container from "$lib/components/Container.svelte";
-  import Nav from "$lib/components/Nav.svelte";
-  import Directory from "$lib/components/Home/Directory.svelte";
-  import FeaturedProjects from "$lib/components/Home/FeaturedProjects.svelte";
-  import Hero from "$lib/components/Home/Hero.svelte";
-  import HomeSection from "$lib/components/Home/Section.svelte";
-  import WhatsUp from "$lib/components/Home/WhatsUp.svelte";
+  import Container from '$lib/components/Container.svelte';
+  import Nav from '$lib/components/Nav.svelte';
+  import Directory from '$lib/components/Home/Directory.svelte';
+  import FeaturedProjects from '$lib/components/Home/FeaturedProjects.svelte';
+  import Hero from '$lib/components/Home/Hero.svelte';
+  import HomeSection from '$lib/components/Home/Section.svelte';
+  import WhatsUp from '$lib/components/Home/WhatsUp.svelte';
 </script>
 
 <Hero />

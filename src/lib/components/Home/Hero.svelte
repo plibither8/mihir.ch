@@ -7,9 +7,9 @@
 </script>
 
 <script lang="ts">
-  import Container from "$lib/components/Container.svelte";
-  import SoundBars from "$lib/components/Graphics/SoundBars.svelte";
-  import Circles from "$lib/components/Graphics/Circles.svelte";
+  import Container from '$lib/components/Container.svelte';
+  import SoundBars from '$lib/components/Graphics/SoundBars.svelte';
+  import Circles from '$lib/components/Graphics/Circles.svelte';
 
   const header: HeaderInfo = {
     element: undefined,
@@ -32,19 +32,24 @@
           Mihir Chaturvedi, <span class="text-gray-500">(plibither8)</span>
         </h1>
         <div class="flex items-baseline relative space-x-4">
-          <h2 class="text-gray-300 text-xl leading-normal font-black">frontend &amp; user experience</h2>
-          <div class="flex-grow h-px bg-purple-400 bg-opacity-30"></div>
+          <h2 class="text-gray-300 text-xl leading-normal font-black">
+            frontend &amp; user experience
+          </h2>
+          <div class="flex-grow h-px bg-purple-400 bg-opacity-30" />
         </div>
       </div>
       <div class="space-y-4 max-w-xl text-gray-300">
         <p>Namaste! _/\_</p>
         <p>
-          I build for the web, and like to automate stuff for fun.
-          Sometimes when I'm bored, I try to redesign this website.
+          I build for the web, and like to automate stuff for fun. Sometimes
+          when I'm bored, I try to redesign this website.
         </p>
-        <p>Currently, I'm working @
+        <p>
+          Currently, I'm working @
           <a
-            href="https://pabio.com" target="_blank" rel="noopener"
+            href="https://pabio.com"
+            target="_blank"
+            rel="noopener"
             class="underline hover:text-orange-600"
           >
             Pabio

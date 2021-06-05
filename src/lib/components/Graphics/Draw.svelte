@@ -3,11 +3,10 @@
   by Antoine Abboi (https://antoineabbou.fr/).
   Thanks!
 -->
-
 <script lang="ts">
-  import { onMount } from "svelte";
-  import type { HeaderInfo } from "$lib/components/Home/Hero.svelte";
-  import { purple } from "$lib/constants";
+  import { onMount } from 'svelte';
+  import type { HeaderInfo } from '$lib/components/Home/Hero.svelte';
+  import { purple } from '$lib/constants';
 
   export let header: HeaderInfo;
   export let colors: string[] = purple;
@@ -38,7 +37,8 @@
       if (this.y + this.radius + this.dy > canvas.height) {
         this.dy = Circle.round(this.dy * Circle.friction);
         if (!this.stopped) {
-          this.stopped = (Math.abs(Math.abs(this.pDy) - Math.abs(this.dy)) <= 0.5);
+          this.stopped =
+            Math.abs(Math.abs(this.pDy) - Math.abs(this.dy)) <= 0.5;
           stoppedCircleCount += Number(this.stopped);
         }
         this.dy = -this.dy;
@@ -82,8 +82,10 @@
     }
   }
 
-  const randomIntFromRange = (min: number, max: number): number => Math.floor(Math.random() * (max - min + 1) + min);
-  const randomColor = (): string => colors[Math.floor(Math.random() * colors.length)];
+  const randomIntFromRange = (min: number, max: number): number =>
+    Math.floor(Math.random() * (max - min + 1) + min);
+  const randomColor = (): string =>
+    colors[Math.floor(Math.random() * colors.length)];
 
   let circles: Circle[] = [];
 
@@ -102,7 +104,7 @@
   function animate() {
     if (stoppedCircleCount === circleCount) return;
     requestAnimationFrame(animate);
-    circles.forEach(circle => circle.update());
+    circles.forEach((circle) => circle.update());
   }
 
   onMount(() => {
@@ -119,4 +121,6 @@
   class="absolute top-0 left-0 transition-transform transform group-hover:scale-110"
 />
 
-<div class="absolute top-0 left-0 h-full w-full bg-black-900 bg-opacity-80 backdrop-filter backdrop-blur-lg" />
+<div
+  class="absolute top-0 left-0 h-full w-full bg-black-900 bg-opacity-80 backdrop-filter backdrop-blur-lg"
+/>

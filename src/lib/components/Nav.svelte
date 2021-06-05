@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { slide } from "svelte/transition";
-  import { horizontalSlide } from "$lib/transitions";
-  import Icon, { ChevronDoubleLeft } from "svelte-hero-icons";
-  import Container from "$lib/components/Container.svelte";
-  import NavItem from "$lib/components/NavItem.svelte";
-  import Logo from "$lib/components/Logo.svelte";
+  import { slide } from 'svelte/transition';
+  import { horizontalSlide } from '$lib/transitions';
+  import Icon, { ChevronDoubleLeft } from 'svelte-hero-icons';
+  import Container from '$lib/components/Container.svelte';
+  import NavItem from '$lib/components/NavItem.svelte';
+  import Logo from '$lib/components/Logo.svelte';
 
-  export let persistLogo: boolean = false;
+  export let persistLogo = false;
 
-  let expand: boolean = false;
+  let expand = false;
   let scrollY: number;
   let parentElement: HTMLDivElement;
   let showLogo = false;
@@ -26,7 +26,11 @@
 >
   <Container>
     <div class="flex items-center justify-between space-x-2">
-      <nav class="flex items-center overflow-auto {!showLogo && !persistLogo && "-mx-2 md:-mx-4"}">
+      <nav
+        class="flex items-center overflow-auto {!showLogo &&
+          !persistLogo &&
+          '-mx-2 md:-mx-4'}"
+      >
         {#if persistLogo || showLogo}
           <div class="flex items-center" transition:horizontalSlide>
             <a href="/" class="">
@@ -41,29 +45,60 @@
         <NavItem label="GitHub" href="/projects" />
         <NavItem label="Twitter" href="/projects" />
       </nav>
-      <button class="p-2 -m-2" on:click={() => expand = !expand}>
-        <Icon src={ChevronDoubleLeft} size="16" class="text-gray-300 transition-transform transform {expand && '-rotate-90'}" />
+      <button class="p-2 -m-2" on:click={() => (expand = !expand)}>
+        <Icon
+          src={ChevronDoubleLeft}
+          size="16"
+          class="text-gray-300 transition-transform transform {expand &&
+            '-rotate-90'}"
+        />
       </button>
     </div>
     {#if expand}
-      <nav transition:slide={{ duration: 200 }} class="py-5 grid grid-cols-2 lg:grid-cols-3 gap-5 text-sm">
-        <a href="/" class="flex flex-col space-y-1 hover:text-purple-400 text-gray-300">
+      <nav
+        transition:slide={{ duration: 200 }}
+        class="py-5 grid grid-cols-2 lg:grid-cols-3 gap-5 text-sm"
+      >
+        <a
+          href="/"
+          class="flex flex-col space-y-1 hover:text-purple-400 text-gray-300"
+        >
           <span class="font-medium">About</span>
-          <span class="text-xs text-gray-500">A bit about myself, as a person.</span>
+          <span class="text-xs text-gray-500"
+            >A bit about myself, as a person.</span
+          >
         </a>
-        <a href="/" class="flex flex-col space-y-1 hover:text-purple-400 text-gray-300">
+        <a
+          href="/"
+          class="flex flex-col space-y-1 hover:text-purple-400 text-gray-300"
+        >
           <span class="font-medium">Thanks! ❤️</span>
-          <span class="text-xs text-gray-500">Acknowledgement to the people who have helped me :)</span>
+          <span class="text-xs text-gray-500"
+            >Acknowledgement to the people who have helped me :)</span
+          >
         </a>
-        <a href="/" class="flex flex-col space-y-1 hover:text-purple-400 text-gray-300">
+        <a
+          href="/"
+          class="flex flex-col space-y-1 hover:text-purple-400 text-gray-300"
+        >
           <span class="font-medium">Versions</span>
-          <span class="text-xs text-gray-500">Revisions of this website, over the years.</span>
+          <span class="text-xs text-gray-500"
+            >Revisions of this website, over the years.</span
+          >
         </a>
-        <a href="/" class="flex flex-col space-y-1 hover:text-purple-400 text-gray-300">
+        <a
+          href="/"
+          class="flex flex-col space-y-1 hover:text-purple-400 text-gray-300"
+        >
           <span class="font-medium">Support</span>
-          <span class="text-xs text-gray-500">Support me and my work, in many ways.</span>
+          <span class="text-xs text-gray-500"
+            >Support me and my work, in many ways.</span
+          >
         </a>
-        <a href="/" class="flex flex-col space-y-1 hover:text-purple-400 text-gray-300">
+        <a
+          href="/"
+          class="flex flex-col space-y-1 hover:text-purple-400 text-gray-300"
+        >
           <span class="font-medium">Uses</span>
           <span class="text-xs text-gray-500">Some other page I guess...</span>
         </a>

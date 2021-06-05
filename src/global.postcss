@@ -9,26 +9,12 @@ body,
   @apply bg-black-700;
 }
 
-a.fancy {
-  @apply text-white relative;
-
-  &.fancy::before {
-    @apply absolute w-full h-full top-0 left-0 transition-transform ;
-    content: '';
-    transform: skew(-30deg, -2deg);
-    background: #9e68ce4f;
-  }
-
-  &:hover,
-  &:focus {
-    &::before {
-      transform: skew(0, 0);
-    }
-  }
+a.link {
+  @apply underline hover:text-purple-400;
 }
 
 ::selection {
-  color: white;
+  @apply text-white;
   background: #b13eb14f;
 }
 
