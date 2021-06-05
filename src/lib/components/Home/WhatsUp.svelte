@@ -1,5 +1,6 @@
 <script lang="ts">
   import HorizontalScrollContainer from '../HorizontalScrollContainer.svelte';
+  import WhatsUpContainer from './WhatsUp/Container.svelte';
   import HackerNews from './WhatsUp/HackerNews.svelte';
   import Music from './WhatsUp/Music.svelte';
   import Programming from './WhatsUp/Programming.svelte';
@@ -93,7 +94,7 @@
     {
       heading: 'Hacker News',
       description:
-        'Hacker News stories and comments I\'ve favourited over time, listed in reverse chronological order.',
+        'Stories and comments I\'ve favourited over time, listed in reverse chronological order.',
       component: HackerNews,
       data: [
         {
@@ -175,15 +176,8 @@
 
 <HorizontalScrollContainer>
   <div class="flex space-x-20">
-    {#each items as { heading, description, component, data }}
-      <div class="space-y-5">
-        <h3 class="leading-normal text-gray-400">
-          <span class="font-medium text-white text-lg">{heading}</span>
-          <span class="mx-1">&mdash;</span>
-          <span>{description}</span>
-        </h3>
-        <svelte:component this={component} {data} />
-      </div>
+    {#each items as item}
+      <WhatsUpContainer {...item} />
     {/each}
   </div>
 </HorizontalScrollContainer>

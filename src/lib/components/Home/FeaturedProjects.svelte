@@ -6,7 +6,7 @@
   import FeaturedProjectsItem from '$lib/components/Home/FeaturedProjectsItem.svelte';
   import data from '$lib/data/featured-projects.json';
   let expanded = false;
-</script>
+</script>]
 
 <Container className="space-y-5">
   <p class="text-gray-400 leading-normal">

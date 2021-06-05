@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@icons-pack/svelte-simple-icons': github:plibither8/svelte-simple-icons#canary
   '@sveltejs/adapter-static': next
   '@sveltejs/kit': next
   '@typescript-eslint/eslint-plugin': ^4.19.0
@@ -24,6 +25,7 @@ specifiers:
   typescript: ^4.0.0
 
 dependencies:
+  '@icons-pack/svelte-simple-icons': github.com/plibither8/svelte-simple-icons/8e508060cc43d08512341c8c4879045304e2912e
   svelte-hero-icons: 2.2.0
 
 devDependencies:
@@ -841,8 +843,8 @@ packages:
       is-arrayish: 0.2.1
     dev: true
 
-  /esbuild/0.12.5:
-    resolution: {integrity: sha512-vcuP53pA5XiwUU4FnlXM+2PnVjTfHGthM7uP1gtp+9yfheGvFFbq/KyuESThmtoHPUrfZH5JpxGVJIFDVD1Egw==}
+  /esbuild/0.12.6:
+    resolution: {integrity: sha512-RDvVLvAjsq/kIZJoneMiUOH7EE7t2QaW7T3Q7EdQij14+bZbDq5sndb0tTanmHIFSqZVMBMMyqzVHkS3dJobeA==}
     hasBin: true
     requiresBuild: true
     dev: true
@@ -2307,7 +2309,6 @@ packages:
   /svelte/3.38.2:
     resolution: {integrity: sha512-q5Dq0/QHh4BLJyEVWGe7Cej5NWs040LWjMbicBGZ+3qpFWJ1YObRmUDZKbbovddLC9WW7THTj3kYbTOFmU9fbg==}
     engines: {node: '>= 8'}
-    dev: true
 
   /svgo/2.3.0:
     resolution: {integrity: sha512-fz4IKjNO6HDPgIQxu4IxwtubtbSfGEAJUq/IXyTPIkGhWck/faiiwfkvsB8LnBkKLvSoyNNIY6d13lZprJMc9Q==}
@@ -2462,7 +2463,7 @@ packages:
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
-      esbuild: 0.12.5
+      esbuild: 0.12.6
       postcss: 8.3.0
       resolve: 1.20.0
       rollup: 2.50.6
@@ -2500,3 +2501,11 @@ packages:
     resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
     engines: {node: '>= 6'}
     dev: true
+
+  github.com/plibither8/svelte-simple-icons/8e508060cc43d08512341c8c4879045304e2912e:
+    resolution: {tarball: https://codeload.github.com/plibither8/svelte-simple-icons/tar.gz/8e508060cc43d08512341c8c4879045304e2912e}
+    name: '@icons-pack/svelte-simple-icons'
+    version: 2.2.0
+    dependencies:
+      svelte: 3.38.2
+    dev: false

@@ -3,11 +3,6 @@
   export let data: any;
   let loadCount = 5;
 </script>
-<!-- 
-<p class="text-gray-400 leading-normal">
-  <span class="text-gray-300 font-black">{data.length}</span>
-  favourited stories and comments, in total.
-</p> -->
 
 <p class="text-sm text-gray-400 leading-normal">
   <span>View it on</span>
