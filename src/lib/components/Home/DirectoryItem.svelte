@@ -10,7 +10,7 @@
     <h3 class="font-medium">{name}</h3>
     <Icon src={ExternalLink} size="16" />
   </a>
-  <p class="text-gray-500 text-sm">{description}</p>
+  <p class="text-gray-400 text-sm">{description}</p>
 </div>
 
 <style>

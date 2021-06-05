@@ -32,10 +32,10 @@
         <Icon src={expanded ? X : ArrowsExpand} size="16" />
       </button>
     </div>
-    <p class="text-gray-400 text-sm leading-normal">{description}</p>
+    <p class="text-gray-300 text-sm leading-normal">{description}</p>
     {#if expanded}
       <div transition:slide={{ duration: 100 }}>
-        <p class="text-gray-500 text-sm leading-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam excepturi consequatur officiis delectus veniam atque exercitationem neque sequi aspernatur tempore, itaque, culpa, facilis velit. Suscipit fugit delectus consequuntur laborum ex.</p>
+        <p class="text-gray-400 text-sm leading-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam excepturi consequatur officiis delectus veniam atque exercitationem neque sequi aspernatur tempore, itaque, culpa, facilis velit. Suscipit fugit delectus consequuntur laborum ex.</p>
       </div>
     {/if}
   </div>

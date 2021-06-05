@@ -29,20 +29,20 @@
     <div class="space-y-20">
       <div class="space-y-4 pt-10">
         <h1 class="text-gray-100 text-4xl leading-normal font-medium">
-          Mihir Chaturvedi, <span class="text-gray-600">(plibither8)</span>
+          Mihir Chaturvedi, <span class="text-gray-500">(plibither8)</span>
         </h1>
         <div class="flex items-baseline relative space-x-4">
           <h2 class="text-gray-300 text-xl leading-normal font-black">frontend &amp; user experience</h2>
-          <div class="flex-grow h-px bg-accent-900 bg-opacity-30"></div>
+          <div class="flex-grow h-px bg-purple-400 bg-opacity-30"></div>
         </div>
       </div>
-      <div class="space-y-4 max-w-xl">
-        <p class="text-gray-400">Namaste! _/\_</p>
-        <p class="text-gray-400">
+      <div class="space-y-4 max-w-xl text-gray-300">
+        <p>Namaste! _/\_</p>
+        <p>
           I build for the web, and like to automate stuff for fun.
           Sometimes when I'm bored, I try to redesign this website.
         </p>
-        <p class="text-gray-400">Currently, I'm working @
+        <p>Currently, I'm working @
           <a
             href="https://pabio.com" target="_blank" rel="noopener"
             class="underline hover:text-orange-600"
