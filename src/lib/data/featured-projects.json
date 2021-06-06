@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Refined Hacker News",
+    "description": "✨ Browser extension: Hacker News, but refined — Interface tweaks and features to make the HN experience better.",
+    "colors": ["#fb923c", "#f97316", "#ea580c"]
+  },
+  {
+    "name": "Markdown New Tab",
+    "description": "🗒️ ⏰ ✔️ Browser New Tab: Save notes in Markdown directly in the 'New Tab' page.",
+    "colors": ["#ffffff", "#dbeafe", "#60a5fa"]
+  },
+  {
+    "name": "2048.cpp",
+    "description": "🎮 A fully-featured terminal version of the popular game \"2048\" written in C++",
+    "colors": ["#dcfce7", "#bbf7d0", "#86efac"]
+  },
+  {
+    "name": "licensed",
+    "description": "⚖️ licensed is an interactive command line tool to help you choose and add licenses to your projects",
+    "colors": ["#fef9c3", "#fef08a", "#fde047", "#facc15"]
+  },
+  {
+    "name": "Made With Love In",
+    "description": "❤️ Mircoservice for serving and listing \"Made with love in <country-name>\" badges",
+    "colors": ["#fecaca", "#fca5a5", "#f87171", "#ef4444"]
+  },
+  {
+    "name": "Sanskriti School",
+    "description": "🎒 The official website of Sanskriti School, New Delhi",
+    "colors": ["#f97316", "#ea580c", "#3b82f6", "#2563eb"]
+  }
+]
