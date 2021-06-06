@@ -33,9 +33,9 @@
 
 <Container className="space-y-5">
   <p class="text-gray-300 text-lg leading-normal">
-    I am currently {config.availableForFreelance ? '' : 'not '}accepting new
+    I am currently {config.availableForHire ? '' : 'not '}accepting new
     freelance projects.
-    {#if config.availableForFreelance}
+    {#if config.availableForHire}
       Let's talk here: <a class="link" href="mailto:work@mihir.ch"
         >work@mihir.ch</a
       >.

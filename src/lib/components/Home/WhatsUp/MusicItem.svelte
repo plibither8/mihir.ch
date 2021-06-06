@@ -2,7 +2,7 @@
   export let artist;
   export let activeArtist;
   export let span: { col: number; row: number };
-  const activateArtist = () => $activeArtist = artist;
+  const activateArtist = () => ($activeArtist = artist);
 </script>
 
 <button
@@ -14,7 +14,7 @@
   style="
     grid-row: span {span.row} / span {span.row};
     grid-column: span {span.col} / span {span.col};
-  " 
+  "
   on:focus={activateArtist}
   on:click={activateArtist}
   on:mouseover={activateArtist}

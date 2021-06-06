@@ -5,6 +5,7 @@
   import Container from '$lib/components/Container.svelte';
   import NavItem from '$lib/components/NavItem.svelte';
   import Logo from '$lib/components/Logo.svelte';
+  import navigation from '$lib/data/navigation.json';
 
   export let persistLogo = false;
 
@@ -12,9 +13,9 @@
   let scrollY: number;
   let parentElement: HTMLDivElement;
   let showLogo = false;
-  $: if (parentElement && scrollY) {
+  $: if (!persistLogo && parentElement && scrollY) {
     const { top, y } = parentElement.getBoundingClientRect();
-    showLogo =  !top || !y || top < 10 || y < 10;
+    showLogo = !top || !y || top < 10 || y < 10;
   }
 </script>
 
@@ -33,17 +34,13 @@
       >
         {#if persistLogo || showLogo}
           <div class="flex items-center" transition:horizontalSlide>
-            <a href="/" class="">
-              <Logo />
-            </a>
-            <NavItem label="Mihir." href="/" strong />
+            <a href="/" class=""><Logo /></a>
+            <NavItem type="primary" label="Mihir." href="/" strong />
           </div>
         {/if}
-        <NavItem label="Code" href="/projects" />
-        <NavItem label="Writing" href="/projects" />
-        <NavItem label="Contact" href="/projects" />
-        <NavItem label="GitHub" href="/projects" />
-        <NavItem label="Twitter" href="/projects" />
+        {#each navigation.primary as item}
+          <NavItem type="primary" {...item} />
+        {/each}
       </nav>
       <button class="p-2 -m-2" on:click={() => (expand = !expand)}>
         <Icon
@@ -59,49 +56,9 @@
         transition:slide={{ duration: 200 }}
         class="py-5 grid grid-cols-2 lg:grid-cols-3 gap-5 text-sm"
       >
-        <a
-          href="/"
-          class="flex flex-col space-y-1 hover:text-purple-400 text-gray-300"
-        >
-          <span class="font-medium">About</span>
-          <span class="text-xs text-gray-500"
-            >A bit about myself, as a person.</span
-          >
-        </a>
-        <a
-          href="/"
-          class="flex flex-col space-y-1 hover:text-purple-400 text-gray-300"
-        >
-          <span class="font-medium">Thanks! ❤️</span>
-          <span class="text-xs text-gray-500"
-            >Acknowledgement to the people who have helped me :)</span
-          >
-        </a>
-        <a
-          href="/"
-          class="flex flex-col space-y-1 hover:text-purple-400 text-gray-300"
-        >
-          <span class="font-medium">Versions</span>
-          <span class="text-xs text-gray-500"
-            >Revisions of this website, over the years.</span
-          >
-        </a>
-        <a
-          href="/"
-          class="flex flex-col space-y-1 hover:text-purple-400 text-gray-300"
-        >
-          <span class="font-medium">Support</span>
-          <span class="text-xs text-gray-500"
-            >Support me and my work, in many ways.</span
-          >
-        </a>
-        <a
-          href="/"
-          class="flex flex-col space-y-1 hover:text-purple-400 text-gray-300"
-        >
-          <span class="font-medium">Uses</span>
-          <span class="text-xs text-gray-500">Some other page I guess...</span>
-        </a>
+        {#each navigation.secondary as item}
+          <NavItem type="secondary" {...item} />
+        {/each}
       </nav>
     {/if}
   </Container>

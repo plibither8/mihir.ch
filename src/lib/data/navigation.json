@@ -1,0 +1,53 @@
+{
+  "primary": [
+    {
+      "label": "Code",
+      "href": "/"
+    },
+    {
+      "label": "Writing",
+      "href": "/"
+    },
+    {
+      "label": "Contact",
+      "href": "/"
+    },
+    {
+      "label": "GitHub",
+      "href": "/",
+      "external": true
+    },
+    {
+      "label": "Twitter",
+      "href": "/",
+      "external": true
+    }
+  ],
+  "secondary": [
+    {
+      "label": "About",
+      "description": "A bit about myself, as a person.",
+      "href": "/"
+    },
+    {
+      "label": "Thanks! ❤️",
+      "description": "Acknowledgement to the people who have helped me :)",
+      "href": "/"
+    },
+    {
+      "label": "Versions",
+      "description": "Revisions of this website, over the years.",
+      "href": "/"
+    },
+    {
+      "label": "Support",
+      "description": "Support me and my work, in many ways.",
+      "href": "/"
+    },
+    {
+      "label": "Uses",
+      "description": "Some other page I guess...",
+      "href": "/"
+    }
+  ]
+}
