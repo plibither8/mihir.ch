@@ -57,8 +57,8 @@
     class="grid gap-3"
     style="grid-template-columns: repeat(6, 3rem); grid-template-rows: repeat(5, 3rem);"
   >
-    {#each data.topFive as artist, rank}
-      <MusicItem {artist} {activeArtist} span={spans[rank]} {rank} />
+    {#each data.topFive as artist, i}
+      <MusicItem {artist} {activeArtist} span={spans[i]} />
     {/each}
   </div>
 

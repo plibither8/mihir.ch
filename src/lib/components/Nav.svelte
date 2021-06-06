@@ -14,7 +14,7 @@
   let showLogo = false;
   $: if (parentElement && scrollY) {
     const { top, y } = parentElement.getBoundingClientRect();
-    showLogo = top === 0 || y === 0;
+    showLogo =  !top || !y || top < 10 || y < 10;
   }
 </script>
 
