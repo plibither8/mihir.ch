@@ -1,6 +1,6 @@
 <script>
   import { chunkify } from '$lib/utils';
-  import Icon, { ArrowsExpand } from 'svelte-hero-icons';
+  import Icon, { ArrowsExpand, X } from 'svelte-hero-icons';
   import Container from '$lib/components/Container.svelte';
   import HorizontalScrollContainer from '$lib/components/HorizontalScrollContainer.svelte';
   import FeaturedProjectsItem from '$lib/components/Home/FeaturedProjectsItem.svelte';
@@ -14,14 +14,14 @@
     prominence.
   </p>
   <p class="text-gray-400 leading-normal">
-    The rest are <a class="link" href="/code">organised and indexed here</a>,
-    or my <a href="https://github.com/plibither8" class="link">GitHub</a>.
+    The rest are <a class="link" href="/code">organised and indexed here</a>, or
+    my <a href="https://github.com/plibither8" class="link">GitHub</a>.
   </p>
   <button
     on:click={() => (expanded = !expanded)}
     class="flex items-center space-x-2 text-gray-300 font-medium"
   >
-    <Icon src={ArrowsExpand} size="16" class="text-gray-100" />
+    <Icon src={expanded ? X : ArrowsExpand} size="16" class="text-gray-100" />
     <span>{expanded ? 'Collapse' : 'Expand'} all</span>
   </button>
 </Container>

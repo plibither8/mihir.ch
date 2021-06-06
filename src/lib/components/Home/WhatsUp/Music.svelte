@@ -14,7 +14,7 @@
   const activeArtist = writable(undefined);
 </script>
 
-<svelte:window on:click={() => $activeArtist = undefined} />
+<svelte:window on:click={() => ($activeArtist = undefined)} />
 
 <div
   class="space-y-5"
@@ -28,17 +28,30 @@
 
   <p class="text-sm text-gray-400 leading-normal">
     <span>View it on</span>
-    <a class="link inline-flex items-center space-x-1" target="_blank" rel="noopener" href="https://last.fm/user/plibither8">
+    <a
+      class="link inline-flex items-center space-x-1"
+      target="_blank"
+      rel="noopener"
+      href="https://last.fm/user/plibither8"
+    >
       <span>Last.fm</span>
       <Icon src={ExternalLink} size="16" class="text-gray-300" />
-    </a> or
-    <a class="link inline-flex items-center space-x-1" target="_blank" rel="noopener" href="https://maloja.mihir.ch">
+    </a>
+    or
+    <a
+      class="link inline-flex items-center space-x-1"
+      target="_blank"
+      rel="noopener"
+      href="https://maloja.mihir.ch"
+    >
       <span>my self-hosted Maloja instance</span>
       <Icon src={ExternalLink} size="16" class="text-gray-300" />
     </a>.
   </p>
 
-  <p class="text-sm text-gray-400 leading-normal">(Hint: hover over or click on these. 👇)</p>
+  <p class="text-sm text-gray-400 leading-normal">
+    (Hint: hover over or click on these. 👇)
+  </p>
 
   <div
     class="grid gap-3"
@@ -51,10 +64,17 @@
 
   {#if $activeArtist}
     <div transition:slide={{ duration: 200 }}>
-      <a href={$activeArtist.url} target="_blank" rel="noopener" class="flex items-center justify-between">
+      <a
+        href={$activeArtist.url}
+        target="_blank"
+        rel="noopener"
+        class="flex items-center justify-between"
+      >
         <p class="text-sm">
           <span class=" text-gray-300 font-black">{$activeArtist.name}</span>
-          <span class="text-gray-400">&mdash; {$activeArtist.playcount} scrobbles</span>
+          <span class="text-gray-400"
+            >&mdash; {$activeArtist.playcount} scrobbles</span
+          >
         </p>
         <Icon src={ExternalLink} size="16" class="text-gray-300" />
       </a>
