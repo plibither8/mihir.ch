@@ -26,8 +26,11 @@ const pages = readdirSync(pagesDir).filter((f) =>
 const getRecentActivity = async () => {
   const GIST_API_URL =
     "https://api.github.com/gists/ea3780e4764315e354bc3f0655c81814";
-  const remoteData = await fetch(GIST_API_URL).then((res) => res.json());
-  console.log(remoteData);
+  const remoteData = await fetch(GIST_API_URL, {
+    headers: {
+      Authorization: "token " + process.env.GITHUB_TOKEN,
+    },
+  }).then((res) => res.json());
   const content = JSON.parse(remoteData.files["recent-activity.json"].content);
 
   return {
